@@ -15,21 +15,29 @@
         .then(res => res.json())
         .then(data => {
             if (data && data.url) {
-                window.location.replace(data.url);
-            } else {
-                window.location.replace('https://lessons-chargers-badge-signs.trycloudflare.com');
+                document.getElementById('ocis-btn').href = data.url;
             }
+            if (data && data.vscode_url) {
+                document.getElementById('vscode-btn').href = data.vscode_url;
+            }
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('buttons').style.display = 'block';
         })
         .catch(err => {
-            window.location.replace('https://lessons-chargers-badge-signs.trycloudflare.com');
+            document.getElementById('loading').innerText = 'Failed to load live links.';
         });
     </script>
 </head>
 <body style="background:#0a0a0c;color:#00ffcc;font-family:sans-serif;text-align:center;padding-top:20vh;">
     <div style="border:1px solid #00ffcc;display:inline-block;padding:30px;border-radius:12px;background:#111;box-shadow:0 0 20px rgba(0,255,204,0.2);">
-        <h2 style="margin:0 0 10px 0;">⚡ Connecting to Blixor Core Edge Node 2...</h2>
-        <p style="color:#aaa;margin:0 0 15px 0;">Fetching live server tunnel...</p>
-        <a href="https://lessons-chargers-badge-signs.trycloudflare.com" style="color:#00ffcc;font-weight:bold;text-decoration:none;border:1px solid #00ffcc;padding:10px 20px;border-radius:5px;display:inline-block;margin-top:10px;">Open Directly</a>
+        <h2 style="margin:0 0 10px 0;">⚡ Blixor Core Edge Node 2</h2>
+        <p id="loading" style="color:#aaa;margin:0 0 15px 0;">Fetching live server tunnels...</p>
+        
+        <div id="buttons" style="display:none; margin-top:20px;">
+            <a id="ocis-btn" href="#" style="background:#00ffcc;color:#000;font-weight:bold;text-decoration:none;padding:12px 24px;border-radius:5px;display:inline-block;margin:5px;">📁 Open OwnDrive</a>
+            <br><br>
+            <a id="vscode-btn" href="#" style="border:1px solid #00ffcc;color:#00ffcc;font-weight:bold;text-decoration:none;padding:12px 24px;border-radius:5px;display:inline-block;margin:5px;">💻 Open VS Code</a>
+        </div>
     </div>
 </body>
 </html>
