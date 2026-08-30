@@ -1,43 +1,382 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <title>Connecting to Blixor Gateway...</title>
-    <script>
-        fetch('https://api.github.com/repos/sathwik4444/SERVER-LINKS/contents/link.json', {
-            headers: { 'Accept': 'application/vnd.github.v3.raw' },
-            cache: 'no-store'
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data && data.url) {
-                document.getElementById('ocis-btn').href = data.url;
-            }
-            if (data && data.vscode_url) {
-                document.getElementById('vscode-btn').href = data.vscode_url;
-            }
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('buttons').style.display = 'block';
-        })
-        .catch(err => {
-            document.getElementById('loading').innerText = 'Failed to load live links.';
-        });
-    </script>
+    <title>Blixor Edge Node 2 • Cloud Infrastructure Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --primary-glow: rgba(0, 242, 254, 0.4);
+            --accent: #9d4edd;
+            --accent-glow: rgba(157, 78, 221, 0.35);
+            --bg-dark: #07090e;
+            --card-bg: rgba(15, 23, 42, 0.65);
+            --card-border: rgba(255, 255, 255, 0.12);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+            padding: 40px 20px;
+        }
+
+        /* Ambient Lighting Mesh */
+        .glow-sphere-1 {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
+            top: -200px;
+            left: -150px;
+            filter: blur(80px);
+            z-index: 1;
+            animation: floatGlow 14s ease-in-out infinite alternate;
+        }
+
+        .glow-sphere-2 {
+            position: absolute;
+            width: 750px;
+            height: 750px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(157, 78, 221, 0.16) 0%, rgba(0, 0, 0, 0) 70%);
+            bottom: -220px;
+            right: -200px;
+            filter: blur(90px);
+            z-index: 1;
+            animation: floatGlow 18s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes floatGlow {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(100px, 80px) scale(1.2); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Top Header */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            color: #38bdf8;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .ping-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 10px #22c55e;
+            animation: pulseDot 2s infinite;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.6; }
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 45%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            letter-spacing: -1px;
+            margin-bottom: 0.6rem;
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 28px;
+            width: 100%;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2.25rem;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0;
+            transition: opacity 0.35s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 0 30px -5px var(--primary-glow);
+        }
+
+        .service-card:hover::before { opacity: 1; }
+
+        .card-icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .icon-owndrive {
+            background: linear-gradient(135deg, rgba(2, 132, 199, 0.25), rgba(56, 189, 248, 0.15));
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: #38bdf8;
+        }
+
+        .icon-vscode {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.25), rgba(168, 85, 247, 0.15));
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #c084fc;
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 1.75rem;
+        }
+
+        .tags-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            font-size: 11px;
+            font-family: 'JetBrains Mono', monospace;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .btn-launch {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 0.9rem;
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-owndrive {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: #fff;
+            box-shadow: 0 8px 20px -4px rgba(2, 132, 199, 0.5);
+        }
+
+        .btn-owndrive:hover {
+            box-shadow: 0 12px 28px -4px rgba(2, 132, 199, 0.7);
+            filter: brightness(1.1);
+        }
+
+        .btn-vscode {
+            background: linear-gradient(135deg, #7c3aed, #6366f1);
+            color: #fff;
+            box-shadow: 0 8px 20px -4px rgba(124, 58, 237, 0.5);
+        }
+
+        .btn-vscode:hover {
+            box-shadow: 0 12px 28px -4px rgba(124, 58, 237, 0.7);
+            filter: brightness(1.1);
+        }
+
+        /* Footer Info */
+        .footer {
+            margin-top: 3.5rem;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.8rem;
+            color: #64748b;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .footer-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #475569;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.1rem; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-<body style="background:#0a0a0c;color:#00ffcc;font-family:sans-serif;text-align:center;padding-top:20vh;">
-    <div style="border:1px solid #00ffcc;display:inline-block;padding:30px;border-radius:12px;background:#111;box-shadow:0 0 20px rgba(0,255,204,0.2);">
-        <h2 style="margin:0 0 10px 0;">⚡ Blixor Core Edge Node 2</h2>
-        <p id="loading" style="color:#aaa;margin:0 0 15px 0;">Fetching live server tunnels...</p>
-        
-        <div id="buttons" style="display:none; margin-top:20px;">
-            <a id="ocis-btn" href="#" style="background:#00ffcc;color:#000;font-weight:bold;text-decoration:none;padding:12px 24px;border-radius:5px;display:inline-block;margin:5px;">📁 Open OwnDrive</a>
-            <br><br>
-            <a id="vscode-btn" href="#" style="border:1px solid #00ffcc;color:#00ffcc;font-weight:bold;text-decoration:none;padding:12px 24px;border-radius:5px;display:inline-block;margin:5px;">💻 Open VS Code</a>
+<body>
+    <div class="glow-sphere-1"></div>
+    <div class="glow-sphere-2"></div>
+
+    <div class="container">
+        <div class="badge">
+            <span class="ping-dot"></span>
+            <span id="node-status">EDGE NODE 2 • ACTIVE • 7.5GB VIRTUAL MEM</span>
+        </div>
+
+        <h1>Cloud Infrastructure Portal</h1>
+        <p class="subtitle">Next-generation high-performance mobile edge cluster powering enterprise file synchronization and sandboxed cloud IDEs.</p>
+
+        <div class="services-grid">
+            <!-- OwnDrive Card -->
+            <div class="service-card">
+                <div>
+                    <div class="card-icon-box icon-owndrive">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                    </div>
+                    <div class="card-title">OwnDrive Cloud</div>
+                    <div class="card-desc">Infinite Scale personal cloud storage with isolated 2GB WebDAV quotas, collaborative spaces, and file encryption.</div>
+                    <div class="tags-row">
+                        <span class="tag">64-bit oCIS</span>
+                        <span class="tag">8GB SD Pool</span>
+                        <span class="tag">WebDAV</span>
+                    </div>
+                </div>
+                <a id="ocis-btn" href="#" class="btn-launch btn-owndrive" target="_blank">
+                    <span>Open OwnDrive</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+            </div>
+
+            <!-- VS Code Card -->
+            <div class="service-card">
+                <div>
+                    <div class="card-icon-box icon-vscode">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <div class="card-title">VS Code Multi-Tenant IDE</div>
+                    <div class="card-desc">Full-featured VS Code web IDE with real-time 1s VFS WebDAV database binding, multi-user isolation, and integrated terminal.</div>
+                    <div class="tags-row">
+                        <span class="tag">Real-Time VFS</span>
+                        <span class="tag">Jailed Sandboxes</span>
+                        <span class="tag">1GB Node Heap</span>
+                    </div>
+                </div>
+                <a id="vscode-btn" href="#" class="btn-launch btn-vscode" target="_blank">
+                    <span>Launch Cloud IDE</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>Redmi Note 3 (Snapdragon 650)</span>
+            <span class="footer-dot"></span>
+            <span>Cloudflare Tunnel Edge</span>
+            <span class="footer-dot"></span>
+            <span id="refresh-time">Live Status Synced</span>
         </div>
     </div>
+
+    <script>
+        function loadTunnels() {
+            fetch('https://api.github.com/repos/sathwik4444/SERVER-LINKS/contents/link.json', {
+                headers: { 'Accept': 'application/vnd.github.v3.raw' },
+                cache: 'no-store'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.url) {
+                    document.getElementById('ocis-btn').href = data.url;
+                }
+                if (data && data.vscode_url) {
+                    document.getElementById('vscode-btn').href = data.vscode_url;
+                }
+                document.getElementById('refresh-time').innerText = 'Last updated: ' + new Date().toLocaleTimeString();
+            })
+            .catch(err => {
+                console.error(err);
+            });
+        }
+        loadTunnels();
+        setInterval(loadTunnels, 30000);
+    </script>
 </body>
 </html>
