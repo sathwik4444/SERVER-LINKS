@@ -401,24 +401,51 @@
     </div>
 
     <script>
-        function loadTunnels() {
-            fetch('https://api.github.com/repos/sathwik4444/SERVER-LINKS/contents/link.json', {
-                headers: { 'Accept': 'application/vnd.github.v3.raw' },
-                cache: 'no-store'
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data && data.url) {
+        async function fetchLinkData() {
+            // 1. Primary: Uncapped Fastly CDN Raw endpoint (Never rate-limited by GitHub API)
+            try {
+                const rawRes = await fetch('https://raw.githubusercontent.com/sathwik4444/SERVER-LINKS/main/link.json?t=' + Date.now(), { cache: 'no-store' });
+                if (rawRes.ok) return await rawRes.json();
+            } catch (e) {
+                console.warn('Raw CDN fetch failed, attempting API fallback...', e);
+            }
+            // 2. Secondary: GitHub REST API fallback
+            try {
+                const apiRes = await fetch('https://api.github.com/repos/sathwik4444/SERVER-LINKS/contents/link.json?t=' + Date.now(), {
+                    headers: { 'Accept': 'application/vnd.github.v3.raw' },
+                    cache: 'no-store'
+                });
+                if (apiRes.ok) return await apiRes.json();
+            } catch (e) {
+                console.error('API fallback fetch failed:', e);
+            }
+            return null;
+        }
+
+        async function loadTunnels() {
+            const data = await fetchLinkData();
+            if (data) {
+                if (data.url) {
                     document.getElementById('ocis-btn').href = data.url;
                 }
-                if (data && data.vscode_url) {
+                if (data.vscode_url) {
                     document.getElementById('vscode-btn').href = data.vscode_url;
                 }
-                document.getElementById('refresh-time').innerText = 'Last updated: ' + new Date().toLocaleTimeString();
-            })
-            .catch(err => {
-                console.error(err);
-            });
+                
+                const refreshEl = document.getElementById('refresh-time');
+                if (data.updated_at) {
+                    const elapsedSec = Math.floor(Date.now() / 1000) - parseInt(data.updated_at);
+                    if (elapsedSec < 3600) {
+                        const mins = Math.max(1, Math.floor(elapsedSec / 60));
+                        refreshEl.innerHTML = '<span style="color: #10b981;">● Active</span> • Synced ' + mins + 'm ago';
+                    } else {
+                        const hours = Math.floor(elapsedSec / 3600);
+                        refreshEl.innerHTML = '<span style="color: #f59e0b;">● Standby</span> • Last seen ' + hours + 'h ago';
+                    }
+                } else {
+                    refreshEl.innerText = 'Last updated: ' + new Date().toLocaleTimeString();
+                }
+            }
         }
         loadTunnels();
         setInterval(loadTunnels, 30000);
