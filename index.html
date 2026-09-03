@@ -349,6 +349,24 @@
 
         .service-card:not(.is-blackout):hover::before { opacity: 1; }
 
+        /* Dynamic Holographic Specular Glare Sheen */
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 28px;
+            background: radial-gradient(circle 380px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.09) 0%, transparent 75%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 3;
+        }
+
+        .service-card:hover::after { opacity: 1; }
+
         /* Card Top Row */
         .card-top-row {
             display: flex;
@@ -716,167 +734,222 @@
 
     <script>
         // ==========================================================================
-        // 1. Next-Gen 3D Cyber-Horizon Topological Matrix (Color Harmony & Physics)
+        // 🌌 THE "GOAT" LIQUID QUANTUM AURORA & INTERACTIVE STARDUST ENGINE
         // ==========================================================================
         const canvas = document.getElementById('bgCanvas');
         const ctx = canvas.getContext('2d');
         let width = canvas.width = window.innerWidth;
         let height = canvas.height = window.innerHeight;
 
-        let mouse = { x: width / 2, y: height * 0.4, targetX: width / 2, targetY: height * 0.4 };
+        let mouse = {
+            x: width * 0.5,
+            y: height * 0.45,
+            targetX: width * 0.5,
+            targetY: height * 0.45,
+            vx: 0,
+            vy: 0,
+            lastX: width * 0.5,
+            lastY: height * 0.45,
+            speed: 0
+        };
+
         window.addEventListener('mousemove', (e) => {
             mouse.targetX = e.clientX;
             mouse.targetY = e.clientY;
+            for (let i = 0; i < 3; i++) {
+                spawnStardust(e.clientX, e.clientY);
+            }
         });
+
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches && e.touches[0]) {
+                mouse.targetX = e.touches[0].clientX;
+                mouse.targetY = e.touches[0].clientY;
+                spawnStardust(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
         window.addEventListener('resize', () => {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
         });
 
-        const COLS = 46;
-        const ROWS = 32;
-        let time = 0;
-        let isAnyBlackout = false;
-
-        const dataSparks = [];
-        for (let i = 0; i < 35; i++) {
-            dataSparks.push({
-                c: Math.floor(Math.random() * COLS),
-                r: Math.random() * ROWS,
-                speed: 0.12 + Math.random() * 0.18,
-                len: 2 + Math.random() * 3,
-                brightness: Math.random() * 0.8 + 0.2
+        // Interactive Cosmic Stardust Particles
+        let stardust = [];
+        function spawnStardust(x, y) {
+            if (stardust.length > 130) stardust.shift();
+            const angle = Math.random() * Math.PI * 2;
+            const velocity = Math.random() * 2.8 + 0.6;
+            stardust.push({
+                x: x + (Math.random() - 0.5) * 14,
+                y: y + (Math.random() - 0.5) * 14,
+                vx: Math.cos(angle) * velocity + mouse.vx * 0.15,
+                vy: Math.sin(angle) * velocity + mouse.vy * 0.15,
+                size: Math.random() * 2.2 + 1.2,
+                alpha: 1,
+                decay: Math.random() * 0.02 + 0.015,
+                colorType: Math.random()
             });
         }
 
-        function renderCyberHorizon() {
+        // Ambient Floating Nebula Motes
+        const nebulaMotes = [];
+        for (let i = 0; i < 55; i++) {
+            nebulaMotes.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                size: Math.random() * 2.0 + 0.8,
+                phase: Math.random() * Math.PI * 2,
+                baseAlpha: Math.random() * 0.4 + 0.2
+            });
+        }
+
+        let time = 0;
+        let isAnyBlackout = false;
+        let blackoutBlend = 0;
+
+        function renderLiquidAurora() {
             ctx.clearRect(0, 0, width, height);
 
-            mouse.x += (mouse.targetX - mouse.x) * 0.06;
-            mouse.y += (mouse.targetY - mouse.y) * 0.06;
-            time += 0.016;
+            mouse.vx = mouse.targetX - mouse.lastX;
+            mouse.vy = mouse.targetY - mouse.lastY;
+            mouse.speed = Math.hypot(mouse.vx, mouse.vy);
+            mouse.lastX = mouse.targetX;
+            mouse.lastY = mouse.targetY;
+            mouse.x += (mouse.targetX - mouse.x) * 0.07;
+            mouse.y += (mouse.targetY - mouse.y) * 0.07;
 
-            const horizonY = height * 0.44;
-            const vanishingX = width / 2 + (mouse.x - width / 2) * 0.18;
-            const focalLength = 360;
+            time += 0.014;
 
-            // Ambient Horizon Glow with Color Psychology
-            const horizonGlow = ctx.createRadialGradient(vanishingX, horizonY, 10, vanishingX, horizonY, width * 0.65);
-            if (isAnyBlackout) {
-                // Defensive Cyber Amber & Rose Gold
-                horizonGlow.addColorStop(0, 'rgba(244, 63, 94, 0.18)');
-                horizonGlow.addColorStop(0.4, 'rgba(251, 146, 60, 0.08)');
-                horizonGlow.addColorStop(1, 'transparent');
-            } else {
-                // Sapphire Blue & Amethyst Violet
-                horizonGlow.addColorStop(0, 'rgba(14, 165, 233, 0.18)');
-                horizonGlow.addColorStop(0.4, 'rgba(124, 58, 237, 0.10)');
-                horizonGlow.addColorStop(1, 'transparent');
-            }
-            ctx.fillStyle = horizonGlow;
-            ctx.fillRect(0, 0, width, height);
+            const targetBlend = isAnyBlackout ? 1 : 0;
+            blackoutBlend += (targetBlend - blackoutBlend) * 0.05;
 
-            const grid = [];
-            for (let r = 0; r < ROWS; r++) {
-                grid[r] = [];
-                const zNorm = (r + 1) / ROWS;
-                const worldZ = (1 - zNorm * 0.92) * 950 + 60;
-                const scale = focalLength / worldZ;
+            // 1. Multi-Layered Liquid Silk Aurora Ribbons
+            const ribbonCount = 6;
+            for (let i = 0; i < ribbonCount; i++) {
+                ctx.save();
+                ctx.beginPath();
 
-                for (let c = 0; c < COLS; c++) {
-                    const cNorm = (c - COLS / 2) / (COLS / 2);
-                    const worldX = cNorm * 1150;
+                const yOffset = height * (0.22 + i * 0.11);
+                const freq = 0.0018 + i * 0.0004;
+                const speed = 0.8 + i * 0.25;
+                const amp = 46 + i * 14;
 
-                    let wave = Math.sin(c * 0.35 + time * 1.4) * 22
-                             + Math.cos(r * 0.45 - time * 1.8) * 20
-                             + Math.sin((c + r) * 0.25 + time) * 15;
+                ctx.moveTo(0, height);
+                for (let x = 0; x <= width; x += 12) {
+                    let wave = Math.sin(x * freq + time * speed + i * 1.3) * amp
+                             + Math.cos(x * freq * 1.6 - time * speed * 0.7) * (amp * 0.45);
 
-                    const screenEstimateX = vanishingX + worldX * scale;
-                    const screenEstimateY = horizonY + (wave + 140) * scale;
-                    const mDist = Math.hypot(screenEstimateX - mouse.x, screenEstimateY - mouse.y);
-                    const mouseRadius = 260;
-                    if (mDist < mouseRadius) {
-                        const mForce = Math.cos((mDist / mouseRadius) * (Math.PI / 2));
-                        wave -= mForce * 48;
+                    const distToMouse = Math.hypot(x - mouse.x, (yOffset + wave) - mouse.y);
+                    const influenceRadius = 240;
+                    if (distToMouse < influenceRadius) {
+                        const push = Math.cos((distToMouse / influenceRadius) * (Math.PI / 2));
+                        wave -= push * (55 + Math.min(30, mouse.speed * 1.5));
                     }
 
-                    const worldY = 140 + wave;
-                    const screenX = vanishingX + worldX * scale;
-                    const screenY = horizonY + worldY * scale;
-
-                    grid[r][c] = { x: screenX, y: screenY, z: worldZ, scale: scale, alpha: Math.min(1, Math.max(0, (1 - worldZ / 1000) * 1.2)) };
+                    const y = yOffset + wave;
+                    if (x === 0) ctx.lineTo(x, y);
+                    else ctx.lineTo(x, y);
                 }
-            }
+                ctx.lineTo(width, height);
+                ctx.closePath();
 
-            // Horizontal Contour Waves
-            for (let r = 0; r < ROWS; r++) {
-                ctx.beginPath();
-                ctx.moveTo(grid[r][0].x, grid[r][0].y);
-                for (let c = 1; c < COLS; c++) {
-                    const xc = (grid[r][c].x + grid[r][c - 1].x) / 2;
-                    const yc = (grid[r][c].y + grid[r][c - 1].y) / 2;
-                    ctx.quadraticCurveTo(grid[r][c - 1].x, grid[r][c - 1].y, xc, yc);
+                const grad = ctx.createLinearGradient(0, yOffset - amp, width, yOffset + amp + 160);
+                if (blackoutBlend > 0.01) {
+                    // Molten Coral & Cyber Amber Mode
+                    grad.addColorStop(0, `rgba(244, 63, 94, ${(0.15 - i * 0.018) * blackoutBlend})`);
+                    grad.addColorStop(0.5, `rgba(251, 146, 60, ${(0.11 - i * 0.012) * blackoutBlend})`);
+                    grad.addColorStop(1, 'transparent');
                 }
-                ctx.lineTo(grid[r][COLS - 1].x, grid[r][COLS - 1].y);
+                if (blackoutBlend < 0.99) {
+                    // Electric Cyan & Royal Amethyst Mode
+                    const activeWeight = 1 - blackoutBlend;
+                    if (i % 2 === 0) {
+                        grad.addColorStop(0, `rgba(14, 165, 233, ${(0.16 - i * 0.018) * activeWeight})`);
+                        grad.addColorStop(0.5, `rgba(56, 189, 248, ${(0.11 - i * 0.012) * activeWeight})`);
+                        grad.addColorStop(1, 'transparent');
+                    } else {
+                        grad.addColorStop(0, `rgba(124, 58, 237, ${(0.17 - i * 0.018) * activeWeight})`);
+                        grad.addColorStop(0.5, `rgba(192, 132, 252, ${(0.12 - i * 0.012) * activeWeight})`);
+                        grad.addColorStop(1, 'transparent');
+                    }
+                }
 
-                const avgAlpha = grid[r][Math.floor(COLS / 2)].alpha * 0.45;
-                if (isAnyBlackout) {
-                    ctx.strokeStyle = `rgba(244, 63, 94, ${avgAlpha * 0.9})`;
-                    ctx.lineWidth = Math.max(0.6, grid[r][0].scale * 1.4);
+                ctx.fillStyle = grad;
+                ctx.fill();
+
+                ctx.lineWidth = 1.2;
+                if (blackoutBlend > 0.01) {
+                    ctx.strokeStyle = `rgba(244, 63, 94, ${(0.25 - i * 0.03) * blackoutBlend})`;
                 } else {
-                    const gradient = ctx.createLinearGradient(0, 0, width, 0);
-                    gradient.addColorStop(0, `rgba(56, 189, 248, ${avgAlpha * 0.85})`);
-                    gradient.addColorStop(0.5, `rgba(168, 85, 247, ${avgAlpha * 1.15})`);
-                    gradient.addColorStop(1, `rgba(56, 189, 248, ${avgAlpha * 0.85})`);
-                    ctx.strokeStyle = gradient;
-                    ctx.lineWidth = Math.max(0.6, grid[r][0].scale * 1.5);
+                    ctx.strokeStyle = i % 2 === 0 
+                        ? `rgba(56, 189, 248, ${(0.3 - i * 0.03) * (1 - blackoutBlend)})`
+                        : `rgba(168, 85, 247, ${(0.3 - i * 0.03) * (1 - blackoutBlend)})`;
                 }
                 ctx.stroke();
+                ctx.restore();
             }
 
-            // Longitudinal Perspective Grid
-            for (let c = 0; c < COLS; c += 2) {
+            // 2. Ambient Floating Nebula Motes
+            for (let m of nebulaMotes) {
+                m.x += m.vx;
+                m.y += m.vy;
+                if (m.x < 0) m.x = width;
+                if (m.x > width) m.x = 0;
+                if (m.y < 0) m.y = height;
+                if (m.y > height) m.y = 0;
+
+                const flicker = Math.sin(time * 2 + m.phase) * 0.2 + m.baseAlpha;
                 ctx.beginPath();
-                ctx.moveTo(grid[0][c].x, grid[0][c].y);
-                for (let r = 1; r < ROWS; r++) {
-                    ctx.lineTo(grid[r][c].x, grid[r][c].y);
+                ctx.arc(m.x, m.y, m.size, 0, Math.PI * 2);
+                if (isAnyBlackout) {
+                    ctx.fillStyle = `rgba(251, 146, 60, ${flicker * 0.7})`;
+                } else {
+                    ctx.fillStyle = `rgba(56, 189, 248, ${flicker * 0.8})`;
                 }
-                const cDistFromCenter = Math.abs(c - COLS / 2) / (COLS / 2);
-                const colAlpha = (1 - cDistFromCenter * 0.4) * 0.22;
-                ctx.strokeStyle = isAnyBlackout ? `rgba(251, 146, 60, ${colAlpha})` : `rgba(56, 189, 248, ${colAlpha})`;
-                ctx.lineWidth = 0.8;
-                ctx.stroke();
+                ctx.fill();
             }
 
-            // Data Sparks
-            for (let s of dataSparks) {
-                s.r -= s.speed;
-                if (s.r < 0) {
-                    s.r = ROWS - 1;
-                    s.c = Math.floor(Math.random() * COLS);
-                }
-                const rInt = Math.floor(s.r);
-                const rNext = Math.min(ROWS - 1, rInt + 1);
-                const rFrac = s.r - rInt;
-                if (grid[rInt] && grid[rNext]) {
-                    const p1 = grid[rInt][s.c];
-                    const p2 = grid[rNext][s.c];
-                    const sx = p1.x + (p2.x - p1.x) * rFrac;
-                    const sy = p1.y + (p2.y - p1.y) * rFrac;
-                    const sparkAlpha = p1.alpha * s.brightness;
+            // 3. Interactive Cosmic Stardust Trail
+            for (let i = stardust.length - 1; i >= 0; i--) {
+                const s = stardust[i];
+                s.x += s.vx;
+                s.y += s.vy;
+                s.vx *= 0.96;
+                s.vy *= 0.96;
+                s.alpha -= s.decay;
 
-                    ctx.fillStyle = isAnyBlackout ? `rgba(251, 146, 60, ${sparkAlpha})` : `rgba(56, 189, 248, ${sparkAlpha})`;
-                    ctx.beginPath();
-                    ctx.arc(sx, sy, Math.max(1, p1.scale * s.len), 0, Math.PI * 2);
-                    ctx.fill();
+                if (s.alpha <= 0) {
+                    stardust.splice(i, 1);
+                    continue;
                 }
+
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+                if (isAnyBlackout) {
+                    ctx.fillStyle = s.colorType > 0.5 
+                        ? `rgba(244, 63, 94, ${s.alpha})`
+                        : `rgba(251, 146, 60, ${s.alpha})`;
+                    ctx.shadowColor = 'rgba(244, 63, 94, 0.8)';
+                } else {
+                    ctx.fillStyle = s.colorType > 0.5 
+                        ? `rgba(56, 189, 248, ${s.alpha})`
+                        : `rgba(192, 132, 252, ${s.alpha})`;
+                    ctx.shadowColor = 'rgba(56, 189, 248, 0.8)';
+                }
+                ctx.shadowBlur = 8;
+                ctx.fill();
+                ctx.restore();
             }
 
-            requestAnimationFrame(renderCyberHorizon);
+            requestAnimationFrame(renderLiquidAurora);
         }
-        renderCyberHorizon();
+        renderLiquidAurora();
 
-        // 3D Card Tilt on Mouse Move
+        // 3D Card Tilt on Mouse Move with Holographic Specular Glare
         const cards = document.querySelectorAll('.service-card');
         cards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
@@ -886,6 +959,8 @@
                 const rotateX = -(y / (rect.height / 2)) * 6;
                 const rotateY = (x / (rect.width / 2)) * 6;
                 card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+                card.style.setProperty('--mouse-x', `${(e.clientX - rect.left)}px`);
+                card.style.setProperty('--mouse-y', `${(e.clientY - rect.top)}px`);
             });
 
             card.addEventListener('mouseleave', () => {
