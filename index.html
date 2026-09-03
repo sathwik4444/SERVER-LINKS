@@ -56,23 +56,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ==========================================================================
+           COLOR PSYCHOLOGY DESIGN SYSTEM:
+           - Base: Deep Cosmic Obsidian (#040714) - Focus, infinite depth, premium calm
+           - OwnDrive (Trust & Cloud Storage): Sapphire & Cerulean (#0284c7 -> #38bdf8)
+           - VS Code (Creativity & Engineering): Royal Amethyst & Violet (#7c3aed -> #c084fc)
+           - Active State (Optimal Health): Mint Emerald (#10b981 / #34d399) - Reassuring
+           - Standby State (High-Tech Defense): Burnished Coral & Amber (#f43f5e / #fb923c)
+           ========================================================================== */
         :root {
-            --primary: #00f2fe;
-            --primary-glow: rgba(0, 242, 254, 0.45);
-            --primary-subtle: rgba(0, 242, 254, 0.12);
-            --accent: #a855f7;
-            --accent-glow: rgba(168, 85, 247, 0.45);
-            --accent-subtle: rgba(168, 85, 247, 0.12);
-            --danger: #ef4444;
-            --danger-glow: rgba(239, 68, 68, 0.5);
-            --danger-bg: rgba(239, 68, 68, 0.08);
-            --warning: #f59e0b;
-            --success: #10b981;
-            --success-glow: rgba(16, 185, 129, 0.5);
-            --bg-dark: #040711;
-            --card-bg: rgba(13, 20, 36, 0.72);
-            --card-border: rgba(255, 255, 255, 0.1);
+            --bg-dark: #040714;
+            --bg-surface: rgba(11, 17, 33, 0.78);
+            --bg-surface-hover: rgba(15, 23, 42, 0.88);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-border-hover: rgba(255, 255, 255, 0.18);
+            
+            /* OwnDrive Cerulean Palette */
+            --owndrive-primary: #0284c7;
+            --owndrive-light: #38bdf8;
+            --owndrive-glow: rgba(56, 189, 248, 0.35);
+            --owndrive-subtle: rgba(2, 132, 199, 0.12);
+
+            /* VS Code Amethyst Palette */
+            --vscode-primary: #7c3aed;
+            --vscode-light: #c084fc;
+            --vscode-glow: rgba(168, 85, 247, 0.35);
+            --vscode-subtle: rgba(124, 58, 237, 0.12);
+
+            /* Status & Psychological Signals */
+            --status-online: #10b981;
+            --status-online-glow: rgba(16, 185, 129, 0.45);
+            --status-online-bg: rgba(16, 185, 129, 0.12);
+
+            --status-standby: #fb923c;
+            --status-standby-glow: rgba(251, 146, 60, 0.4);
+            --status-standby-bg: rgba(251, 146, 60, 0.12);
+
+            --status-blackout: #f43f5e;
+            --status-blackout-glow: rgba(244, 63, 94, 0.4);
+            --status-blackout-bg: rgba(244, 63, 94, 0.12);
+
             --text-main: #f8fafc;
+            --text-secondary: #cbd5e1;
             --text-muted: #94a3b8;
         }
 
@@ -92,7 +117,7 @@
             padding: 40px 20px;
         }
 
-        /* Interactive Canvas Constellation */
+        /* 3D Cyber-Horizon Canvas */
         #bgCanvas {
             position: fixed;
             top: 0;
@@ -103,18 +128,18 @@
             pointer-events: none;
         }
 
-        /* Cyber Ambient Glow Mesh */
+        /* Ambient Glow Spheres */
         .glow-sphere-1 {
             position: fixed;
             width: 750px;
             height: 750px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 242, 254, 0.16) 0%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
             top: -220px;
             left: -180px;
-            filter: blur(90px);
+            filter: blur(95px);
             z-index: 1;
-            animation: floatGlow 14s ease-in-out infinite alternate;
+            animation: floatGlow 16s ease-in-out infinite alternate;
             pointer-events: none;
         }
 
@@ -123,18 +148,18 @@
             width: 800px;
             height: 800px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
             bottom: -240px;
             right: -220px;
-            filter: blur(100px);
+            filter: blur(105px);
             z-index: 1;
-            animation: floatGlow 18s ease-in-out infinite alternate-reverse;
+            animation: floatGlow 20s ease-in-out infinite alternate-reverse;
             pointer-events: none;
         }
 
         @keyframes floatGlow {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(120px, 90px) scale(1.25); }
+            100% { transform: translate(110px, 85px) scale(1.2); }
         }
 
         .container {
@@ -153,15 +178,15 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            background: rgba(15, 23, 42, 0.75);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(11, 17, 33, 0.82);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             padding: 8px 20px;
             border-radius: 40px;
             margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            max-width: 90%;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+            max-width: 92%;
             flex-wrap: wrap;
         }
 
@@ -171,26 +196,26 @@
             gap: 8px;
             font-size: 0.82rem;
             font-family: 'JetBrains Mono', monospace;
-            color: #cbd5e1;
+            color: var(--text-secondary);
         }
 
         .hud-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: var(--success);
-            box-shadow: 0 0 10px var(--success);
+            background: var(--status-online);
+            box-shadow: 0 0 10px var(--status-online-glow);
             animation: pulseDot 2s infinite;
         }
 
         .hud-dot.warning {
-            background: var(--warning);
-            box-shadow: 0 0 10px var(--warning);
+            background: var(--status-standby);
+            box-shadow: 0 0 10px var(--status-standby-glow);
         }
 
         .hud-dot.danger {
-            background: var(--danger);
-            box-shadow: 0 0 10px var(--danger);
+            background: var(--status-blackout);
+            box-shadow: 0 0 10px var(--status-blackout-glow);
         }
 
         @keyframes pulseDot {
@@ -200,7 +225,7 @@
 
         .hud-btn {
             background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             color: #e2e8f0;
             padding: 4px 12px;
             border-radius: 20px;
@@ -214,32 +239,32 @@
         }
 
         .hud-btn:hover {
-            background: rgba(0, 242, 254, 0.15);
-            border-color: var(--primary);
+            background: rgba(56, 189, 248, 0.15);
+            border-color: var(--owndrive-light);
             color: #fff;
             transform: scale(1.03);
         }
 
         .hud-btn.rotating svg {
-            animation: spin 1s linear infinite;
+            animation: spin 0.8s linear infinite;
         }
 
         @keyframes spin {
             100% { transform: rotate(360deg); }
         }
 
-        /* Hero Titles */
+        /* Hero Header */
         .brand-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: linear-gradient(135deg, rgba(0, 242, 254, 0.12), rgba(168, 85, 247, 0.12));
-            border: 1px solid rgba(56, 189, 248, 0.35);
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(168, 85, 247, 0.12));
+            border: 1px solid rgba(56, 189, 248, 0.3);
             padding: 6px 18px;
             border-radius: 30px;
             font-size: 0.8rem;
             font-family: 'JetBrains Mono', monospace;
-            color: #38bdf8;
+            color: var(--owndrive-light);
             margin-bottom: 1.2rem;
             letter-spacing: 0.5px;
             text-transform: uppercase;
@@ -249,7 +274,7 @@
             font-family: 'Outfit', sans-serif;
             font-size: 3.2rem;
             font-weight: 900;
-            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 40%, #38bdf8 80%, #a855f7 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 40%, #38bdf8 80%, #c084fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-align: center;
@@ -276,11 +301,11 @@
             perspective: 1200px;
         }
 
-        /* Interactive 3D Service Card */
+        /* 3D Glassmorphism Cards */
         .service-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
+            background: var(--bg-surface);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
             border: 1px solid var(--card-border);
             border-radius: 28px;
             padding: 2.5rem;
@@ -290,12 +315,12 @@
             justify-content: space-between;
             position: relative;
             overflow: hidden;
-            transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.15s ease-out;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.15s ease-out, background 0.4s ease;
             transform-style: preserve-3d;
             min-height: 480px;
         }
 
-        /* Shimmer Top Accent Line */
+        /* Top Accent Rim Light */
         .service-card::before {
             content: '';
             position: absolute;
@@ -303,28 +328,28 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            background: linear-gradient(90deg, transparent, var(--owndrive-light), transparent);
             opacity: 0;
             transition: opacity 0.4s;
         }
 
         .service-card.vscode-card::before {
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            background: linear-gradient(90deg, transparent, var(--vscode-light), transparent);
         }
 
         .service-card:not(.is-blackout):hover {
             border-color: rgba(56, 189, 248, 0.45);
-            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.85), 0 0 35px -5px var(--primary-glow);
+            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.85), 0 0 35px -5px var(--owndrive-glow);
         }
 
         .service-card.vscode-card:not(.is-blackout):hover {
             border-color: rgba(168, 85, 247, 0.45);
-            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.85), 0 0 35px -5px var(--accent-glow);
+            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.85), 0 0 35px -5px var(--vscode-glow);
         }
 
         .service-card:not(.is-blackout):hover::before { opacity: 1; }
 
-        /* Card Header & Status */
+        /* Card Top Row */
         .card-top-row {
             display: flex;
             align-items: center;
@@ -349,15 +374,15 @@
         .icon-owndrive {
             background: linear-gradient(135deg, rgba(2, 132, 199, 0.3), rgba(56, 189, 248, 0.15));
             border: 1px solid rgba(56, 189, 248, 0.35);
-            color: #38bdf8;
+            color: var(--owndrive-light);
             box-shadow: 0 8px 24px rgba(2, 132, 199, 0.25);
         }
 
         .icon-vscode {
-            background: linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(168, 85, 247, 0.15));
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(168, 85, 247, 0.15));
             border: 1px solid rgba(168, 85, 247, 0.35);
-            color: #c084fc;
-            box-shadow: 0 8px 24px rgba(147, 51, 234, 0.25);
+            color: var(--vscode-light);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.25);
         }
 
         .status-pill {
@@ -371,7 +396,7 @@
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            background: rgba(16, 185, 129, 0.12);
+            background: var(--status-online-bg);
             border: 1px solid rgba(16, 185, 129, 0.35);
             color: #34d399;
             transition: all 0.3s ease;
@@ -381,8 +406,8 @@
             width: 7px;
             height: 7px;
             border-radius: 50%;
-            background: var(--success);
-            box-shadow: 0 0 8px var(--success);
+            background: var(--status-online);
+            box-shadow: 0 0 8px var(--status-online);
         }
 
         .card-title {
@@ -415,10 +440,10 @@
             border-radius: 10px;
             font-size: 0.75rem;
             font-family: 'JetBrains Mono', monospace;
-            color: #cbd5e1;
+            color: var(--text-secondary);
         }
 
-        /* Launch Action Button */
+        /* Launch Buttons */
         .btn-launch {
             display: flex;
             align-items: center;
@@ -439,19 +464,19 @@
         }
 
         .btn-owndrive {
-            background: linear-gradient(135deg, #0284c7 0%, #00f2fe 100%);
-            color: #040711;
-            box-shadow: 0 8px 24px -4px rgba(0, 242, 254, 0.45);
+            background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+            color: #040714;
+            box-shadow: 0 8px 24px -4px rgba(56, 189, 248, 0.45);
         }
 
         .btn-owndrive:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 32px -4px rgba(0, 242, 254, 0.65);
+            box-shadow: 0 14px 32px -4px rgba(56, 189, 248, 0.65);
         }
 
         .btn-vscode {
-            background: linear-gradient(135deg, #9333ea 0%, #c084fc 100%);
-            color: #040711;
+            background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
+            color: #040714;
             box-shadow: 0 8px 24px -4px rgba(168, 85, 247, 0.45);
         }
 
@@ -461,22 +486,20 @@
         }
 
         /* ==========================================================================
-           ⚡ CYBER BLACKOUT / UNREACHABLE STATE (The User's Feature!)
+           ⚡ CYBER BLACKOUT / HIGH-TECH STANDBY STATE
            ========================================================================== */
         .service-card.is-blackout {
-            background: radial-gradient(circle at 50% 0%, rgba(30, 10, 15, 0.75) 0%, rgba(8, 10, 16, 0.95) 100%);
-            border-color: rgba(239, 68, 68, 0.35);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(239, 68, 68, 0.15);
-            filter: grayscale(0.2);
+            background: radial-gradient(circle at 50% 0%, rgba(28, 14, 24, 0.8) 0%, rgba(10, 12, 20, 0.95) 100%);
+            border-color: rgba(244, 63, 94, 0.35);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(244, 63, 94, 0.15);
         }
 
         .service-card.is-blackout::before {
-            background: linear-gradient(90deg, transparent, var(--danger), transparent);
+            background: linear-gradient(90deg, transparent, var(--status-blackout), transparent);
             opacity: 1;
             animation: alertFlicker 3s infinite;
         }
 
-        /* Holographic Scanlines on Blackout */
         .service-card.is-blackout .blackout-scanlines {
             display: block;
         }
@@ -501,29 +524,28 @@
         }
 
         .service-card.is-blackout .status-pill {
-            background: rgba(239, 68, 68, 0.15);
-            border-color: rgba(239, 68, 68, 0.45);
-            color: #f87171;
+            background: var(--status-blackout-bg);
+            border-color: rgba(244, 63, 94, 0.45);
+            color: #fb7185;
         }
 
         .service-card.is-blackout .status-pill .pill-dot {
-            background: var(--danger);
-            box-shadow: 0 0 10px var(--danger);
+            background: var(--status-blackout);
+            box-shadow: 0 0 10px var(--status-blackout);
             animation: pulseDot 1s infinite;
         }
 
-        /* Blackout Alert Banner */
         .blackout-banner {
             display: none;
-            background: rgba(239, 68, 68, 0.12);
-            border: 1px dashed rgba(239, 68, 68, 0.35);
+            background: rgba(244, 63, 94, 0.1);
+            border: 1px dashed rgba(244, 63, 94, 0.35);
             border-radius: 12px;
             padding: 10px 14px;
             margin-bottom: 1.5rem;
             align-items: center;
             gap: 10px;
             font-size: 0.82rem;
-            color: #fca5a5;
+            color: #fda4af;
             animation: fadeIn 0.4s ease;
         }
 
@@ -538,22 +560,21 @@
             85% { opacity: 0.3; }
         }
 
-        /* Standby Disabled Launch Button */
         .service-card.is-blackout .btn-launch {
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            color: #fca5a5;
+            border: 1px solid rgba(244, 63, 94, 0.3);
+            color: #fda4af;
             box-shadow: none;
             cursor: pointer;
         }
 
         .service-card.is-blackout .btn-launch:hover {
-            background: rgba(239, 68, 68, 0.12);
-            border-color: var(--danger);
+            background: rgba(244, 63, 94, 0.15);
+            border-color: var(--status-blackout);
             transform: none;
         }
 
-        /* Footer & Live Terminal Feed */
+        /* Footer */
         .footer {
             margin-top: 3.5rem;
             display: flex;
@@ -587,20 +608,19 @@
     </style>
 </head>
 <body>
-    <!-- Background Starfield & Floating Constellation -->
     <canvas id="bgCanvas"></canvas>
     <div class="glow-sphere-1"></div>
     <div class="glow-sphere-2"></div>
 
     <div class="container">
-        <!-- Top HUD Status Bar -->
+        <!-- Top HUD Bar -->
         <div class="hud-bar">
             <div class="hud-item">
                 <span class="hud-dot" id="cluster-hud-dot"></span>
                 <span id="cluster-hud-text">CLUSTER: SYNCHRONIZING</span>
             </div>
             <div class="hud-item">
-                <span>PING:</span>
+                <span>LATENCY:</span>
                 <span id="cluster-ping" style="color: #38bdf8;">-- ms</span>
             </div>
             <button class="hud-btn" id="recheckBtn" onclick="forceRecheck()">
@@ -624,7 +644,7 @@
                         </div>
                         <div class="status-pill" id="owndrive-pill">
                             <span class="pill-dot"></span>
-                            <span id="owndrive-pill-text">Probing...</span>
+                            <span id="owndrive-pill-text">Checking...</span>
                         </div>
                     </div>
 
@@ -637,9 +657,8 @@
                         <span class="tag">Zero-Knowledge</span>
                     </div>
 
-                    <!-- Cyber Blackout Alert Message -->
                     <div class="blackout-banner" id="owndrive-blackout-msg">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
                         <span><b>NODE STANDBY:</b> Endpoint unreachable. Device in standby or syncing network route.</span>
                     </div>
                 </div>
@@ -660,7 +679,7 @@
                         </div>
                         <div class="status-pill" id="vscode-pill">
                             <span class="pill-dot"></span>
-                            <span id="vscode-pill-text">Probing...</span>
+                            <span id="vscode-pill-text">Checking...</span>
                         </div>
                     </div>
 
@@ -673,9 +692,8 @@
                         <span class="tag">Native Terminal</span>
                     </div>
 
-                    <!-- Cyber Blackout Alert Message -->
                     <div class="blackout-banner" id="vscode-blackout-msg">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
                         <span><b>NODE STANDBY:</b> Endpoint unreachable. Waiting for Cloudflare edge tunnel.</span>
                     </div>
                 </div>
@@ -696,10 +714,9 @@
         </div>
     </div>
 
-    <!-- Interactive Canvas Constellation & Reachability Prober -->
     <script>
         // ==========================================================================
-        // 1. Next-Gen 3D Cyber-Horizon Topological Matrix (Ultra-Creative Background)
+        // 1. Next-Gen 3D Cyber-Horizon Topological Matrix (Color Harmony & Physics)
         // ==========================================================================
         const canvas = document.getElementById('bgCanvas');
         const ctx = canvas.getContext('2d');
@@ -716,13 +733,11 @@
             height = canvas.height = window.innerHeight;
         });
 
-        // Terrain Configuration
         const COLS = 46;
         const ROWS = 32;
         let time = 0;
-        let isAnyBlackout = true; // Default until probed
+        let isAnyBlackout = false;
 
-        // Digital Data Sparks flowing along the terrain
         const dataSparks = [];
         for (let i = 0; i < 35; i++) {
             dataSparks.push({
@@ -737,35 +752,33 @@
         function renderCyberHorizon() {
             ctx.clearRect(0, 0, width, height);
 
-            // Smooth mouse physics easing
             mouse.x += (mouse.targetX - mouse.x) * 0.06;
             mouse.y += (mouse.targetY - mouse.y) * 0.06;
-
             time += 0.016;
 
             const horizonY = height * 0.44;
             const vanishingX = width / 2 + (mouse.x - width / 2) * 0.18;
             const focalLength = 360;
 
-            // Ambient Horizon Glow
+            // Ambient Horizon Glow with Color Psychology
             const horizonGlow = ctx.createRadialGradient(vanishingX, horizonY, 10, vanishingX, horizonY, width * 0.65);
             if (isAnyBlackout) {
-                horizonGlow.addColorStop(0, 'rgba(239, 68, 68, 0.2)');
-                horizonGlow.addColorStop(0.4, 'rgba(245, 158, 11, 0.08)');
+                // Defensive Cyber Amber & Rose Gold
+                horizonGlow.addColorStop(0, 'rgba(244, 63, 94, 0.18)');
+                horizonGlow.addColorStop(0.4, 'rgba(251, 146, 60, 0.08)');
                 horizonGlow.addColorStop(1, 'transparent');
             } else {
-                horizonGlow.addColorStop(0, 'rgba(0, 242, 254, 0.22)');
-                horizonGlow.addColorStop(0.4, 'rgba(168, 85, 247, 0.12)');
+                // Sapphire Blue & Amethyst Violet
+                horizonGlow.addColorStop(0, 'rgba(14, 165, 233, 0.18)');
+                horizonGlow.addColorStop(0.4, 'rgba(124, 58, 237, 0.10)');
                 horizonGlow.addColorStop(1, 'transparent');
             }
             ctx.fillStyle = horizonGlow;
             ctx.fillRect(0, 0, width, height);
 
-            // Compute 3D Grid Coordinates
             const grid = [];
             for (let r = 0; r < ROWS; r++) {
                 grid[r] = [];
-                // Depth: non-linear distribution for deeper perspective
                 const zNorm = (r + 1) / ROWS;
                 const worldZ = (1 - zNorm * 0.92) * 950 + 60;
                 const scale = focalLength / worldZ;
@@ -774,19 +787,17 @@
                     const cNorm = (c - COLS / 2) / (COLS / 2);
                     const worldX = cNorm * 1150;
 
-                    // Multi-octave undulating wave math
                     let wave = Math.sin(c * 0.35 + time * 1.4) * 22
                              + Math.cos(r * 0.45 - time * 1.8) * 20
                              + Math.sin((c + r) * 0.25 + time) * 15;
 
-                    // Mouse gravitational warp / ripple
                     const screenEstimateX = vanishingX + worldX * scale;
                     const screenEstimateY = horizonY + (wave + 140) * scale;
                     const mDist = Math.hypot(screenEstimateX - mouse.x, screenEstimateY - mouse.y);
                     const mouseRadius = 260;
                     if (mDist < mouseRadius) {
                         const mForce = Math.cos((mDist / mouseRadius) * (Math.PI / 2));
-                        wave -= mForce * 48; // Pull down/distort into a gravity well
+                        wave -= mForce * 48;
                     }
 
                     const worldY = 140 + wave;
@@ -797,12 +808,11 @@
                 }
             }
 
-            // Draw Horizontal Contour Wave Lines
+            // Horizontal Contour Waves
             for (let r = 0; r < ROWS; r++) {
                 ctx.beginPath();
                 ctx.moveTo(grid[r][0].x, grid[r][0].y);
                 for (let c = 1; c < COLS; c++) {
-                    // Smooth curve through points
                     const xc = (grid[r][c].x + grid[r][c - 1].x) / 2;
                     const yc = (grid[r][c].y + grid[r][c - 1].y) / 2;
                     ctx.quadraticCurveTo(grid[r][c - 1].x, grid[r][c - 1].y, xc, yc);
@@ -811,20 +821,20 @@
 
                 const avgAlpha = grid[r][Math.floor(COLS / 2)].alpha * 0.45;
                 if (isAnyBlackout) {
-                    ctx.strokeStyle = `rgba(239, 68, 68, ${avgAlpha})`;
+                    ctx.strokeStyle = `rgba(244, 63, 94, ${avgAlpha * 0.9})`;
                     ctx.lineWidth = Math.max(0.6, grid[r][0].scale * 1.4);
                 } else {
                     const gradient = ctx.createLinearGradient(0, 0, width, 0);
-                    gradient.addColorStop(0, `rgba(0, 242, 254, ${avgAlpha * 0.85})`);
+                    gradient.addColorStop(0, `rgba(56, 189, 248, ${avgAlpha * 0.85})`);
                     gradient.addColorStop(0.5, `rgba(168, 85, 247, ${avgAlpha * 1.15})`);
-                    gradient.addColorStop(1, `rgba(0, 242, 254, ${avgAlpha * 0.85})`);
+                    gradient.addColorStop(1, `rgba(56, 189, 248, ${avgAlpha * 0.85})`);
                     ctx.strokeStyle = gradient;
                     ctx.lineWidth = Math.max(0.6, grid[r][0].scale * 1.5);
                 }
                 ctx.stroke();
             }
 
-            // Draw Longitudinal Perspective Grid Lines
+            // Longitudinal Perspective Grid
             for (let c = 0; c < COLS; c += 2) {
                 ctx.beginPath();
                 ctx.moveTo(grid[0][c].x, grid[0][c].y);
@@ -833,12 +843,12 @@
                 }
                 const cDistFromCenter = Math.abs(c - COLS / 2) / (COLS / 2);
                 const colAlpha = (1 - cDistFromCenter * 0.4) * 0.22;
-                ctx.strokeStyle = isAnyBlackout ? `rgba(245, 158, 11, ${colAlpha})` : `rgba(56, 189, 248, ${colAlpha})`;
+                ctx.strokeStyle = isAnyBlackout ? `rgba(251, 146, 60, ${colAlpha})` : `rgba(56, 189, 248, ${colAlpha})`;
                 ctx.lineWidth = 0.8;
                 ctx.stroke();
             }
 
-            // Draw Flowing Data Sparks traveling toward the horizon
+            // Data Sparks
             for (let s of dataSparks) {
                 s.r -= s.speed;
                 if (s.r < 0) {
@@ -855,7 +865,7 @@
                     const sy = p1.y + (p2.y - p1.y) * rFrac;
                     const sparkAlpha = p1.alpha * s.brightness;
 
-                    ctx.fillStyle = isAnyBlackout ? `rgba(239, 68, 68, ${sparkAlpha})` : `rgba(0, 242, 254, ${sparkAlpha})`;
+                    ctx.fillStyle = isAnyBlackout ? `rgba(251, 146, 60, ${sparkAlpha})` : `rgba(56, 189, 248, ${sparkAlpha})`;
                     ctx.beginPath();
                     ctx.arc(sx, sy, Math.max(1, p1.scale * s.len), 0, Math.PI * 2);
                     ctx.fill();
@@ -866,17 +876,15 @@
         }
         renderCyberHorizon();
 
-        // ==========================================
-        // 2. 3D Card Tilt on Mouse Move
-        // ==========================================
+        // 3D Card Tilt on Mouse Move
         const cards = document.querySelectorAll('.service-card');
         cards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
-                const rotateX = -(y / (rect.height / 2)) * 7;
-                const rotateY = (x / (rect.width / 2)) * 7;
+                const rotateX = -(y / (rect.height / 2)) * 6;
+                const rotateY = (x / (rect.width / 2)) * 6;
                 card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
             });
 
@@ -885,55 +893,66 @@
             });
         });
 
-        // ==========================================
-        // 3. Ultra-Reliable Fastly Raw CDN Fetch + Fallback
-        // ==========================================
+        // ==========================================================================
+        // 2. High-Speed Background Probe & Persistent Cache
+        // ==========================================================================
+        const CACHE_KEY = 'blixor_cluster_state_v2';
+
+        function loadFromCache() {
+            try {
+                const raw = localStorage.getItem(CACHE_KEY);
+                if (raw) {
+                    const cached = JSON.parse(raw);
+                    // Instant render within 0ms!
+                    applyClusterState(cached.data, cached.ocisAlive, cached.vscodeAlive, cached.ocisLat, cached.vscodeLat);
+                    return true;
+                }
+            } catch (e) {}
+            return false;
+        }
+
+        function saveToCache(data, ocisAlive, vscodeAlive, ocisLat, vscodeLat) {
+            try {
+                localStorage.setItem(CACHE_KEY, JSON.stringify({
+                    data, ocisAlive, vscodeAlive, ocisLat, vscodeLat,
+                    cachedAt: Date.now()
+                }));
+            } catch (e) {}
+        }
+
         async function fetchLinkData() {
             const timestamp = Date.now();
-            // Try Raw Fastly CDN first (Never rate-limited!)
             try {
                 const res = await fetch(`https://raw.githubusercontent.com/sathwik4444/SERVER-LINKS/main/link.json?t=${timestamp}`, { cache: 'no-store' });
                 if (res.ok) return await res.json();
-            } catch (e) {
-                console.warn('Raw CDN failed, falling back to API...', e);
-            }
+            } catch (e) {}
 
-            // Fallback to GitHub REST API
             try {
                 const res = await fetch(`https://api.github.com/repos/sathwik4444/SERVER-LINKS/contents/link.json?t=${timestamp}`, {
                     headers: { 'Accept': 'application/vnd.github.v3.raw' },
                     cache: 'no-store'
                 });
                 if (res.ok) return await res.json();
-            } catch (e) {
-                console.error('API fetch failed:', e);
-            }
+            } catch (e) {}
             return null;
         }
 
-        // ==========================================
-        // 4. Live Link Reachability Prober
-        // ==========================================
-        async function probeEndpoint(url) {
-            if (!url || url === '#' || !url.startsWith('http')) return false;
+        // Fast 1.2s Parallel Background Prober (Zero-block)
+        async function probeEndpointFast(url) {
+            if (!url || url === '#' || !url.startsWith('http')) return { alive: false, latency: null };
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 3500);
+            const timeoutId = setTimeout(() => controller.abort(), 1200);
             const start = performance.now();
             try {
-                // Cloudflare Edge returns 200/302 for active tunnels; throws network error if down/NXDOMAIN
                 await fetch(url, { mode: 'no-cors', cache: 'no-store', signal: controller.signal });
                 clearTimeout(timeoutId);
-                const latency = Math.round(performance.now() - start);
-                return { alive: true, latency };
+                return { alive: true, latency: Math.round(performance.now() - start) };
             } catch (err) {
                 clearTimeout(timeoutId);
                 return { alive: false, latency: null };
             }
         }
 
-        // ==========================================
-        // 5. Update Card UI (Neon Active vs Blackout State)
-        // ==========================================
         function setServiceState(service, isAlive, url, latency) {
             const card = document.getElementById(`card-${service}`);
             const pill = document.getElementById(`${service}-pill`);
@@ -943,7 +962,7 @@
 
             if (isAlive) {
                 card.classList.remove('is-blackout');
-                pill.style.background = 'rgba(16, 185, 129, 0.14)';
+                pill.style.background = 'var(--status-online-bg)';
                 pill.style.borderColor = 'rgba(16, 185, 129, 0.4)';
                 pill.style.color = '#34d399';
                 pillText.innerText = latency ? `ONLINE • ${latency}ms` : 'ONLINE';
@@ -952,9 +971,9 @@
                 btnText.innerText = service === 'owndrive' ? 'Launch OwnDrive' : 'Launch Cloud IDE';
             } else {
                 card.classList.add('is-blackout');
-                pill.style.background = 'rgba(239, 68, 68, 0.15)';
-                pill.style.borderColor = 'rgba(239, 68, 68, 0.45)';
-                pill.style.color = '#f87171';
+                pill.style.background = 'var(--status-blackout-bg)';
+                pill.style.borderColor = 'rgba(244, 63, 94, 0.45)';
+                pill.style.color = '#fb7185';
                 pillText.innerText = 'NODE STANDBY';
                 btn.href = 'javascript:void(0);';
                 btn.setAttribute('onclick', 'forceRecheck()');
@@ -962,96 +981,95 @@
             }
         }
 
-        // ==========================================
-        // 6. Master Sync & Probe Orchestrator
-        // ==========================================
+        function applyClusterState(data, ocisAlive, vscodeAlive, ocisLat, vscodeLat) {
+            if (!data) return;
+
+            setServiceState('owndrive', ocisAlive, data.url, ocisLat);
+            setServiceState('vscode', vscodeAlive, data.vscode_url, vscodeLat);
+
+            const totalAlive = (ocisAlive ? 1 : 0) + (vscodeAlive ? 1 : 0);
+            isAnyBlackout = (totalAlive < 2);
+
+            const hudDot = document.getElementById('cluster-hud-dot');
+            const hudText = document.getElementById('cluster-hud-text');
+            const pingEl = document.getElementById('cluster-ping');
+            const refreshEl = document.getElementById('refresh-time');
+
+            if (totalAlive === 2) {
+                hudDot.className = 'hud-dot';
+                hudText.innerText = 'CLUSTER: ALL NODES ONLINE';
+            } else if (totalAlive === 1) {
+                hudDot.className = 'hud-dot warning';
+                hudText.innerText = 'CLUSTER: 1 NODE RECONNECTING';
+            } else {
+                hudDot.className = 'hud-dot danger';
+                hudText.innerText = 'CLUSTER: NODES STANDBY';
+            }
+
+            const lats = [ocisLat, vscodeLat].filter(x => x !== null && x !== undefined);
+            if (lats.length > 0) {
+                const avg = Math.round(lats.reduce((a, b) => a + b, 0) / lats.length);
+                pingEl.innerText = `${avg} ms`;
+                pingEl.style.color = '#34d399';
+            } else {
+                pingEl.innerText = 'Standby';
+                pingEl.style.color = '#fb7185';
+            }
+
+            if (data.updated_at) {
+                const elapsed = Math.floor(Date.now() / 1000) - parseInt(data.updated_at);
+                if (elapsed < 3600) {
+                    const mins = Math.max(1, Math.floor(elapsed / 60));
+                    refreshEl.innerHTML = `Mesh synced ${mins}m ago`;
+                } else {
+                    const hours = Math.floor(elapsed / 3600);
+                    refreshEl.innerHTML = `Nodes standby (Last active ${hours}h ago)`;
+                }
+            }
+        }
+
+        // Master Background Prober (Instant UI + Parallel Ping)
         async function syncCluster() {
             const recheckBtn = document.getElementById('recheckBtn');
             recheckBtn.classList.add('rotating');
 
             const data = await fetchLinkData();
-            let totalAlive = 0;
-            let avgLatency = [];
-
             if (data) {
-                // Check OwnDrive
-                const ocisUrl = data.url;
-                const ocisProbe = await probeEndpoint(ocisUrl);
-                if (ocisProbe.alive) {
-                    totalAlive++;
-                    avgLatency.push(ocisProbe.latency);
-                    setServiceState('owndrive', true, ocisUrl, ocisProbe.latency);
+                const isStale = (Date.now() / 1000 - parseInt(data.updated_at || 0)) > 2700; // 45m+ means standby
+                if (isStale) {
+                    // Instantaneous Standby resolution without waiting for network timeouts!
+                    applyClusterState(data, false, false, null, null);
+                    saveToCache(data, false, false, null, null);
                 } else {
-                    setServiceState('owndrive', false, null, null);
-                }
-
-                // Check VS Code
-                const vscodeUrl = data.vscode_url;
-                const vscodeProbe = await probeEndpoint(vscodeUrl);
-                if (vscodeProbe.alive) {
-                    totalAlive++;
-                    avgLatency.push(vscodeProbe.latency);
-                    setServiceState('vscode', true, vscodeUrl, vscodeProbe.latency);
-                } else {
-                    setServiceState('vscode', false, null, null);
-                }
-
-                // Top HUD Update
-                const hudDot = document.getElementById('cluster-hud-dot');
-                const hudText = document.getElementById('cluster-hud-text');
-                const pingEl = document.getElementById('cluster-ping');
-                const refreshEl = document.getElementById('refresh-time');
-
-                if (totalAlive === 2) {
-                    isAnyBlackout = false;
-                    hudDot.className = 'hud-dot';
-                    hudText.innerText = 'CLUSTER: ALL NODES ONLINE';
-                } else if (totalAlive === 1) {
-                    isAnyBlackout = true;
-                    hudDot.className = 'hud-dot warning';
-                    hudText.innerText = 'CLUSTER: 1 NODE RECONNECTING';
-                } else {
-                    isAnyBlackout = true;
-                    hudDot.className = 'hud-dot danger';
-                    hudText.innerText = 'CLUSTER: NODES STANDBY';
-                }
-
-                if (avgLatency.length > 0) {
-                    const avg = Math.round(avgLatency.reduce((a,b)=>a+b,0)/avgLatency.length);
-                    pingEl.innerText = `${avg} ms`;
-                    pingEl.style.color = '#34d399';
-                } else {
-                    pingEl.innerText = 'Offline';
-                    pingEl.style.color = '#f87171';
-                }
-
-                if (data.updated_at) {
-                    const elapsed = Math.floor(Date.now() / 1000) - parseInt(data.updated_at);
-                    if (elapsed < 3600) {
-                        const mins = Math.max(1, Math.floor(elapsed / 60));
-                        refreshEl.innerHTML = `Mesh synced ${mins}m ago`;
-                    } else {
-                        const hours = Math.floor(elapsed / 3600);
-                        refreshEl.innerHTML = `Nodes standby (Last active ${hours}h ago)`;
-                    }
+                    // Run both probes concurrently in parallel with fast 1.2s timeout!
+                    const [ocisProbe, vscodeProbe] = await Promise.all([
+                        probeEndpointFast(data.url),
+                        probeEndpointFast(data.vscode_url)
+                    ]);
+                    applyClusterState(data, ocisProbe.alive, vscodeProbe.alive, ocisProbe.latency, vscodeProbe.latency);
+                    saveToCache(data, ocisProbe.alive, vscodeProbe.alive, ocisProbe.latency, vscodeProbe.latency);
                 }
             } else {
-                isAnyBlackout = true;
                 setServiceState('owndrive', false, null, null);
                 setServiceState('vscode', false, null, null);
+                isAnyBlackout = true;
             }
 
             setTimeout(() => {
                 recheckBtn.classList.remove('rotating');
-            }, 600);
+            }, 500);
         }
 
         function forceRecheck() {
             syncCluster();
         }
 
+        // 1. Instantaneous render from cache if available (0ms load!)
+        loadFromCache();
+
+        // 2. Perform silent background sync immediately and every 20 seconds
         syncCluster();
-        setInterval(syncCluster, 30000);
+        setInterval(syncCluster, 20000);
     </script>
 </body>
 </html>
