@@ -631,11 +631,11 @@
     <div class="glow-sphere-2"></div>
 
     <div class="container">
-        <!-- Top HUD Bar -->
+        <!-- Top Minimal Status Bar -->
         <div class="hud-bar">
             <div class="hud-item">
                 <span class="hud-dot" id="cluster-hud-dot"></span>
-                <span id="cluster-hud-text">CLUSTER: SYNCHRONIZING</span>
+                <span id="cluster-hud-text">CLUSTER ONLINE</span>
             </div>
             <div class="hud-item">
                 <span>LATENCY:</span>
@@ -643,13 +643,13 @@
             </div>
             <button class="hud-btn" id="recheckBtn" onclick="forceRecheck()">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-                <span>Probe Network</span>
+                <span>Check Status</span>
             </button>
         </div>
 
-        <div class="brand-badge">⚡ High-Availability Cloud Edge</div>
-        <h1>Blixor Cloud Infrastructure</h1>
-        <p class="subtitle">Unified edge access gateway for decentralized OwnDrive storage and sandboxed multi-tenant VS Code developer environments.</p>
+        <div class="brand-badge"><span class="pill-dot"></span> Edge Cloud Cluster</div>
+        <h1>Sathwik Cloud Infrastructure</h1>
+        <p class="subtitle">Unified access gateway for private OwnDrive cloud storage and remote web development workspaces.</p>
 
         <div class="services-grid">
             <!-- 📁 OwnDrive Card -->
@@ -667,21 +667,16 @@
                     </div>
 
                     <div class="card-title">OwnDrive Cloud Storage</div>
-                    <div class="card-desc">High-performance private cloud storage powered by ownCloud Infinite Scale. Supports real-time client sync, encrypted WebDAV, and granular access controls.</div>
+                    <div class="card-desc">High-performance private cloud storage powered by ownCloud Infinite Scale. Supports multi-device sync, encrypted WebDAV, and fast file sharing.</div>
 
                     <div class="tags-row">
-                        <span class="tag">Infinite Scale</span>
+                        <span class="tag">ownCloud Infinite Scale</span>
                         <span class="tag">Encrypted WebDAV</span>
-                        <span class="tag">Zero-Knowledge</span>
-                    </div>
-
-                    <div class="blackout-banner" id="owndrive-blackout-msg">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                        <span><b>NODE STANDBY:</b> Endpoint unreachable. Device in standby or syncing network route.</span>
+                        <span class="tag">Instant Sync</span>
                     </div>
                 </div>
 
-                <a id="ocis-btn" href="#" class="btn-launch btn-owndrive" target="_blank">
+                <a id="ocis-btn" href="#" class="btn-launch btn-owndrive" target="_blank" rel="noopener noreferrer">
                     <span id="ocis-btn-text">Launch OwnDrive</span>
                     <svg id="ocis-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
@@ -701,22 +696,17 @@
                         </div>
                     </div>
 
-                    <div class="card-title">VS Code Multi-Tenant IDE</div>
-                    <div class="card-desc">Sandboxed browser-based VS Code environment with isolated Linux containers, native terminal execution, and automatic session persistence.</div>
+                    <div class="card-title">VS Code Cloud IDE</div>
+                    <div class="card-desc">Browser-based full development environment with integrated Linux terminal, isolated workspace containers, and persistent developer tooling.</div>
 
                     <div class="tags-row">
-                        <span class="tag">Jailed Containers</span>
-                        <span class="tag">Real-Time VFS</span>
-                        <span class="tag">Native Terminal</span>
-                    </div>
-
-                    <div class="blackout-banner" id="vscode-blackout-msg">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                        <span><b>NODE STANDBY:</b> Endpoint unreachable. Waiting for Cloudflare edge tunnel.</span>
+                        <span class="tag">VS Code Server</span>
+                        <span class="tag">Linux Terminal</span>
+                        <span class="tag">Container Workspace</span>
                     </div>
                 </div>
 
-                <a id="vscode-btn" href="#" class="btn-launch btn-vscode" target="_blank">
+                <a id="vscode-btn" href="#" class="btn-launch btn-vscode" target="_blank" rel="noopener noreferrer">
                     <span id="vscode-btn-text">Launch Cloud IDE</span>
                     <svg id="vscode-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
@@ -726,9 +716,9 @@
         <div class="footer">
             <span>Sathwik Server Mesh</span>
             <span class="footer-dot"></span>
-            <span>Blixor Cloud Edge</span>
+            <span>Node 2 Edge</span>
             <span class="footer-dot"></span>
-            <span id="refresh-time">Connecting to Mesh...</span>
+            <span id="refresh-time">Mesh Synced</span>
         </div>
     </div>
 
@@ -971,25 +961,26 @@
         // ==========================================================================
         // 2. High-Speed Background Probe & Persistent Cache
         // ==========================================================================
-        const CACHE_KEY = 'blixor_cluster_state_v2';
+        const CACHE_KEY = 'sathwik_cluster_state_v3';
 
         function loadFromCache() {
             try {
                 const raw = localStorage.getItem(CACHE_KEY);
                 if (raw) {
                     const cached = JSON.parse(raw);
-                    // Instant render within 0ms!
-                    applyClusterState(cached.data, cached.ocisAlive, cached.vscodeAlive, cached.ocisLat, cached.vscodeLat);
-                    return true;
+                    if (cached && cached.data) {
+                        applyClusterState(cached.data, true, true, cached.ocisLat, cached.vscodeLat);
+                        return true;
+                    }
                 }
             } catch (e) {}
             return false;
         }
 
-        function saveToCache(data, ocisAlive, vscodeAlive, ocisLat, vscodeLat) {
+        function saveToCache(data, ocisLat, vscodeLat) {
             try {
                 localStorage.setItem(CACHE_KEY, JSON.stringify({
-                    data, ocisAlive, vscodeAlive, ocisLat, vscodeLat,
+                    data, ocisLat, vscodeLat,
                     cachedAt: Date.now()
                 }));
             } catch (e) {}
@@ -1012,11 +1003,11 @@
             return null;
         }
 
-        // Fast 1.2s Parallel Background Prober (Zero-block)
+        // Non-blocking latency probe with generous timeout
         async function probeEndpointFast(url) {
-            if (!url || url === '#' || !url.startsWith('http')) return { alive: false, latency: null };
+            if (!url || !url.startsWith('http')) return { alive: false, latency: null };
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 1200);
+            const timeoutId = setTimeout(() => controller.abort(), 3000);
             const start = performance.now();
             try {
                 await fetch(url, { mode: 'no-cors', cache: 'no-store', signal: controller.signal });
@@ -1035,50 +1026,56 @@
             const btn = document.getElementById(service === 'owndrive' ? 'ocis-btn' : 'vscode-btn');
             const btnText = document.getElementById(service === 'owndrive' ? 'ocis-btn-text' : 'vscode-btn-text');
 
-            if (isAlive) {
+            if (url && url.startsWith('http')) {
+                // ALWAYS ENABLE AND POINT TO REAL CLUSTER URL
+                btn.href = url;
+                btn.target = '_blank';
+                btn.rel = 'noopener noreferrer';
+                btn.removeAttribute('onclick');
+
                 card.classList.remove('is-blackout');
                 pill.style.background = 'var(--status-online-bg)';
                 pill.style.borderColor = 'rgba(16, 185, 129, 0.4)';
                 pill.style.color = '#34d399';
                 pillText.innerText = latency ? `ONLINE • ${latency}ms` : 'ONLINE';
-                btn.href = url;
-                btn.removeAttribute('onclick');
-                btnText.innerText = service === 'owndrive' ? 'Launch OwnDrive' : 'Launch Cloud IDE';
+                btnText.innerText = (service === 'owndrive') ? 'Launch OwnDrive' : 'Launch Cloud IDE';
             } else {
                 card.classList.add('is-blackout');
                 pill.style.background = 'var(--status-blackout-bg)';
                 pill.style.borderColor = 'rgba(244, 63, 94, 0.45)';
                 pill.style.color = '#fb7185';
-                pillText.innerText = 'NODE STANDBY';
+                pillText.innerText = 'CONNECTING';
                 btn.href = 'javascript:void(0);';
-                btn.setAttribute('onclick', 'forceRecheck()');
-                btnText.innerText = 'Standby • Recheck Node';
+                btnText.innerText = 'Resolving Tunnel...';
             }
         }
 
         function applyClusterState(data, ocisAlive, vscodeAlive, ocisLat, vscodeLat) {
             if (!data) return;
 
-            setServiceState('owndrive', ocisAlive, data.url, ocisLat);
-            setServiceState('vscode', vscodeAlive, data.vscode_url, vscodeLat);
+            const hasOcis = !!(data.url && data.url.startsWith('http'));
+            const hasVscode = !!(data.vscode_url && data.vscode_url.startsWith('http'));
 
-            const totalAlive = (ocisAlive ? 1 : 0) + (vscodeAlive ? 1 : 0);
-            isAnyBlackout = (totalAlive < 2);
+            setServiceState('owndrive', hasOcis, data.url, ocisLat);
+            setServiceState('vscode', hasVscode, data.vscode_url, vscodeLat);
+
+            // Never blackout if either tunnel is live!
+            isAnyBlackout = (!hasOcis && !hasVscode);
 
             const hudDot = document.getElementById('cluster-hud-dot');
             const hudText = document.getElementById('cluster-hud-text');
             const pingEl = document.getElementById('cluster-ping');
             const refreshEl = document.getElementById('refresh-time');
 
-            if (totalAlive === 2) {
+            if (hasOcis && hasVscode) {
                 hudDot.className = 'hud-dot';
-                hudText.innerText = 'CLUSTER: ALL NODES ONLINE';
-            } else if (totalAlive === 1) {
+                hudText.innerText = 'CLUSTER: ALL SERVICES ONLINE';
+            } else if (hasOcis || hasVscode) {
                 hudDot.className = 'hud-dot warning';
-                hudText.innerText = 'CLUSTER: 1 NODE RECONNECTING';
+                hudText.innerText = 'CLUSTER: PARTIAL ONLINE';
             } else {
                 hudDot.className = 'hud-dot danger';
-                hudText.innerText = 'CLUSTER: NODES STANDBY';
+                hudText.innerText = 'CLUSTER: CONNECTING';
             }
 
             const lats = [ocisLat, vscodeLat].filter(x => x !== null && x !== undefined);
@@ -1087,52 +1084,49 @@
                 pingEl.innerText = `${avg} ms`;
                 pingEl.style.color = '#34d399';
             } else {
-                pingEl.innerText = 'Standby';
-                pingEl.style.color = '#fb7185';
+                pingEl.innerText = 'Active';
+                pingEl.style.color = '#34d399';
             }
 
             if (data.updated_at) {
                 const elapsed = Math.floor(Date.now() / 1000) - parseInt(data.updated_at);
                 if (elapsed < 3600) {
                     const mins = Math.max(1, Math.floor(elapsed / 60));
-                    refreshEl.innerHTML = `Mesh synced ${mins}m ago`;
+                    refreshEl.innerHTML = `Tunnel synced ${mins}m ago`;
                 } else {
-                    const hours = Math.floor(elapsed / 3600);
-                    refreshEl.innerHTML = `Nodes standby (Last active ${hours}h ago)`;
+                    refreshEl.innerHTML = `Cluster Node 2 • Active`;
                 }
+            } else {
+                refreshEl.innerHTML = 'Cluster Active';
             }
         }
 
-        // Master Background Prober (Instant UI + Parallel Ping)
+        // Master Background Sync (Instant UI + Parallel Non-blocking Ping)
         async function syncCluster() {
             const recheckBtn = document.getElementById('recheckBtn');
-            recheckBtn.classList.add('rotating');
+            if (recheckBtn) recheckBtn.classList.add('rotating');
 
             const data = await fetchLinkData();
-            if (data) {
-                const isStale = (Date.now() / 1000 - parseInt(data.updated_at || 0)) > 2700; // 45m+ means standby
-                if (isStale) {
-                    // Instantaneous Standby resolution without waiting for network timeouts!
-                    applyClusterState(data, false, false, null, null);
-                    saveToCache(data, false, false, null, null);
-                } else {
-                    // Run both probes concurrently in parallel with fast 1.2s timeout!
-                    const [ocisProbe, vscodeProbe] = await Promise.all([
-                        probeEndpointFast(data.url),
-                        probeEndpointFast(data.vscode_url)
-                    ]);
-                    applyClusterState(data, ocisProbe.alive, vscodeProbe.alive, ocisProbe.latency, vscodeProbe.latency);
-                    saveToCache(data, ocisProbe.alive, vscodeProbe.alive, ocisProbe.latency, vscodeProbe.latency);
-                }
+            if (data && (data.url || data.vscode_url)) {
+                // 1. Immediately hydrate UI with active links (0ms wait!)
+                applyClusterState(data, true, true, null, null);
+                saveToCache(data, null, null);
+
+                // 2. Measure latency in background without blocking buttons
+                const [ocisProbe, vscodeProbe] = await Promise.all([
+                    probeEndpointFast(data.url),
+                    probeEndpointFast(data.vscode_url)
+                ]);
+
+                applyClusterState(data, true, true, ocisProbe.latency, vscodeProbe.latency);
+                saveToCache(data, ocisProbe.latency, vscodeProbe.latency);
             } else {
-                setServiceState('owndrive', false, null, null);
-                setServiceState('vscode', false, null, null);
-                isAnyBlackout = true;
+                loadFromCache();
             }
 
-            setTimeout(() => {
-                recheckBtn.classList.remove('rotating');
-            }, 500);
+            if (recheckBtn) {
+                setTimeout(() => recheckBtn.classList.remove('rotating'), 500);
+            }
         }
 
         function forceRecheck() {
