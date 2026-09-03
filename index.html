@@ -54,17 +54,50 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ==========================================================================
+           COLOR PSYCHOLOGY DESIGN SYSTEM:
+           - Base: Deep Cosmic Obsidian (#040714) - Focus, infinite depth, premium calm
+           - OwnDrive (Trust & Cloud Storage): Sapphire & Cerulean (#0284c7 -> #38bdf8)
+           - VS Code (Creativity & Engineering): Royal Amethyst & Violet (#7c3aed -> #c084fc)
+           - Active State (Optimal Health): Mint Emerald (#10b981 / #34d399) - Reassuring
+           - Standby State (High-Tech Defense): Burnished Coral & Amber (#f43f5e / #fb923c)
+           ========================================================================== */
         :root {
-            --primary: #00f2fe;
-            --primary-glow: rgba(0, 242, 254, 0.4);
-            --accent: #9d4edd;
-            --accent-glow: rgba(157, 78, 221, 0.35);
-            --bg-dark: #07090e;
-            --card-bg: rgba(15, 23, 42, 0.65);
-            --card-border: rgba(255, 255, 255, 0.12);
+            --bg-dark: #040714;
+            --bg-surface: rgba(11, 17, 33, 0.78);
+            --bg-surface-hover: rgba(15, 23, 42, 0.88);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-border-hover: rgba(255, 255, 255, 0.18);
+            
+            /* OwnDrive Cerulean Palette */
+            --owndrive-primary: #0284c7;
+            --owndrive-light: #38bdf8;
+            --owndrive-glow: rgba(56, 189, 248, 0.35);
+            --owndrive-subtle: rgba(2, 132, 199, 0.12);
+
+            /* VS Code Amethyst Palette */
+            --vscode-primary: #7c3aed;
+            --vscode-light: #c084fc;
+            --vscode-glow: rgba(168, 85, 247, 0.35);
+            --vscode-subtle: rgba(124, 58, 237, 0.12);
+
+            /* Status & Psychological Signals */
+            --status-online: #10b981;
+            --status-online-glow: rgba(16, 185, 129, 0.45);
+            --status-online-bg: rgba(16, 185, 129, 0.12);
+
+            --status-standby: #fb923c;
+            --status-standby-glow: rgba(251, 146, 60, 0.4);
+            --status-standby-bg: rgba(251, 146, 60, 0.12);
+
+            --status-blackout: #f43f5e;
+            --status-blackout-glow: rgba(244, 63, 94, 0.4);
+            --status-blackout-bg: rgba(244, 63, 94, 0.12);
+
             --text-main: #f8fafc;
+            --text-secondary: #cbd5e1;
             --text-muted: #94a3b8;
         }
 
@@ -84,344 +117,1034 @@
             padding: 40px 20px;
         }
 
-        /* Ambient Lighting Mesh */
-        .glow-sphere-1 {
-            position: absolute;
-            width: 700px;
-            height: 700px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 242, 254, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
-            top: -200px;
-            left: -150px;
-            filter: blur(80px);
+        /* 3D Cyber-Horizon Canvas */
+        #bgCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 1;
-            animation: floatGlow 14s ease-in-out infinite alternate;
+            pointer-events: none;
         }
 
-        .glow-sphere-2 {
-            position: absolute;
+        /* Ambient Glow Spheres */
+        .glow-sphere-1 {
+            position: fixed;
             width: 750px;
             height: 750px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(157, 78, 221, 0.16) 0%, rgba(0, 0, 0, 0) 70%);
-            bottom: -220px;
-            right: -200px;
-            filter: blur(90px);
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
+            top: -220px;
+            left: -180px;
+            filter: blur(95px);
             z-index: 1;
-            animation: floatGlow 18s ease-in-out infinite alternate-reverse;
+            animation: floatGlow 16s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        .glow-sphere-2 {
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            bottom: -240px;
+            right: -220px;
+            filter: blur(105px);
+            z-index: 1;
+            animation: floatGlow 20s ease-in-out infinite alternate-reverse;
+            pointer-events: none;
         }
 
         @keyframes floatGlow {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(100px, 80px) scale(1.2); }
+            100% { transform: translate(110px, 85px) scale(1.2); }
         }
 
         .container {
             position: relative;
             z-index: 10;
             width: 100%;
-            max-width: 900px;
+            max-width: 980px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Top Header */
-        .badge {
+        /* Top HUD Bar */
+        .hud-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            background: rgba(11, 17, 33, 0.82);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            padding: 8px 20px;
+            border-radius: 40px;
+            margin-bottom: 2rem;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+            max-width: 92%;
+            flex-wrap: wrap;
+        }
+
+        .hud-item {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 12px;
+            font-size: 0.82rem;
             font-family: 'JetBrains Mono', monospace;
-            color: #38bdf8;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            color: var(--text-secondary);
         }
 
-        .ping-dot {
+        .hud-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: #22c55e;
-            box-shadow: 0 0 10px #22c55e;
+            background: var(--status-online);
+            box-shadow: 0 0 10px var(--status-online-glow);
             animation: pulseDot 2s infinite;
+        }
+
+        .hud-dot.warning {
+            background: var(--status-standby);
+            box-shadow: 0 0 10px var(--status-standby-glow);
+        }
+
+        .hud-dot.danger {
+            background: var(--status-blackout);
+            box-shadow: 0 0 10px var(--status-blackout-glow);
         }
 
         @keyframes pulseDot {
             0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.3); opacity: 0.6; }
+            50% { transform: scale(1.35); opacity: 0.55; }
+        }
+
+        .hud-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #e2e8f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.25s ease;
+        }
+
+        .hud-btn:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: var(--owndrive-light);
+            color: #fff;
+            transform: scale(1.03);
+        }
+
+        .hud-btn.rotating svg {
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hero Header */
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(168, 85, 247, 0.12));
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--owndrive-light);
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         h1 {
             font-family: 'Outfit', sans-serif;
-            font-size: 2.75rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 45%, #38bdf8 100%);
+            font-size: 3.2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 40%, #38bdf8 80%, #c084fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-align: center;
-            letter-spacing: -1px;
-            margin-bottom: 0.6rem;
+            letter-spacing: -1.2px;
+            line-height: 1.15;
+            margin-bottom: 0.8rem;
         }
 
         .subtitle {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             text-align: center;
-            max-width: 620px;
-            line-height: 1.6;
-            margin-bottom: 3rem;
+            max-width: 650px;
+            line-height: 1.65;
+            margin-bottom: 3.2rem;
         }
 
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 32px;
             width: 100%;
+            perspective: 1200px;
         }
 
+        /* 3D Glassmorphism Cards */
         .service-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(28px);
-            -webkit-backdrop-filter: blur(28px);
+            background: var(--bg-surface);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
             border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 2.25rem;
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+            border-radius: 28px;
+            padding: 2.5rem;
+            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.7);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             position: relative;
             overflow: hidden;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.15s ease-out, background 0.4s ease;
+            transform-style: preserve-3d;
+            min-height: 480px;
         }
 
+        /* Top Accent Rim Light */
         .service-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--owndrive-light), transparent);
             opacity: 0;
-            transition: opacity 0.35s;
+            transition: opacity 0.4s;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 0 30px -5px var(--primary-glow);
+        .service-card.vscode-card::before {
+            background: linear-gradient(90deg, transparent, var(--vscode-light), transparent);
         }
 
-        .service-card:hover::before { opacity: 1; }
+        .service-card:not(.is-blackout):hover {
+            border-color: rgba(56, 189, 248, 0.45);
+            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.85), 0 0 35px -5px var(--owndrive-glow);
+        }
+
+        .service-card.vscode-card:not(.is-blackout):hover {
+            border-color: rgba(168, 85, 247, 0.45);
+            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.85), 0 0 35px -5px var(--vscode-glow);
+        }
+
+        .service-card:not(.is-blackout):hover::before { opacity: 1; }
+
+        /* Dynamic Holographic Specular Glare Sheen */
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 28px;
+            background: radial-gradient(circle 380px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.09) 0%, transparent 75%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 3;
+        }
+
+        .service-card:hover::after { opacity: 1; }
+
+        /* Card Top Row */
+        .card-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.8rem;
+        }
 
         .card-icon-box {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
+            width: 62px;
+            height: 62px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .service-card:hover .card-icon-box {
+            transform: scale(1.08) rotate(-3deg);
         }
 
         .icon-owndrive {
-            background: linear-gradient(135deg, rgba(2, 132, 199, 0.25), rgba(56, 189, 248, 0.15));
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            color: #38bdf8;
+            background: linear-gradient(135deg, rgba(2, 132, 199, 0.3), rgba(56, 189, 248, 0.15));
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            color: var(--owndrive-light);
+            box-shadow: 0 8px 24px rgba(2, 132, 199, 0.25);
         }
 
         .icon-vscode {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.25), rgba(168, 85, 247, 0.15));
-            border: 1px solid rgba(168, 85, 247, 0.3);
-            color: #c084fc;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(168, 85, 247, 0.15));
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            color: var(--vscode-light);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.25);
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            background: var(--status-online-bg);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            color: #34d399;
+            transition: all 0.3s ease;
+        }
+
+        .status-pill .pill-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--status-online);
+            box-shadow: 0 0 8px var(--status-online);
         }
 
         .card-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.45rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 0.5rem;
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.5px;
         }
 
         .card-desc {
             font-size: 0.92rem;
             color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 1.75rem;
+            line-height: 1.6;
+            margin-bottom: 1.8rem;
         }
 
         .tags-row {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 2rem;
+            margin-bottom: 2.2rem;
         }
 
         .tag {
-            background: rgba(15, 23, 42, 0.6);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            color: #cbd5e1;
-            font-size: 11px;
+            padding: 5px 12px;
+            border-radius: 10px;
+            font-size: 0.75rem;
             font-family: 'JetBrains Mono', monospace;
-            padding: 4px 10px;
-            border-radius: 6px;
+            color: var(--text-secondary);
         }
 
+        /* Launch Buttons */
         .btn-launch {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             width: 100%;
-            padding: 0.9rem;
-            border-radius: 12px;
-            font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
+            padding: 1.05rem 1.6rem;
+            border-radius: 16px;
             font-weight: 700;
+            font-size: 0.98rem;
+            font-family: 'Outfit', sans-serif;
             text-decoration: none;
-            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
         }
 
         .btn-owndrive {
-            background: linear-gradient(135deg, #0284c7, #0369a1);
-            color: #fff;
-            box-shadow: 0 8px 20px -4px rgba(2, 132, 199, 0.5);
+            background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+            color: #040714;
+            box-shadow: 0 8px 24px -4px rgba(56, 189, 248, 0.45);
         }
 
         .btn-owndrive:hover {
-            box-shadow: 0 12px 28px -4px rgba(2, 132, 199, 0.7);
-            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 32px -4px rgba(56, 189, 248, 0.65);
         }
 
         .btn-vscode {
-            background: linear-gradient(135deg, #7c3aed, #6366f1);
-            color: #fff;
-            box-shadow: 0 8px 20px -4px rgba(124, 58, 237, 0.5);
+            background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
+            color: #040714;
+            box-shadow: 0 8px 24px -4px rgba(168, 85, 247, 0.45);
         }
 
         .btn-vscode:hover {
-            box-shadow: 0 12px 28px -4px rgba(124, 58, 237, 0.7);
-            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 32px -4px rgba(168, 85, 247, 0.65);
         }
 
-        /* Footer Info */
+        /* ==========================================================================
+           ⚡ CYBER BLACKOUT / HIGH-TECH STANDBY STATE
+           ========================================================================== */
+        .service-card.is-blackout {
+            background: radial-gradient(circle at 50% 0%, rgba(28, 14, 24, 0.8) 0%, rgba(10, 12, 20, 0.95) 100%);
+            border-color: rgba(244, 63, 94, 0.35);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(244, 63, 94, 0.15);
+        }
+
+        .service-card.is-blackout::before {
+            background: linear-gradient(90deg, transparent, var(--status-blackout), transparent);
+            opacity: 1;
+            animation: alertFlicker 3s infinite;
+        }
+
+        .service-card.is-blackout .blackout-scanlines {
+            display: block;
+        }
+
+        .blackout-scanlines {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.25) 0px,
+                rgba(0, 0, 0, 0.25) 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0.65;
+        }
+
+        .service-card.is-blackout .status-pill {
+            background: var(--status-blackout-bg);
+            border-color: rgba(244, 63, 94, 0.45);
+            color: #fb7185;
+        }
+
+        .service-card.is-blackout .status-pill .pill-dot {
+            background: var(--status-blackout);
+            box-shadow: 0 0 10px var(--status-blackout);
+            animation: pulseDot 1s infinite;
+        }
+
+        .blackout-banner {
+            display: none;
+            background: rgba(244, 63, 94, 0.1);
+            border: 1px dashed rgba(244, 63, 94, 0.35);
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin-bottom: 1.5rem;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.82rem;
+            color: #fda4af;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .service-card.is-blackout .blackout-banner {
+            display: flex;
+        }
+
+        @keyframes alertFlicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.2; }
+            70% { opacity: 1; }
+            85% { opacity: 0.3; }
+        }
+
+        .service-card.is-blackout .btn-launch {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(244, 63, 94, 0.3);
+            color: #fda4af;
+            box-shadow: none;
+            cursor: pointer;
+        }
+
+        .service-card.is-blackout .btn-launch:hover {
+            background: rgba(244, 63, 94, 0.15);
+            border-color: var(--status-blackout);
+            transform: none;
+        }
+
+        /* Footer */
         .footer {
             margin-top: 3.5rem;
             display: flex;
             align-items: center;
-            gap: 20px;
-            font-size: 0.8rem;
+            gap: 14px;
+            font-size: 0.85rem;
             color: #64748b;
             font-family: 'JetBrains Mono', monospace;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .footer-dot {
             width: 4px;
             height: 4px;
             border-radius: 50%;
-            background: #475569;
+            background: #334155;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.1rem; }
+            h1 { font-size: 2.3rem; }
             .services-grid { grid-template-columns: 1fr; }
+            .service-card { padding: 1.8rem; min-height: auto; }
+            .hud-bar { justify-content: center; }
         }
     </style>
 </head>
 <body>
+    <canvas id="bgCanvas"></canvas>
     <div class="glow-sphere-1"></div>
     <div class="glow-sphere-2"></div>
 
     <div class="container">
-        <div class="badge">
-            <span class="ping-dot"></span>
-            <span id="node-status">BLIXOR CLOUD • SATHWIK SERVER • HIGH AVAILABILITY</span>
+        <!-- Top HUD Bar -->
+        <div class="hud-bar">
+            <div class="hud-item">
+                <span class="hud-dot" id="cluster-hud-dot"></span>
+                <span id="cluster-hud-text">CLUSTER: SYNCHRONIZING</span>
+            </div>
+            <div class="hud-item">
+                <span>LATENCY:</span>
+                <span id="cluster-ping" style="color: #38bdf8;">-- ms</span>
+            </div>
+            <button class="hud-btn" id="recheckBtn" onclick="forceRecheck()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                <span>Probe Network</span>
+            </button>
         </div>
 
-        <h1>Blixor Cloud Portal</h1>
-        <p class="subtitle">Official Sathwik Server edge infrastructure powering high-performance enterprise file synchronization and sandboxed cloud development workspaces.</p>
+        <div class="brand-badge">⚡ High-Availability Cloud Edge</div>
+        <h1>Blixor Cloud Infrastructure</h1>
+        <p class="subtitle">Unified edge access gateway for decentralized OwnDrive storage and sandboxed multi-tenant VS Code developer environments.</p>
 
         <div class="services-grid">
-            <!-- OwnDrive Card -->
-            <div class="service-card">
+            <!-- 📁 OwnDrive Card -->
+            <div class="service-card" id="card-owndrive" data-service="owndrive">
+                <div class="blackout-scanlines"></div>
                 <div>
-                    <div class="card-icon-box icon-owndrive">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                    <div class="card-top-row">
+                        <div class="card-icon-box icon-owndrive">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <div class="status-pill" id="owndrive-pill">
+                            <span class="pill-dot"></span>
+                            <span id="owndrive-pill-text">Checking...</span>
+                        </div>
                     </div>
-                    <div class="card-title">OwnDrive Cloud</div>
-                    <div class="card-desc">Infinite Scale decentralized cloud storage with isolated workspace quotas, collaborative team spaces, and enterprise-grade file encryption.</div>
+
+                    <div class="card-title">OwnDrive Cloud Storage</div>
+                    <div class="card-desc">High-performance private cloud storage powered by ownCloud Infinite Scale. Supports real-time client sync, encrypted WebDAV, and granular access controls.</div>
+
                     <div class="tags-row">
                         <span class="tag">Infinite Scale</span>
-                        <span class="tag">Encrypted VFS</span>
-                        <span class="tag">WebDAV</span>
+                        <span class="tag">Encrypted WebDAV</span>
+                        <span class="tag">Zero-Knowledge</span>
+                    </div>
+
+                    <div class="blackout-banner" id="owndrive-blackout-msg">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        <span><b>NODE STANDBY:</b> Endpoint unreachable. Device in standby or syncing network route.</span>
                     </div>
                 </div>
+
                 <a id="ocis-btn" href="#" class="btn-launch btn-owndrive" target="_blank">
-                    <span>Open OwnDrive</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    <span id="ocis-btn-text">Launch OwnDrive</span>
+                    <svg id="ocis-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
             </div>
 
-            <!-- VS Code Card -->
-            <div class="service-card">
+            <!-- 💻 VS Code Card -->
+            <div class="service-card vscode-card" id="card-vscode" data-service="vscode">
+                <div class="blackout-scanlines"></div>
                 <div>
-                    <div class="card-icon-box icon-vscode">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    <div class="card-top-row">
+                        <div class="card-icon-box icon-vscode">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <div class="status-pill" id="vscode-pill">
+                            <span class="pill-dot"></span>
+                            <span id="vscode-pill-text">Checking...</span>
+                        </div>
                     </div>
+
                     <div class="card-title">VS Code Multi-Tenant IDE</div>
-                    <div class="card-desc">Full-featured Cloud IDE with real-time distributed workspace synchronization, sandboxed container runtime, and integrated terminal.</div>
+                    <div class="card-desc">Sandboxed browser-based VS Code environment with isolated Linux containers, native terminal execution, and automatic session persistence.</div>
+
                     <div class="tags-row">
+                        <span class="tag">Jailed Containers</span>
                         <span class="tag">Real-Time VFS</span>
-                        <span class="tag">Jailed Sandboxes</span>
-                        <span class="tag">Zero Latency</span>
+                        <span class="tag">Native Terminal</span>
+                    </div>
+
+                    <div class="blackout-banner" id="vscode-blackout-msg">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        <span><b>NODE STANDBY:</b> Endpoint unreachable. Waiting for Cloudflare edge tunnel.</span>
                     </div>
                 </div>
+
                 <a id="vscode-btn" href="#" class="btn-launch btn-vscode" target="_blank">
-                    <span>Launch Cloud IDE</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    <span id="vscode-btn-text">Launch Cloud IDE</span>
+                    <svg id="vscode-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
             </div>
         </div>
 
         <div class="footer">
-            <span>Sathwik Server Architecture</span>
+            <span>Sathwik Server Mesh</span>
             <span class="footer-dot"></span>
             <span>Blixor Cloud Edge</span>
             <span class="footer-dot"></span>
-            <span id="refresh-time">Live Status Synced</span>
+            <span id="refresh-time">Connecting to Mesh...</span>
         </div>
     </div>
 
     <script>
-        function loadTunnels() {
-            fetch('https://api.github.com/repos/sathwik4444/SERVER-LINKS/contents/link.json', {
-                headers: { 'Accept': 'application/vnd.github.v3.raw' },
-                cache: 'no-store'
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data && data.url) {
-                    document.getElementById('ocis-btn').href = data.url;
-                }
-                if (data && data.vscode_url) {
-                    document.getElementById('vscode-btn').href = data.vscode_url;
-                }
-                document.getElementById('refresh-time').innerText = 'Last updated: ' + new Date().toLocaleTimeString();
-            })
-            .catch(err => {
-                console.error(err);
+        // ==========================================================================
+        // 🌌 THE "GOAT" LIQUID QUANTUM AURORA & INTERACTIVE STARDUST ENGINE
+        // ==========================================================================
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        let mouse = {
+            x: width * 0.5,
+            y: height * 0.45,
+            targetX: width * 0.5,
+            targetY: height * 0.45,
+            vx: 0,
+            vy: 0,
+            lastX: width * 0.5,
+            lastY: height * 0.45,
+            speed: 0
+        };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.targetX = e.clientX;
+            mouse.targetY = e.clientY;
+            for (let i = 0; i < 3; i++) {
+                spawnStardust(e.clientX, e.clientY);
+            }
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches && e.touches[0]) {
+                mouse.targetX = e.touches[0].clientX;
+                mouse.targetY = e.touches[0].clientY;
+                spawnStardust(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        // Interactive Cosmic Stardust Particles
+        let stardust = [];
+        function spawnStardust(x, y) {
+            if (stardust.length > 130) stardust.shift();
+            const angle = Math.random() * Math.PI * 2;
+            const velocity = Math.random() * 2.8 + 0.6;
+            stardust.push({
+                x: x + (Math.random() - 0.5) * 14,
+                y: y + (Math.random() - 0.5) * 14,
+                vx: Math.cos(angle) * velocity + mouse.vx * 0.15,
+                vy: Math.sin(angle) * velocity + mouse.vy * 0.15,
+                size: Math.random() * 2.2 + 1.2,
+                alpha: 1,
+                decay: Math.random() * 0.02 + 0.015,
+                colorType: Math.random()
             });
         }
-        loadTunnels();
-        setInterval(loadTunnels, 30000);
+
+        // Ambient Floating Nebula Motes
+        const nebulaMotes = [];
+        for (let i = 0; i < 55; i++) {
+            nebulaMotes.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                size: Math.random() * 2.0 + 0.8,
+                phase: Math.random() * Math.PI * 2,
+                baseAlpha: Math.random() * 0.4 + 0.2
+            });
+        }
+
+        let time = 0;
+        let isAnyBlackout = false;
+        let blackoutBlend = 0;
+
+        function renderLiquidAurora() {
+            ctx.clearRect(0, 0, width, height);
+
+            mouse.vx = mouse.targetX - mouse.lastX;
+            mouse.vy = mouse.targetY - mouse.lastY;
+            mouse.speed = Math.hypot(mouse.vx, mouse.vy);
+            mouse.lastX = mouse.targetX;
+            mouse.lastY = mouse.targetY;
+            mouse.x += (mouse.targetX - mouse.x) * 0.07;
+            mouse.y += (mouse.targetY - mouse.y) * 0.07;
+
+            time += 0.014;
+
+            const targetBlend = isAnyBlackout ? 1 : 0;
+            blackoutBlend += (targetBlend - blackoutBlend) * 0.05;
+
+            // 1. Multi-Layered Liquid Silk Aurora Ribbons
+            const ribbonCount = 6;
+            for (let i = 0; i < ribbonCount; i++) {
+                ctx.save();
+                ctx.beginPath();
+
+                const yOffset = height * (0.22 + i * 0.11);
+                const freq = 0.0018 + i * 0.0004;
+                const speed = 0.8 + i * 0.25;
+                const amp = 46 + i * 14;
+
+                ctx.moveTo(0, height);
+                for (let x = 0; x <= width; x += 12) {
+                    let wave = Math.sin(x * freq + time * speed + i * 1.3) * amp
+                             + Math.cos(x * freq * 1.6 - time * speed * 0.7) * (amp * 0.45);
+
+                    const distToMouse = Math.hypot(x - mouse.x, (yOffset + wave) - mouse.y);
+                    const influenceRadius = 240;
+                    if (distToMouse < influenceRadius) {
+                        const push = Math.cos((distToMouse / influenceRadius) * (Math.PI / 2));
+                        wave -= push * (55 + Math.min(30, mouse.speed * 1.5));
+                    }
+
+                    const y = yOffset + wave;
+                    if (x === 0) ctx.lineTo(x, y);
+                    else ctx.lineTo(x, y);
+                }
+                ctx.lineTo(width, height);
+                ctx.closePath();
+
+                const grad = ctx.createLinearGradient(0, yOffset - amp, width, yOffset + amp + 160);
+                if (blackoutBlend > 0.01) {
+                    // Molten Coral & Cyber Amber Mode
+                    grad.addColorStop(0, `rgba(244, 63, 94, ${(0.15 - i * 0.018) * blackoutBlend})`);
+                    grad.addColorStop(0.5, `rgba(251, 146, 60, ${(0.11 - i * 0.012) * blackoutBlend})`);
+                    grad.addColorStop(1, 'transparent');
+                }
+                if (blackoutBlend < 0.99) {
+                    // Electric Cyan & Royal Amethyst Mode
+                    const activeWeight = 1 - blackoutBlend;
+                    if (i % 2 === 0) {
+                        grad.addColorStop(0, `rgba(14, 165, 233, ${(0.16 - i * 0.018) * activeWeight})`);
+                        grad.addColorStop(0.5, `rgba(56, 189, 248, ${(0.11 - i * 0.012) * activeWeight})`);
+                        grad.addColorStop(1, 'transparent');
+                    } else {
+                        grad.addColorStop(0, `rgba(124, 58, 237, ${(0.17 - i * 0.018) * activeWeight})`);
+                        grad.addColorStop(0.5, `rgba(192, 132, 252, ${(0.12 - i * 0.012) * activeWeight})`);
+                        grad.addColorStop(1, 'transparent');
+                    }
+                }
+
+                ctx.fillStyle = grad;
+                ctx.fill();
+
+                ctx.lineWidth = 1.2;
+                if (blackoutBlend > 0.01) {
+                    ctx.strokeStyle = `rgba(244, 63, 94, ${(0.25 - i * 0.03) * blackoutBlend})`;
+                } else {
+                    ctx.strokeStyle = i % 2 === 0 
+                        ? `rgba(56, 189, 248, ${(0.3 - i * 0.03) * (1 - blackoutBlend)})`
+                        : `rgba(168, 85, 247, ${(0.3 - i * 0.03) * (1 - blackoutBlend)})`;
+                }
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            // 2. Ambient Floating Nebula Motes
+            for (let m of nebulaMotes) {
+                m.x += m.vx;
+                m.y += m.vy;
+                if (m.x < 0) m.x = width;
+                if (m.x > width) m.x = 0;
+                if (m.y < 0) m.y = height;
+                if (m.y > height) m.y = 0;
+
+                const flicker = Math.sin(time * 2 + m.phase) * 0.2 + m.baseAlpha;
+                ctx.beginPath();
+                ctx.arc(m.x, m.y, m.size, 0, Math.PI * 2);
+                if (isAnyBlackout) {
+                    ctx.fillStyle = `rgba(251, 146, 60, ${flicker * 0.7})`;
+                } else {
+                    ctx.fillStyle = `rgba(56, 189, 248, ${flicker * 0.8})`;
+                }
+                ctx.fill();
+            }
+
+            // 3. Interactive Cosmic Stardust Trail
+            for (let i = stardust.length - 1; i >= 0; i--) {
+                const s = stardust[i];
+                s.x += s.vx;
+                s.y += s.vy;
+                s.vx *= 0.96;
+                s.vy *= 0.96;
+                s.alpha -= s.decay;
+
+                if (s.alpha <= 0) {
+                    stardust.splice(i, 1);
+                    continue;
+                }
+
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+                if (isAnyBlackout) {
+                    ctx.fillStyle = s.colorType > 0.5 
+                        ? `rgba(244, 63, 94, ${s.alpha})`
+                        : `rgba(251, 146, 60, ${s.alpha})`;
+                    ctx.shadowColor = 'rgba(244, 63, 94, 0.8)';
+                } else {
+                    ctx.fillStyle = s.colorType > 0.5 
+                        ? `rgba(56, 189, 248, ${s.alpha})`
+                        : `rgba(192, 132, 252, ${s.alpha})`;
+                    ctx.shadowColor = 'rgba(56, 189, 248, 0.8)';
+                }
+                ctx.shadowBlur = 8;
+                ctx.fill();
+                ctx.restore();
+            }
+
+            requestAnimationFrame(renderLiquidAurora);
+        }
+        renderLiquidAurora();
+
+        // 3D Card Tilt on Mouse Move with Holographic Specular Glare
+        const cards = document.querySelectorAll('.service-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotateX = -(y / (rect.height / 2)) * 6;
+                const rotateY = (x / (rect.width / 2)) * 6;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+                card.style.setProperty('--mouse-x', `${(e.clientX - rect.left)}px`);
+                card.style.setProperty('--mouse-y', `${(e.clientY - rect.top)}px`);
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+            });
+        });
+
+        // ==========================================================================
+        // 2. High-Speed Background Probe & Persistent Cache
+        // ==========================================================================
+        const CACHE_KEY = 'blixor_cluster_state_v2';
+
+        function loadFromCache() {
+            try {
+                const raw = localStorage.getItem(CACHE_KEY);
+                if (raw) {
+                    const cached = JSON.parse(raw);
+                    // Instant render within 0ms!
+                    applyClusterState(cached.data, cached.ocisAlive, cached.vscodeAlive, cached.ocisLat, cached.vscodeLat);
+                    return true;
+                }
+            } catch (e) {}
+            return false;
+        }
+
+        function saveToCache(data, ocisAlive, vscodeAlive, ocisLat, vscodeLat) {
+            try {
+                localStorage.setItem(CACHE_KEY, JSON.stringify({
+                    data, ocisAlive, vscodeAlive, ocisLat, vscodeLat,
+                    cachedAt: Date.now()
+                }));
+            } catch (e) {}
+        }
+
+        async function fetchLinkData() {
+            const timestamp = Date.now();
+            try {
+                const res = await fetch(`https://raw.githubusercontent.com/sathwik4444/SERVER-LINKS/main/link.json?t=${timestamp}`, { cache: 'no-store' });
+                if (res.ok) return await res.json();
+            } catch (e) {}
+
+            try {
+                const res = await fetch(`https://api.github.com/repos/sathwik4444/SERVER-LINKS/contents/link.json?t=${timestamp}`, {
+                    headers: { 'Accept': 'application/vnd.github.v3.raw' },
+                    cache: 'no-store'
+                });
+                if (res.ok) return await res.json();
+            } catch (e) {}
+            return null;
+        }
+
+        // Fast 1.2s Parallel Background Prober (Zero-block)
+        async function probeEndpointFast(url) {
+            if (!url || url === '#' || !url.startsWith('http')) return { alive: false, latency: null };
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 1200);
+            const start = performance.now();
+            try {
+                await fetch(url, { mode: 'no-cors', cache: 'no-store', signal: controller.signal });
+                clearTimeout(timeoutId);
+                return { alive: true, latency: Math.round(performance.now() - start) };
+            } catch (err) {
+                clearTimeout(timeoutId);
+                return { alive: false, latency: null };
+            }
+        }
+
+        function setServiceState(service, isAlive, url, latency) {
+            const card = document.getElementById(`card-${service}`);
+            const pill = document.getElementById(`${service}-pill`);
+            const pillText = document.getElementById(`${service}-pill-text`);
+            const btn = document.getElementById(service === 'owndrive' ? 'ocis-btn' : 'vscode-btn');
+            const btnText = document.getElementById(service === 'owndrive' ? 'ocis-btn-text' : 'vscode-btn-text');
+
+            if (isAlive) {
+                card.classList.remove('is-blackout');
+                pill.style.background = 'var(--status-online-bg)';
+                pill.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                pill.style.color = '#34d399';
+                pillText.innerText = latency ? `ONLINE • ${latency}ms` : 'ONLINE';
+                btn.href = url;
+                btn.removeAttribute('onclick');
+                btnText.innerText = service === 'owndrive' ? 'Launch OwnDrive' : 'Launch Cloud IDE';
+            } else {
+                card.classList.add('is-blackout');
+                pill.style.background = 'var(--status-blackout-bg)';
+                pill.style.borderColor = 'rgba(244, 63, 94, 0.45)';
+                pill.style.color = '#fb7185';
+                pillText.innerText = 'NODE STANDBY';
+                btn.href = 'javascript:void(0);';
+                btn.setAttribute('onclick', 'forceRecheck()');
+                btnText.innerText = 'Standby • Recheck Node';
+            }
+        }
+
+        function applyClusterState(data, ocisAlive, vscodeAlive, ocisLat, vscodeLat) {
+            if (!data) return;
+
+            setServiceState('owndrive', ocisAlive, data.url, ocisLat);
+            setServiceState('vscode', vscodeAlive, data.vscode_url, vscodeLat);
+
+            const totalAlive = (ocisAlive ? 1 : 0) + (vscodeAlive ? 1 : 0);
+            isAnyBlackout = (totalAlive < 2);
+
+            const hudDot = document.getElementById('cluster-hud-dot');
+            const hudText = document.getElementById('cluster-hud-text');
+            const pingEl = document.getElementById('cluster-ping');
+            const refreshEl = document.getElementById('refresh-time');
+
+            if (totalAlive === 2) {
+                hudDot.className = 'hud-dot';
+                hudText.innerText = 'CLUSTER: ALL NODES ONLINE';
+            } else if (totalAlive === 1) {
+                hudDot.className = 'hud-dot warning';
+                hudText.innerText = 'CLUSTER: 1 NODE RECONNECTING';
+            } else {
+                hudDot.className = 'hud-dot danger';
+                hudText.innerText = 'CLUSTER: NODES STANDBY';
+            }
+
+            const lats = [ocisLat, vscodeLat].filter(x => x !== null && x !== undefined);
+            if (lats.length > 0) {
+                const avg = Math.round(lats.reduce((a, b) => a + b, 0) / lats.length);
+                pingEl.innerText = `${avg} ms`;
+                pingEl.style.color = '#34d399';
+            } else {
+                pingEl.innerText = 'Standby';
+                pingEl.style.color = '#fb7185';
+            }
+
+            if (data.updated_at) {
+                const elapsed = Math.floor(Date.now() / 1000) - parseInt(data.updated_at);
+                if (elapsed < 3600) {
+                    const mins = Math.max(1, Math.floor(elapsed / 60));
+                    refreshEl.innerHTML = `Mesh synced ${mins}m ago`;
+                } else {
+                    const hours = Math.floor(elapsed / 3600);
+                    refreshEl.innerHTML = `Nodes standby (Last active ${hours}h ago)`;
+                }
+            }
+        }
+
+        // Master Background Prober (Instant UI + Parallel Ping)
+        async function syncCluster() {
+            const recheckBtn = document.getElementById('recheckBtn');
+            recheckBtn.classList.add('rotating');
+
+            const data = await fetchLinkData();
+            if (data) {
+                const isStale = (Date.now() / 1000 - parseInt(data.updated_at || 0)) > 2700; // 45m+ means standby
+                if (isStale) {
+                    // Instantaneous Standby resolution without waiting for network timeouts!
+                    applyClusterState(data, false, false, null, null);
+                    saveToCache(data, false, false, null, null);
+                } else {
+                    // Run both probes concurrently in parallel with fast 1.2s timeout!
+                    const [ocisProbe, vscodeProbe] = await Promise.all([
+                        probeEndpointFast(data.url),
+                        probeEndpointFast(data.vscode_url)
+                    ]);
+                    applyClusterState(data, ocisProbe.alive, vscodeProbe.alive, ocisProbe.latency, vscodeProbe.latency);
+                    saveToCache(data, ocisProbe.alive, vscodeProbe.alive, ocisProbe.latency, vscodeProbe.latency);
+                }
+            } else {
+                setServiceState('owndrive', false, null, null);
+                setServiceState('vscode', false, null, null);
+                isAnyBlackout = true;
+            }
+
+            setTimeout(() => {
+                recheckBtn.classList.remove('rotating');
+            }, 500);
+        }
+
+        function forceRecheck() {
+            syncCluster();
+        }
+
+        // 1. Instantaneous render from cache if available (0ms load!)
+        loadFromCache();
+
+        // 2. Perform silent background sync immediately and every 20 seconds
+        syncCluster();
+        setInterval(syncCluster, 20000);
     </script>
 </body>
 </html>
