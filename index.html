@@ -11,88 +11,64 @@
     <meta name="google-site-verification" content="iuKSqNpRhrCLbG9bHdJ-Ujie6lXFxCI5tkMqmWknN6o" />
 
     <!-- Primary SEO Meta Tags -->
-    <title>Sathwik Server Mesh • Autonomous Cloud & Edge Cluster Portal</title>
-    <meta name="title" content="Sathwik Server Mesh • Autonomous Cloud & Edge Cluster Portal">
-    <meta name="description" content="Official Sathwik Server Mesh Portal - Live Cloudflare Edge cluster, OwnDrive Infinite Scale cloud storage, and multi-tenant VS Code web IDE by sathwik4444 (Sathwik Inteti).">
-    <meta name="keywords" content="sathwik server, sathwik servers, blixor, blixor server, blixor cloud, sathwik blixor, sathwik4444, sathwikinteti, sathwik inteti, sathwik cloud, sathwik server links, SERVER-LINKS, owndrive, vs code web, cloud ide, edge cluster, cloudflare tunnels">
-    <meta name="author" content="sathwik4444 (Sathwik Inteti)">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>Sathwik Server Mesh — Edge Infrastructure Gateway</title>
+    <meta name="title" content="Sathwik Server Mesh — Edge Infrastructure Gateway">
+    <meta name="description" content="Official infrastructure portal for the Sathwik Server Mesh. Private edge-computing environment featuring OwnDrive Infinite Scale storage and sandboxed VS Code developer workspaces.">
+    <meta name="keywords" content="sathwik server, sathwik server mesh, blixor, blixor server, sathwik4444, owndrive, vs code web, cloud ide, edge cluster, arm64 server, cloudflare tunnels">
+    <meta name="author" content="Sathwik Inteti (@sathwik4444)">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sathwik4444.github.io/SERVER-LINKS/">
 
     <!-- Open Graph / Social Cards -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sathwik4444.github.io/SERVER-LINKS/">
-    <meta property="og:title" content="Sathwik Server Mesh • Autonomous Cloud & Edge Cluster Portal">
-    <meta property="og:description" content="Official Sathwik Server Mesh Portal - Live Cloudflare Edge cluster, OwnDrive Cloud, and VS Code IDE by sathwik4444.">
+    <meta property="og:title" content="Sathwik Server Mesh — Edge Infrastructure Gateway">
+    <meta property="og:description" content="Private edge-computing environment featuring OwnDrive storage and sandboxed VS Code developer workspaces.">
     <meta property="og:site_name" content="Sathwik Server Mesh">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Sathwik Server Mesh",
-      "alternateName": ["Sathwik Server", "Blixor Cloud", "Sathwik Server Links"],
-      "url": "https://sathwik4444.github.io/SERVER-LINKS/",
-      "description": "Unified access gateway for private OwnDrive storage and sandboxed VS Code web IDE on the Sathwik dual-phone server cluster.",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Linux, Web",
-      "author": {
-        "@type": "Person",
-        "name": "Sathwik Inteti",
-        "alternateName": ["sathwik4444", "sathwikinteti"],
-        "url": "https://github.com/sathwik4444"
-      }
-    }
-    </script>
-
+    <!-- Fonts: Inter for refined body typography, JetBrains Mono for system metrics -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         /* ==========================================================================
-           COLOR SYSTEM & DESIGN TOKENS
-           - Dark Void: #040714 with subtle cyan & violet ambient glow
-           - OwnDrive Palette: Cerulean / Sapphire (#0284c7 -> #38bdf8)
-           - VS Code Palette: Electric Amethyst (#7c3aed -> #c084fc)
-           - Status Online: Mint Emerald (#10b981)
-           - Status Standby / Reconnecting: Amber Gold (#f59e0b)
-           - Status Offline / Alert: Crimson Coral (#f43f5e)
+           VISUAL SYSTEM — TRUE BLACK DESIGN TOKENS
+           - Canvas: Pure pitch black (#000000)
+           - Elevated Surfaces: Near-black (#080808, #0D0D0D, #121212)
+           - Borders: Extremely subtle charcoal (#1A1A1A, #262626)
+           - Typography: Soft white (#EDEDED), Restrained neutral gray (#808080, #525252)
+           - Accents: Monochromatic silver (#E5E5E5)
+           - Status colors: Restrained, muted tones only for operational status
            ========================================================================== */
         :root {
-            --bg-void: #040714;
-            --bg-card: rgba(11, 18, 36, 0.72);
-            --bg-card-hover: rgba(15, 25, 48, 0.88);
-            --border-card: rgba(255, 255, 255, 0.08);
-            --border-card-hover: rgba(255, 255, 255, 0.18);
+            --bg-canvas: #000000;
+            --surface-1: #080808;
+            --surface-2: #0D0D0D;
+            --surface-elevated: #121212;
             
-            --owndrive-primary: #0284c7;
-            --owndrive-light: #38bdf8;
-            --owndrive-glow: rgba(56, 189, 248, 0.35);
-            --owndrive-subtle: rgba(2, 132, 199, 0.12);
+            --border-subtle: #181818;
+            --border-medium: #222222;
+            --border-active: #333333;
 
-            --vscode-primary: #7c3aed;
-            --vscode-light: #c084fc;
-            --vscode-glow: rgba(168, 85, 247, 0.35);
-            --vscode-subtle: rgba(124, 58, 237, 0.12);
+            --text-primary: #F0F0F0;
+            --text-secondary: #8A8A8A;
+            --text-muted: #555555;
 
-            --status-online: #10b981;
-            --status-online-glow: rgba(16, 185, 129, 0.4);
-            --status-online-bg: rgba(16, 185, 129, 0.12);
+            --accent-primary: #F0F0F0;
+            --accent-silver: #A3A3A3;
 
-            --status-standby: #f59e0b;
-            --status-standby-glow: rgba(245, 158, 11, 0.4);
-            --status-standby-bg: rgba(245, 158, 11, 0.12);
+            --status-online: #22C55E;
+            --status-online-dim: rgba(34, 197, 94, 0.10);
+            --status-degraded: #EAB308;
+            --status-degraded-dim: rgba(234, 179, 8, 0.10);
+            --status-offline: #EF4444;
+            --status-offline-dim: rgba(239, 68, 68, 0.10);
 
-            --status-offline: #f43f5e;
-            --status-offline-glow: rgba(244, 63, 94, 0.4);
-            --status-offline-bg: rgba(244, 63, 94, 0.12);
-
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --text-dim: #64748b;
+            --shadow-subtle: 0 4px 24px -1px rgba(0, 0, 0, 0.85);
+            --shadow-elevated: 0 16px 40px -8px rgba(0, 0, 0, 0.95);
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         * {
@@ -101,137 +77,246 @@
             padding: 0;
         }
 
-        body {
-            background-color: var(--bg-void);
-            color: var(--text-main);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        html, body {
+            background-color: var(--bg-canvas);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
-            position: relative;
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
-        /* High-Efficiency Canvas for Ambient Fluid Glow */
-        #bgCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.75;
-        }
-
-        /* Subtle Cyber Grid */
-        .cyber-grid {
+        /* Pure Black Faint Grid Texture (almost invisible, non-distracting) */
+        .ambient-grid {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
+                linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 64px 64px;
             pointer-events: none;
-            z-index: 1;
-            opacity: 0.8;
+            z-index: 0;
+            opacity: 0.6;
         }
 
-        /* Main Container */
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem 4rem;
+        /* Subtle Light Vignette for natural depth */
+        .ambient-vignette {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.018) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Container Layout */
+        .site-wrapper {
             position: relative;
             z-index: 2;
-            width: 100%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 1.5rem 5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         /* ==========================================================================
-           HUD STATUS BAR (Top Minimal Bar)
+           HEADER COMPONENT
            ========================================================================== */
-        .hud-bar {
+        header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(11, 18, 36, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-card);
-            border-radius: 9999px;
-            padding: 0.6rem 1.25rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.82rem;
-            flex-wrap: wrap;
-            gap: 12px;
+            padding: 1.75rem 0 1.25rem;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 3.5rem;
         }
 
-        .hud-left, .hud-right {
+        .header-brand {
             display: flex;
             align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
         }
 
-        .hud-item {
+        .brand-icon {
+            width: 24px;
+            height: 24px;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-medium);
+            border-radius: 6px;
+            background: var(--surface-1);
+        }
+
+        .brand-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
+
+        .brand-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            padding-left: 8px;
+            border-left: 1px solid var(--border-subtle);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        /* Compact System Availability Indicator */
+        .system-status-indicator {
+            display: inline-flex;
             align-items: center;
             gap: 8px;
+            background: var(--surface-1);
+            border: 1px solid var(--border-subtle);
+            padding: 5px 12px;
+            border-radius: 9999px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            color: var(--text-secondary);
+            user-select: none;
         }
 
-        .hud-dot {
-            width: 8px;
-            height: 8px;
+        .status-dot {
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             background: var(--status-online);
-            box-shadow: 0 0 10px var(--status-online);
-            transition: all 0.3s ease;
+            box-shadow: 0 0 8px var(--status-online);
+            transition: background 0.3s ease;
         }
 
-        .hud-dot.warning {
-            background: var(--status-standby);
-            box-shadow: 0 0 10px var(--status-standby);
+        .status-dot.degraded {
+            background: var(--status-degraded);
+            box-shadow: 0 0 8px var(--status-degraded);
         }
 
-        .hud-dot.danger {
+        .status-dot.offline {
             background: var(--status-offline);
-            box-shadow: 0 0 10px var(--status-offline);
-            animation: pulseAlert 1.2s infinite;
+            box-shadow: 0 0 8px var(--status-offline);
         }
 
-        @keyframes pulseAlert {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(1.3); }
-        }
-
-        .hud-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-main);
-            padding: 4px 12px;
-            border-radius: 9999px;
-            cursor: pointer;
-            display: flex;
+        .header-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            display: inline-flex;
             align-items: center;
             gap: 6px;
+        }
+
+        .header-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* ==========================================================================
+           HERO SECTION
+           ========================================================================== */
+        .hero-section {
+            margin-bottom: 4rem;
+            animation: heroFadeIn 0.8s var(--ease-out) forwards;
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--surface-1);
+            border: 1px solid var(--border-subtle);
+            padding: 4px 10px;
+            border-radius: 6px;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.78rem;
-            transition: all 0.2s ease;
+            font-size: 0.72rem;
+            color: var(--accent-silver);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
         }
 
-        .hud-btn:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.25);
-            transform: translateY(-1px);
+        h1.hero-title {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 600;
+            letter-spacing: -0.035em;
+            line-height: 1.15;
+            color: #FFFFFF;
+            max-width: 800px;
+            margin-bottom: 1.15rem;
         }
 
-        .hud-btn.rotating svg {
+        p.hero-description {
+            font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+            color: var(--text-secondary);
+            max-width: 620px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-control {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.84rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s var(--ease-out);
+            border: 1px solid transparent;
+            font-family: inherit;
+        }
+
+        .btn-control-secondary {
+            background: var(--surface-1);
+            border-color: var(--border-subtle);
+            color: var(--text-secondary);
+        }
+
+        .btn-control-secondary:hover {
+            border-color: var(--border-medium);
+            color: var(--text-primary);
+            background: var(--surface-2);
+        }
+
+        .btn-control-secondary.is-refreshing svg {
             animation: spin 0.7s linear infinite;
         }
 
@@ -240,938 +325,698 @@
         }
 
         /* ==========================================================================
-           HEADER & HERO
+           GATEWAY SERVICES SECTION
            ========================================================================== */
-        .hero {
-            text-align: center;
-            margin-bottom: 2.8rem;
-        }
-
-        .brand-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(56, 189, 248, 0.08);
-            border: 1px solid rgba(56, 189, 248, 0.25);
-            padding: 5px 14px;
-            border-radius: 9999px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: #7dd3fc;
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 1.2rem;
-        }
-
-        h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 2.85rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.15;
-            background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.75rem;
-        }
-
-        .subtitle {
-            font-size: 1.05rem;
             color: var(--text-muted);
-            max-width: 680px;
-            margin: 0 auto;
-            font-weight: 400;
-        }
-
-        /* Section Title Header */
-        .section-header {
+            margin-bottom: 1.25rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 2.5rem 0 1.25rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .section-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #f1f5f9;
-        }
-
-        .section-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.72rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* ==========================================================================
-           SERVICES GRID (Top Section)
-           ========================================================================== */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 1.75rem;
-            margin-bottom: 1rem;
+            gap: 1.5rem;
+            margin-bottom: 4.5rem;
         }
 
+        /* Service Tile Card */
         .service-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: 20px;
-            padding: 2.2rem;
-            position: relative;
-            overflow: hidden;
+            background: var(--surface-1);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1.75rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            backdrop-filter: blur(16px);
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            box-shadow: var(--shadow-subtle);
+            transition: border-color 0.25s var(--ease-out), transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), opacity 0.3s ease;
+            overflow: hidden;
+            animation: cardEnter 0.6s var(--ease-out) backwards;
         }
 
-        .service-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--border-card-hover);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* Top Accent Glow Border */
-        .service-card::before {
+        /* Subtle Pointer-Following Light (Restrained Neutral Highlight Only) */
+        .service-card::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--owndrive-light), transparent);
-            opacity: 0.8;
+            height: 100%;
+            background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.035), transparent 70%);
+            pointer-events: none;
+            opacity: 0;
             transition: opacity 0.3s ease;
         }
 
-        .vscode-card::before {
-            background: linear-gradient(90deg, transparent, var(--vscode-light), transparent);
+        .service-card:hover {
+            border-color: var(--border-medium);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-elevated);
         }
 
-        .card-top-row {
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .card-top {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
-        .card-icon-box {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
+        .card-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: var(--surface-2);
+            border: 1px solid var(--border-subtle);
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.3s ease;
+            color: var(--text-primary);
+            transition: border-color 0.2s ease;
         }
 
-        .icon-owndrive {
-            background: rgba(2, 132, 199, 0.15);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            color: var(--owndrive-light);
-            box-shadow: 0 0 20px var(--owndrive-glow);
+        .service-card:hover .card-icon {
+            border-color: var(--border-medium);
         }
 
-        .icon-vscode {
-            background: rgba(124, 58, 237, 0.15);
-            border: 1px solid rgba(192, 132, 252, 0.3);
-            color: var(--vscode-light);
-            box-shadow: 0 0 20px var(--vscode-glow);
-        }
-
-        .service-card:hover .card-icon-box {
-            transform: scale(1.06);
-        }
-
-        /* Interactive Status Pill */
-        .status-pill {
+        /* Availability Pill */
+        .availability-pill {
             display: inline-flex;
             align-items: center;
-            gap: 7px;
-            padding: 5px 12px;
+            gap: 6px;
+            padding: 4px 10px;
             border-radius: 9999px;
-            font-size: 0.74rem;
-            font-weight: 600;
             font-family: 'JetBrains Mono', monospace;
-            background: var(--status-online-bg);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: #34d399;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            user-select: none;
+            font-size: 0.72rem;
+            background: var(--surface-2);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
         }
 
-        .status-pill:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 12px var(--status-online-glow);
-        }
-
-        .pill-dot {
-            width: 6px;
-            height: 6px;
+        .pill-indicator {
+            width: 5px;
+            height: 5px;
             border-radius: 50%;
-            background: currentColor;
-            box-shadow: 0 0 6px currentColor;
+            background: var(--status-online);
+        }
+
+        .availability-pill.online {
+            color: #22C55E;
+            border-color: rgba(34, 197, 94, 0.25);
+            background: var(--status-online-dim);
+        }
+
+        .availability-pill.online .pill-indicator {
+            background: #22C55E;
+        }
+
+        .availability-pill.degraded {
+            color: #EAB308;
+            border-color: rgba(234, 179, 8, 0.25);
+            background: var(--status-degraded-dim);
+        }
+
+        .availability-pill.degraded .pill-indicator {
+            background: #EAB308;
+        }
+
+        .availability-pill.offline {
+            color: #EF4444;
+            border-color: rgba(239, 68, 68, 0.25);
+            background: var(--status-offline-dim);
+        }
+
+        .availability-pill.offline .pill-indicator {
+            background: #EF4444;
+        }
+
+        .card-content {
+            margin-bottom: 1.75rem;
         }
 
         .card-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.55rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.6rem;
-            letter-spacing: -0.01em;
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
         }
 
-        .card-desc {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            margin-bottom: 1.4rem;
-            line-height: 1.6;
+        .card-description {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin-bottom: 1.25rem;
         }
 
-        .tags-row {
+        .card-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 1.6rem;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 4px 10px;
-            border-radius: 8px;
-            font-size: 0.74rem;
-            font-family: 'JetBrains Mono', monospace;
-            color: #cbd5e1;
-        }
-
-        /* ==========================================================================
-           INLINE DIAGNOSTIC DRAWER (Reveals when offline or upon clicking status)
-           ========================================================================== */
-        .diag-drawer {
-            display: none;
-            background: rgba(4, 7, 20, 0.85);
-            border: 1px dashed rgba(255, 255, 255, 0.15);
-            border-radius: 14px;
-            padding: 1.1rem;
-            margin-bottom: 1.5rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.78rem;
-            animation: drawerSlide 0.3s ease;
-        }
-
-        .diag-drawer.open {
-            display: block;
-        }
-
-        @keyframes drawerSlide {
-            from { opacity: 0; transform: translateY(-8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .diag-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            font-weight: 600;
-            color: #e2e8f0;
-        }
-
-        .diag-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 6px;
-            color: var(--text-muted);
-        }
-
-        .diag-val {
-            color: #f1f5f9;
-        }
-
-        .diag-val.good { color: #34d399; }
-        .diag-val.warn { color: #fbbf24; }
-        .diag-val.bad  { color: #fb7185; }
-
-        .diag-action-bar {
-            display: flex;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .diag-btn {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #e2e8f0;
-            padding: 6px 10px;
-            border-radius: 8px;
-            font-size: 0.74rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             gap: 6px;
-            text-decoration: none;
-            transition: all 0.2s ease;
         }
 
-        .diag-btn:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Action Buttons */
-        .btn-launch {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 13px 20px;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .btn-owndrive {
-            background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
-            color: #040714;
-            box-shadow: 0 6px 20px -4px rgba(56, 189, 248, 0.45);
-        }
-
-        .btn-owndrive:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 28px -4px rgba(56, 189, 248, 0.65);
-        }
-
-        .btn-vscode {
-            background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
-            color: #040714;
-            box-shadow: 0 6px 20px -4px rgba(168, 85, 247, 0.45);
-        }
-
-        .btn-vscode:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 28px -4px rgba(168, 85, 247, 0.65);
-        }
-
-        /* Standby / Offline State Styling on Card */
-        .service-card.is-offline {
-            border-color: rgba(244, 63, 94, 0.35);
-            background: radial-gradient(circle at 50% 0%, rgba(28, 14, 24, 0.85) 0%, rgba(10, 12, 22, 0.95) 100%);
-        }
-
-        .service-card.is-offline::before {
-            background: linear-gradient(90deg, transparent, var(--status-offline), transparent);
-        }
-
-        .service-card.is-offline .btn-launch {
-            background: rgba(244, 63, 94, 0.12);
-            border: 1px solid rgba(244, 63, 94, 0.3);
-            color: #fda4af;
-            box-shadow: none;
-        }
-
-        .service-card.is-offline .btn-launch:hover {
-            background: rgba(244, 63, 94, 0.22);
-            border-color: var(--status-offline);
-        }
-
-        /* ==========================================================================
-           ARCHITECTURE TOPOLOGY SECTION (Minimalist Cyber Architecture)
-           ========================================================================== */
-        .topology-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: 20px;
-            padding: 2.2rem;
-            backdrop-filter: blur(16px);
-            margin-bottom: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .topology-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.6), rgba(168, 85, 247, 0.6), transparent);
-        }
-
-        .topology-grid {
-            display: grid;
-            grid-template-columns: 1fr 140px 1fr;
-            align-items: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        @media (max-width: 860px) {
-            .topology-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-        }
-
-        .node-box {
-            background: rgba(15, 23, 42, 0.65);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 1.5rem;
-            position: relative;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .node-box:hover {
-            border-color: rgba(56, 189, 248, 0.35);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-        }
-
-        .node-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 0.75rem;
-        }
-
-        .node-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .node-badge {
+        .card-tag {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.7rem;
-            padding: 3px 8px;
-            border-radius: 6px;
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: #34d399;
-        }
-
-        .node-meta {
-            font-size: 0.83rem;
             color: var(--text-muted);
-            margin-bottom: 1rem;
-            line-height: 1.5;
+            background: var(--surface-2);
+            border: 1px solid var(--border-subtle);
+            padding: 3px 8px;
+            border-radius: 4px;
         }
 
-        .node-specs {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.76rem;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 10px 12px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .node-spec-row {
+        /* Card Actions */
+        .card-actions {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            color: var(--text-dim);
+            gap: 10px;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-subtle);
         }
 
-        .node-spec-row span:last-child {
-            color: #cbd5e1;
-            font-weight: 500;
-        }
-
-        /* Central Interconnect Bus */
-        .bus-column {
-            display: flex;
-            flex-direction: column;
+        .btn-launch {
+            flex: 1;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            text-align: center;
-        }
-
-        .bus-wire {
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            gap: 8px;
+            padding: 9px 16px;
+            background: #FFFFFF;
+            color: #000000;
+            border: 1px solid #FFFFFF;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s var(--ease-out);
             position: relative;
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
         }
 
-        @media (max-width: 860px) {
-            .bus-wire {
-                width: 2px;
-                height: 40px;
-            }
+        .btn-launch:hover {
+            background: #E5E5E5;
+            border-color: #E5E5E5;
+            transform: translateY(-1px);
         }
 
-        .bus-chip {
-            background: rgba(30, 41, 59, 0.85);
-            border: 1px solid rgba(129, 140, 248, 0.4);
-            border-radius: 12px;
-            padding: 10px 14px;
-            box-shadow: 0 0 20px rgba(129, 140, 248, 0.25);
+        .btn-launch:active {
+            transform: translateY(0);
+        }
+
+        .btn-launch:focus-visible {
+            outline: 2px solid #FFFFFF;
+            outline-offset: 2px;
+        }
+
+        .btn-fallback {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9px 12px;
+            background: var(--surface-2);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.78rem;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: #c7d2fe;
             cursor: pointer;
             transition: all 0.2s ease;
         }
 
-        .bus-chip:hover {
-            transform: scale(1.05);
-            border-color: #a5b4fc;
+        .btn-fallback:hover {
+            border-color: var(--border-medium);
+            color: var(--text-primary);
         }
 
-        .bus-chip-title {
-            font-weight: 700;
-            color: #ffffff;
-            font-size: 0.8rem;
-            margin-bottom: 2px;
+        .btn-fallback:focus-visible {
+            outline: 2px solid var(--text-secondary);
+            outline-offset: 2px;
         }
 
-        /* Footer */
-        .footer {
-            margin-top: 3.5rem;
+        /* Service Unavailable / Graceful Offline State */
+        .service-card.is-unavailable {
+            opacity: 0.72;
+        }
+
+        .service-card.is-unavailable .card-icon {
+            filter: grayscale(1);
+            opacity: 0.6;
+        }
+
+        .service-card.is-unavailable .btn-launch {
+            background: var(--surface-2);
+            border-color: var(--border-subtle);
+            color: var(--text-muted);
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* ==========================================================================
+           ARCHITECTURE SPECIFICATIONS SECTION
+           ========================================================================== */
+        .architecture-section {
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 3.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 860px) {
+            .architecture-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .spec-item {
+            background: var(--surface-1);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 1.35rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .spec-item:hover {
+            border-color: var(--border-medium);
+        }
+
+        .spec-header {
             display: flex;
             align-items: center;
-            gap: 14px;
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            font-family: 'JetBrains Mono', monospace;
-            flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
+            margin-bottom: 0.65rem;
         }
 
-        .footer-dot {
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background: #334155;
+        .spec-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .spec-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            border: 1px solid var(--border-subtle);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .spec-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .spec-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .spec-list li span:last-child {
+            color: var(--text-secondary);
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        footer {
+            margin-top: auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
         }
 
         .footer-link {
-            color: var(--text-dim);
+            color: var(--text-muted);
             text-decoration: none;
             transition: color 0.2s ease;
         }
 
         .footer-link:hover {
-            color: #38bdf8;
+            color: var(--text-secondary);
         }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .service-card { padding: 1.7rem; }
-            .topology-card { padding: 1.5rem; }
-            .hud-bar { justify-content: center; border-radius: 16px; }
+        /* Accessibility: Prefers reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .hero-section, .service-card {
+                animation: none !important;
+            }
+        }
+
+        /* Responsive Mobile Layout */
+        @media (max-width: 680px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+                margin-bottom: 2.5rem;
+            }
+            .header-nav {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            h1.hero-title {
+                font-size: 2rem;
+            }
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
 <body>
-    <canvas id="bgCanvas"></canvas>
-    <div class="cyber-grid"></div>
+    <div class="ambient-grid"></div>
+    <div class="ambient-vignette"></div>
 
-    <div class="container">
-        <!-- Top Minimal Status Bar -->
-        <div class="hud-bar">
-            <div class="hud-left">
-                <div class="hud-item">
-                    <span class="hud-dot" id="cluster-hud-dot"></span>
-                    <span id="cluster-hud-text">CLUSTER: INITIALIZING</span>
+    <div class="site-wrapper">
+        <!-- Minimal Official Header -->
+        <header>
+            <a href="#" class="header-brand" aria-label="Sathwik Server Mesh Home">
+                <div class="brand-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                        <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                        <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                        <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                    </svg>
                 </div>
-                <div class="hud-item">
-                    <span style="color: var(--text-dim);">LATENCY:</span>
-                    <span id="cluster-ping" style="color: #38bdf8;">-- ms</span>
+                <span class="brand-title">Sathwik Server Mesh</span>
+                <span class="brand-meta">Edge Ingress</span>
+            </a>
+
+            <div class="header-nav">
+                <div class="system-status-indicator" id="global-status-pill" title="Aggregate Cluster Status">
+                    <span class="status-dot" id="global-status-dot"></span>
+                    <span id="global-status-text">Checking Cluster...</span>
                 </div>
-            </div>
-            <div class="hud-right">
-                <span id="refresh-time" style="color: var(--text-dim);">Checking Mesh...</span>
-                <button class="hud-btn" id="recheckBtn" onclick="forceRecheck()">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-                    <span>Test Connectivity</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Hero Header -->
-        <div class="hero">
-            <div class="brand-badge">
-                <span class="pill-dot" style="background:#38bdf8;"></span>
-                Autonomous Server Cluster
-            </div>
-            <h1>Sathwik Server Mesh</h1>
-            <p class="subtitle">Unified edge gateway powering private OwnDrive storage and sandboxed VS Code developer environments.</p>
-        </div>
-
-        <!-- Section 1: Edge Cloud Services -->
-        <div class="section-header">
-            <div class="section-title">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                Active Cloud Gateways
-            </div>
-            <div class="section-tag">Public Edge Ingress</div>
-        </div>
-
-        <div class="services-grid">
-            <!-- 📁 OwnDrive Card -->
-            <div class="service-card" id="card-owndrive" data-service="owndrive">
-                <div>
-                    <div class="card-top-row">
-                        <div class="card-icon-box icon-owndrive">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-                        </div>
-                        <div class="status-pill" id="owndrive-pill" onclick="toggleDrawer('owndrive')">
-                            <span class="pill-dot"></span>
-                            <span id="owndrive-pill-text">Checking...</span>
-                        </div>
-                    </div>
-
-                    <div class="card-title">OwnDrive Cloud Storage</div>
-                    <div class="card-desc">High-performance private cloud storage powered by ownCloud Infinite Scale. Supports multi-device sync, encrypted WebDAV, and direct streaming.</div>
-
-                    <div class="tags-row">
-                        <span class="tag">ownCloud Infinite Scale</span>
-                        <span class="tag">WebDAV</span>
-                        <span class="tag">Zero-Knowledge</span>
-                    </div>
-
-                    <!-- Inline Diagnostic Drawer -->
-                    <div class="diag-drawer" id="owndrive-drawer">
-                        <div class="diag-header">
-                            <span>DIAGNOSTIC TELEMETRY</span>
-                            <span id="owndrive-diag-status" class="diag-val good">PROBING</span>
-                        </div>
-                        <div class="diag-row">
-                            <span>Edge Ingress:</span>
-                            <span id="owndrive-diag-url" class="diag-val">Resolving...</span>
-                        </div>
-                        <div class="diag-row">
-                            <span>Round-Trip Ping:</span>
-                            <span id="owndrive-diag-ping" class="diag-val">--</span>
-                        </div>
-                        <div class="diag-row">
-                            <span>Watchdog Daemon:</span>
-                            <span class="diag-val good">Active (Server 2)</span>
-                        </div>
-                        <div class="diag-action-bar">
-                            <button class="diag-btn" onclick="testSingleService('owndrive')">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-                                Retest Node
-                            </button>
-                            <a class="diag-btn" href="http://100.120.154.90:8081" target="_blank" rel="noopener noreferrer" title="Direct Tailscale Mesh Access">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                                Tailscale LAN (:8081)
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <a id="ocis-btn" href="#" class="btn-launch btn-owndrive" target="_blank" rel="noopener noreferrer">
-                    <span id="ocis-btn-text">Launch OwnDrive</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <a href="https://github.com/sathwik4444/SERVER-LINKS" class="header-link" target="_blank" rel="noopener noreferrer">
+                    <span>GitHub</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                 </a>
             </div>
+        </header>
 
-            <!-- 💻 VS Code Card -->
-            <div class="service-card vscode-card" id="card-vscode" data-service="vscode">
-                <div>
-                    <div class="card-top-row">
-                        <div class="card-icon-box icon-vscode">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                        </div>
-                        <div class="status-pill" id="vscode-pill" onclick="toggleDrawer('vscode')">
-                            <span class="pill-dot"></span>
-                            <span id="vscode-pill-text">Checking...</span>
-                        </div>
-                    </div>
+        <!-- Concise Confident Hero -->
+        <main>
+            <section class="hero-section">
+                <div class="hero-badge">
+                    <span>NODE 1 CLUSTER</span>
+                    <span>•</span>
+                    <span id="mesh-uptime-indicator">ARM64 CLUSTER</span>
+                </div>
+                <h1 class="hero-title">Private Edge Infrastructure Gateway</h1>
+                <p class="hero-description">
+                    Dedicated, hardware-isolated compute environment providing high-throughput OwnDrive cloud storage and sandboxed multi-tenant VS Code development workspaces.
+                </p>
+                <div class="hero-controls">
+                    <button class="btn-control btn-control-secondary" id="recheck-btn" onclick="forceRecheck()" aria-label="Validate Infrastructure Tunnels">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 4 23 10 17 10"></polyline>
+                            <polyline points="1 20 1 14 7 14"></polyline>
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                        </svg>
+                        <span id="recheck-btn-text">Test Availability</span>
+                    </button>
+                    <a href="#architecture" class="btn-control btn-control-secondary">Architecture Specs</a>
+                </div>
+            </section>
 
-                    <div class="card-title">VS Code Cloud IDE</div>
-                    <div class="card-desc">Full browser-based development environment with integrated Linux terminal, isolated workspace containers, and persistent developer tooling.</div>
+            <!-- Gateway Services Section -->
+            <section aria-labelledby="services-heading">
+                <div class="section-label" id="services-heading">
+                    <span>Gateway Services</span>
+                    <span id="last-sync-time">Synchronizing...</span>
+                </div>
 
-                    <div class="tags-row">
-                        <span class="tag">VS Code Server</span>
-                        <span class="tag">Linux Terminal</span>
-                        <span class="tag">Multi-Tenant</span>
-                    </div>
+                <div class="services-grid">
+                    <!-- Service 1: OwnDrive -->
+                    <article class="service-card" id="card-owndrive">
+                        <div>
+                            <div class="card-top">
+                                <div class="card-icon" aria-hidden="true">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="availability-pill" id="owndrive-pill">
+                                    <span class="pill-indicator"></span>
+                                    <span id="owndrive-pill-text">Resolving</span>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="card-title">OwnDrive Infinite Scale</h2>
+                                <p class="card-description">
+                                    Enterprise private cloud storage platform with zero-knowledge encrypted WebDAV syncing, high-speed streaming, and automated volume journaling.
+                                </p>
+                                <div class="card-tags">
+                                    <span class="card-tag">ownCloud oCIS</span>
+                                    <span class="card-tag">WebDAV</span>
+                                    <span class="card-tag">ext4 Mount</span>
+                                </div>
+                            </div>
+                        </div>
 
-                    <!-- Inline Diagnostic Drawer -->
-                    <div class="diag-drawer" id="vscode-drawer">
-                        <div class="diag-header">
-                            <span>DIAGNOSTIC TELEMETRY</span>
-                            <span id="vscode-diag-status" class="diag-val good">PROBING</span>
-                        </div>
-                        <div class="diag-row">
-                            <span>Edge Ingress:</span>
-                            <span id="vscode-diag-url" class="diag-val">Resolving...</span>
-                        </div>
-                        <div class="diag-row">
-                            <span>Round-Trip Ping:</span>
-                            <span id="vscode-diag-ping" class="diag-val">--</span>
-                        </div>
-                        <div class="diag-row">
-                            <span>Authentication:</span>
-                            <span class="diag-val">WebDAV / OwnDrive Key</span>
-                        </div>
-                        <div class="diag-action-bar">
-                            <button class="diag-btn" onclick="testSingleService('vscode')">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-                                Retest Node
-                            </button>
-                            <a class="diag-btn" href="http://100.120.154.90:8080" target="_blank" rel="noopener noreferrer" title="Direct Tailscale Mesh Access">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                                Tailscale LAN (:8080)
+                        <div class="card-actions">
+                            <a id="owndrive-launch" href="#" class="btn-launch" target="_blank" rel="noopener noreferrer">
+                                <span id="owndrive-launch-text">Launch OwnDrive</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </a>
+                            <a href="http://100.120.154.90:8081" class="btn-fallback" target="_blank" rel="noopener noreferrer" title="Direct Tailscale Mesh Access (:8081)">
+                                Tailscale
                             </a>
                         </div>
-                    </div>
-                </div>
+                    </article>
 
-                <a id="vscode-btn" href="#" class="btn-launch btn-vscode" target="_blank" rel="noopener noreferrer">
-                    <span id="vscode-btn-text">Launch Cloud IDE</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-            </div>
-        </div>
-
-        <!-- Section 2: Minimalist Architecture Topology -->
-        <div class="section-header">
-            <div class="section-title">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
-                Cluster Topology & Hardware Mesh
-            </div>
-            <div class="section-tag">Zero-Trust Physical Architecture</div>
-        </div>
-
-        <div class="topology-card">
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">
-                Dual-Android autonomous computing fabric synchronized through hardware power sequencing and zero-trust WireGuard mesh.
-            </p>
-
-            <div class="topology-grid">
-                <!-- Node 0: Lenovo A6000 -->
-                <div class="node-box" onclick="toggleDrawer('owndrive')">
-                    <div class="node-header">
-                        <div class="node-title">
-                            <span style="color:#38bdf8;">⚡</span> Node 0 (Slave)
+                    <!-- Service 2: VS Code -->
+                    <article class="service-card" id="card-vscode">
+                        <div>
+                            <div class="card-top">
+                                <div class="card-icon" aria-hidden="true">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="availability-pill" id="vscode-pill">
+                                    <span class="pill-indicator"></span>
+                                    <span id="vscode-pill-text">Resolving</span>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="card-title">VS Code Workspaces</h2>
+                                <p class="card-description">
+                                    Browser-based development environment with sandboxed Linux terminal access, persistent developer tooling, and integrated WebDAV workspace mounting.
+                                </p>
+                                <div class="card-tags">
+                                    <span class="card-tag">code-server</span>
+                                    <span class="card-tag">Multi-Tenant</span>
+                                    <span class="card-tag">Port 8080</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="node-badge">AUX GATEWAY</span>
-                    </div>
-                    <div class="node-meta">Lenovo Kraft-A6000 • Qualcomm Snapdragon 410 (64-bit)</div>
-                    <div class="node-specs">
-                        <div class="node-spec-row"><span>OS:</span><span>Android + Alpine Chroot</span></div>
-                        <div class="node-spec-row"><span>Mesh IP:</span><span>100.102.245.39</span></div>
-                        <div class="node-spec-row"><span>Roles:</span><span>AdGuard DNS • SSH Honeypot</span></div>
-                        <div class="node-spec-row"><span>Bus Role:</span><span>USB ADB / OTG Slave</span></div>
-                    </div>
-                </div>
 
-                <!-- Hardware Interconnect Bus -->
-                <div class="bus-column">
-                    <div class="bus-wire"></div>
-                    <div class="bus-chip" title="Hardware Controller & Intruder Defense">
-                        <div class="bus-chip-title">BLIXOR ESP32-S3</div>
-                        <div>8-Relay Matrix</div>
-                        <div style="font-size: 0.68rem; color: #94a3b8; margin-top: 2px;">Powered Y-Cable (+5V Isolated)</div>
-                    </div>
-                    <div class="bus-wire"></div>
-                </div>
-
-                <!-- Node 1: Xiaomi Redmi Note 3 -->
-                <div class="node-box" onclick="toggleDrawer('vscode')">
-                    <div class="node-header">
-                        <div class="node-title">
-                            <span style="color:#c084fc;">🚀</span> Node 1 (Master)
+                        <div class="card-actions">
+                            <a id="vscode-launch" href="#" class="btn-launch" target="_blank" rel="noopener noreferrer">
+                                <span id="vscode-launch-text">Launch Workspace</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </a>
+                            <a href="http://100.120.154.90:8080" class="btn-fallback" target="_blank" rel="noopener noreferrer" title="Direct Tailscale Mesh Access (:8080)">
+                                Tailscale
+                            </a>
                         </div>
-                        <span class="node-badge" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">CORE COMPUTE</span>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Minimalist Architecture Section -->
+            <section class="architecture-section" id="architecture" aria-labelledby="arch-heading">
+                <div class="section-label" id="arch-heading">
+                    <span>Infrastructure Architecture</span>
+                    <span>Zero-Trust ARM64 Fabric</span>
+                </div>
+
+                <div class="architecture-grid">
+                    <!-- Node 0 -->
+                    <div class="spec-item">
+                        <div class="spec-header">
+                            <span class="spec-title">Node 0 — Aux Gateway</span>
+                            <span class="spec-badge">SLAVE</span>
+                        </div>
+                        <p class="spec-desc">Lenovo A6000 running Alpine Linux container. Operates network honeypot and internal AdGuard DNS filtration.</p>
+                        <ul class="spec-list">
+                            <li><span>Silicon</span><span>Snapdragon 410</span></li>
+                            <li><span>Mesh IP</span><span>100.102.245.39</span></li>
+                            <li><span>Kernel</span><span>Linux 3.10.108</span></li>
+                        </ul>
                     </div>
-                    <div class="node-meta">Redmi Note 3 • Qualcomm Snapdragon 650 (Hexa-core)</div>
-                    <div class="node-specs">
-                        <div class="node-spec-row"><span>OS:</span><span>Native Debian 12 Chroot</span></div>
-                        <div class="node-spec-row"><span>Mesh IP:</span><span>100.120.154.90</span></div>
-                        <div class="node-spec-row"><span>Storage:</span><span>MicroSD ext4 (/mnt/sdcard)</span></div>
-                        <div class="node-spec-row"><span>Daemons:</span><span>oCIS • VS Code • Watchdog</span></div>
+
+                    <!-- Sequencer -->
+                    <div class="spec-item">
+                        <div class="spec-header">
+                            <span class="spec-title">Hardware Sequencer</span>
+                            <span class="spec-badge">CONTROLLER</span>
+                        </div>
+                        <p class="spec-desc">BLIXOR ESP32-S3 microcontroller managing isolated node watchdog power cycles via powered USB OTG Y-cable.</p>
+                        <ul class="spec-list">
+                            <li><span>Security</span><span>4-Layer Zero-Trust</span></li>
+                            <li><span>Relays</span><span>8 Isolated Channels</span></li>
+                            <li><span>Diurnal</span><span>24h Solar Curve (IST)</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Node 1 -->
+                    <div class="spec-item">
+                        <div class="spec-header">
+                            <span class="spec-title">Node 1 — Core Compute</span>
+                            <span class="spec-badge">MASTER</span>
+                        </div>
+                        <p class="spec-desc">Redmi Note 3 running native Debian 12 chroot. Hosts ownCloud oCIS, multi-tenant VS Code, and Cloudflare tunnels.</p>
+                        <ul class="spec-list">
+                            <li><span>Silicon</span><span>Snapdragon 650 (6C)</span></li>
+                            <li><span>Mesh IP</span><span>100.120.154.90</span></li>
+                            <li><span>Storage</span><span>8GB MicroSD (ext4)</span></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
 
-        <!-- Footer -->
-        <div class="footer">
-            <span>Sathwik Server Mesh</span>
-            <span class="footer-dot"></span>
-            <a href="https://github.com/sathwik4444" class="footer-link" target="_blank" rel="noopener noreferrer">@sathwik4444</a>
-            <span class="footer-dot"></span>
-            <span>Cloudflare Edge Tunneled</span>
-            <span class="footer-dot"></span>
-            <span id="footer-sync-time">Cluster Active</span>
-        </div>
+        <!-- Minimalist Restrained Footer -->
+        <footer>
+            <div class="footer-left">
+                <span>Sathwik Server Mesh</span>
+                <span>•</span>
+                <span>Self-Hosted Edge Fabric</span>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/sathwik4444" class="footer-link" target="_blank" rel="noopener noreferrer">@sathwik4444</a>
+                <span>•</span>
+                <span id="footer-latency-badge">Latency: --</span>
+            </div>
+        </footer>
     </div>
 
-    <!-- Client Logic & Fluid Particle Animation -->
+    <!-- Script: Subtle Card Highlight & Real Telemetry State Engine -->
     <script>
         // ==========================================================================
-        // 🌌 OPTIMIZED HIGH-PERFORMANCE AMBIENT AURORA CANVAS ENGINE (60 FPS)
+        // SUBTLE POINTER HIGHLIGHT (Restricted neutral light on cards)
         // ==========================================================================
-        const canvas = document.getElementById('bgCanvas');
-        const ctx = canvas.getContext('2d');
-        let width = canvas.width = window.innerWidth;
-        let height = canvas.height = window.innerHeight;
-        let isTabActive = true;
-
-        document.addEventListener('visibilitychange', () => {
-            isTabActive = !document.hidden;
+        const cards = document.querySelectorAll('.service-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            }, { passive: true });
         });
 
-        window.addEventListener('resize', () => {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }, { passive: true });
-
-        // Cosmic Ribbon Particles
-        const particles = [];
-        const PARTICLE_COUNT = Math.min(45, Math.floor(width / 30));
-
-        for (let i = 0; i < PARTICLE_COUNT; i++) {
-            particles.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.4,
-                vy: (Math.random() - 0.5) * 0.4,
-                radius: Math.random() * 2 + 0.8,
-                alpha: Math.random() * 0.5 + 0.2,
-                color: Math.random() > 0.5 ? '56, 189, 248' : '168, 85, 247'
-            });
-        }
-
-        let time = 0;
-        function animateCanvas() {
-            if (!isTabActive) {
-                requestAnimationFrame(animateCanvas);
-                return;
-            }
-
-            time += 0.005;
-            ctx.clearRect(0, 0, width, height);
-
-            // Ambient Energy Gradients
-            const g1 = ctx.createRadialGradient(
-                width * 0.3 + Math.sin(time) * 100, 
-                height * 0.25 + Math.cos(time) * 80, 
-                10, 
-                width * 0.3, 
-                height * 0.25, 
-                width * 0.55
-            );
-            g1.addColorStop(0, 'rgba(2, 132, 199, 0.12)');
-            g1.addColorStop(1, 'transparent');
-            ctx.fillStyle = g1;
-            ctx.fillRect(0, 0, width, height);
-
-            const g2 = ctx.createRadialGradient(
-                width * 0.7 + Math.cos(time * 0.8) * 120, 
-                height * 0.65 + Math.sin(time * 0.8) * 90, 
-                10, 
-                width * 0.7, 
-                height * 0.65, 
-                width * 0.5
-            );
-            g2.addColorStop(0, 'rgba(124, 58, 237, 0.10)');
-            g2.addColorStop(1, 'transparent');
-            ctx.fillStyle = g2;
-            ctx.fillRect(0, 0, width, height);
-
-            // Smooth floating cosmic stardust
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                p.x += p.vx;
-                p.y += p.vy;
-
-                if (p.x < 0) p.x = width;
-                if (p.x > width) p.x = 0;
-                if (p.y < 0) p.y = height;
-                if (p.y > height) p.y = 0;
-
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
-                ctx.fill();
-            }
-
-            requestAnimationFrame(animateCanvas);
-        }
-        requestAnimationFrame(animateCanvas);
-
         // ==========================================================================
-        // ⚡ REAL-TIME CLUSTER & LIVE PROBE STATE MACHINE
+        // REAL SERVICE STATE ENGINE (Preserves real links, no fake data)
         // ==========================================================================
-        let liveClusterData = null;
+        let clusterCache = null;
 
-        function loadFromCache() {
+        function loadCache() {
             try {
-                const cached = localStorage.getItem('sathwik_mesh_cache');
-                if (cached) {
-                    const parsed = JSON.parse(cached);
-                    liveClusterData = parsed;
-                    applyClusterState(parsed, false);
+                const stored = localStorage.getItem('sathwik_mesh_manifest');
+                if (stored) {
+                    clusterCache = JSON.parse(stored);
+                    applyState(clusterCache, false);
                 }
             } catch (e) {}
         }
 
-        function saveToCache(data) {
+        function saveCache(data) {
             try {
-                localStorage.setItem('sathwik_mesh_cache', JSON.stringify(data));
+                localStorage.setItem('sathwik_mesh_manifest', JSON.stringify(data));
             } catch (e) {}
         }
 
-        function toggleDrawer(service) {
-            const drawer = document.getElementById(`${service}-drawer`);
-            if (drawer) {
-                drawer.classList.toggle('open');
-            }
-        }
-
-        // Multi-tier link.json fetch
-        async function fetchLinkData() {
-            const timestamp = Date.now();
+        async function fetchLinkManifest() {
+            const t = Date.now();
             try {
-                const res = await fetch(`https://raw.githubusercontent.com/sathwik4444/SERVER-LINKS/main/link.json?t=${timestamp}`, { cache: 'no-store' });
+                const res = await fetch(`https://raw.githubusercontent.com/sathwik4444/SERVER-LINKS/main/link.json?t=${t}`, { cache: 'no-store' });
                 if (res.ok) return await res.json();
             } catch (e) {}
 
             try {
-                const res = await fetch(`https://api.github.com/repos/sathwik4444/SERVER-LINKS/contents/link.json?t=${timestamp}`, {
+                const res = await fetch(`https://api.github.com/repos/sathwik4444/SERVER-LINKS/contents/link.json?t=${t}`, {
                     headers: { 'Accept': 'application/vnd.github.v3.raw' },
                     cache: 'no-store'
                 });
@@ -1180,209 +1025,150 @@
             return null;
         }
 
-        // Non-blocking latency probe with AbortController
-        async function probeEndpointFast(url) {
+        async function testEndpointReachability(url) {
             if (!url || !url.startsWith('http')) return { alive: false, latency: null };
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 2500);
+            const timeout = setTimeout(() => controller.abort(), 3000);
             const start = performance.now();
             try {
                 await fetch(url, { mode: 'no-cors', cache: 'no-store', signal: controller.signal });
-                clearTimeout(timeoutId);
-                return { alive: true, latency: Math.round(performance.now() - start) };
-            } catch (err) {
-                clearTimeout(timeoutId);
+                clearTimeout(timeout);
+                const latency = Math.round(performance.now() - start);
+                return { alive: true, latency };
+            } catch (e) {
+                clearTimeout(timeout);
                 return { alive: false, latency: null };
             }
         }
 
-        function setServiceUI(service, isAlive, url, latency) {
-            const card = document.getElementById(`card-${service}`);
-            const pill = document.getElementById(`${service}-pill`);
-            const pillText = document.getElementById(`${service}-pill-text`);
-            const btn = document.getElementById(service === 'owndrive' ? 'ocis-btn' : 'vscode-btn');
-            const btnText = document.getElementById(service === 'owndrive' ? 'ocis-btn-text' : 'vscode-btn-text');
-            const drawer = document.getElementById(`${service}-drawer`);
-            
-            const diagStatus = document.getElementById(`${service}-diag-status`);
-            const diagUrl = document.getElementById(`${service}-diag-url`);
-            const diagPing = document.getElementById(`${service}-diag-ping`);
+        function updateServiceUI(serviceId, isOnline, url, latency) {
+            const card = document.getElementById(`card-${serviceId}`);
+            const pill = document.getElementById(`${serviceId}-pill`);
+            const pillText = document.getElementById(`${serviceId}-pill-text`);
+            const btn = document.getElementById(`${serviceId}-launch`);
+            const btnText = document.getElementById(`${serviceId}-launch-text`);
+
+            const defaultTitle = (serviceId === 'owndrive') ? 'Launch OwnDrive' : 'Launch Workspace';
 
             if (url && url.startsWith('http')) {
-                // Short domain formatting for diagnostics
-                try {
-                    const uObj = new URL(url);
-                    if (diagUrl) diagUrl.innerText = uObj.hostname;
-                } catch(e) {
-                    if (diagUrl) diagUrl.innerText = url;
-                }
+                btn.href = url;
+                btn.target = '_blank';
+                btn.rel = 'noopener noreferrer';
 
-                if (isAlive) {
-                    card.classList.remove('is-offline');
-                    pill.style.background = 'var(--status-online-bg)';
-                    pill.style.borderColor = 'rgba(16, 185, 129, 0.4)';
-                    pill.style.color = '#34d399';
+                if (isOnline) {
+                    card.classList.remove('is-unavailable');
+                    pill.className = 'availability-pill online';
                     pillText.innerText = latency ? `ONLINE • ${latency}ms` : 'ONLINE';
-                    btn.href = url;
-                    btnText.innerText = (service === 'owndrive') ? 'Launch OwnDrive' : 'Launch Cloud IDE';
-                    
-                    if (diagStatus) {
-                        diagStatus.innerText = 'ONLINE';
-                        diagStatus.className = 'diag-val good';
-                    }
-                    if (diagPing) diagPing.innerText = latency ? `${latency} ms` : 'Active';
+                    btnText.innerText = defaultTitle;
                 } else {
-                    // Endpoint unreachable or tunnel down
-                    card.classList.add('is-offline');
-                    pill.style.background = 'var(--status-offline-bg)';
-                    pill.style.borderColor = 'rgba(244, 63, 94, 0.45)';
-                    pill.style.color = '#fb7185';
-                    pillText.innerText = 'STANDBY / RETRY';
-                    btn.href = url; // Still allow user click to force test
-                    btnText.innerText = 'Launch (Offline Check)';
-
-                    // Automatically reveal diagnostic drawer when down!
-                    if (drawer) drawer.classList.add('open');
-
-                    if (diagStatus) {
-                        diagStatus.innerText = 'UNREACHABLE';
-                        diagStatus.className = 'diag-val bad';
-                    }
-                    if (diagPing) diagPing.innerText = 'Timeout / 502';
+                    // Graceful unavailable state
+                    card.classList.add('is-unavailable');
+                    pill.className = 'availability-pill offline';
+                    pillText.innerText = 'UNAVAILABLE';
+                    btnText.innerText = 'Service Standby';
                 }
             } else {
-                // No link available yet
-                card.classList.add('is-offline');
-                pill.style.background = 'var(--status-offline-bg)';
-                pill.style.borderColor = 'rgba(244, 63, 94, 0.45)';
-                pill.style.color = '#fb7185';
-                pillText.innerText = 'RESOLVING';
-                btn.href = 'javascript:void(0);';
+                card.classList.add('is-unavailable');
+                pill.className = 'availability-pill offline';
+                pillText.innerText = 'OFFLINE';
+                btn.href = '#';
                 btnText.innerText = 'Resolving Tunnel...';
-                
-                if (drawer) drawer.classList.add('open');
-                if (diagStatus) {
-                    diagStatus.innerText = 'NO TUNNEL';
-                    diagStatus.className = 'diag-val bad';
-                }
-                if (diagUrl) diagUrl.innerText = 'None';
             }
         }
 
-        function applyClusterState(data, probed, ocisAlive, vscodeAlive, ocisLat, vscodeLat) {
+        function applyState(data, probed, ocisAlive, vscodeAlive, ocisLat, vscodeLat) {
             if (!data) return;
 
             const hasOcis = !!(data.url && data.url.startsWith('http'));
             const hasVscode = !!(data.vscode_url && data.vscode_url.startsWith('http'));
 
             if (!probed) {
-                // Initial optimistic paint from cache / link.json
-                setServiceUI('owndrive', hasOcis, data.url, null);
-                setServiceUI('vscode', hasVscode, data.vscode_url, null);
+                updateServiceUI('owndrive', hasOcis, data.url, null);
+                updateServiceUI('vscode', hasVscode, data.vscode_url, null);
             } else {
-                // Real probed state
-                setServiceUI('owndrive', ocisAlive, data.url, ocisLat);
-                setServiceUI('vscode', vscodeAlive, data.vscode_url, vscodeLat);
+                updateServiceUI('owndrive', ocisAlive, data.url, ocisLat);
+                updateServiceUI('vscode', vscodeAlive, data.vscode_url, vscodeLat);
             }
 
-            const hudDot = document.getElementById('cluster-hud-dot');
-            const hudText = document.getElementById('cluster-hud-text');
-            const pingEl = document.getElementById('cluster-ping');
-            const refreshEl = document.getElementById('refresh-time');
-            const footerSync = document.getElementById('footer-sync-time');
+            // Global HUD Indicator
+            const globalDot = document.getElementById('global-status-dot');
+            const globalText = document.getElementById('global-status-text');
+            const latencyBadge = document.getElementById('footer-latency-badge');
+            const syncTime = document.getElementById('last-sync-time');
 
-            const allAlive = probed ? (ocisAlive && vscodeAlive) : (hasOcis && hasVscode);
-            const partial = probed ? (ocisAlive || vscodeAlive) : (hasOcis || hasVscode);
+            const allHealthy = probed ? (ocisAlive && vscodeAlive) : (hasOcis && hasVscode);
+            const partiallyHealthy = probed ? (ocisAlive || vscodeAlive) : (hasOcis || hasVscode);
 
-            if (allAlive) {
-                hudDot.className = 'hud-dot';
-                hudText.innerText = 'CLUSTER: ALL ONLINE';
-            } else if (partial) {
-                hudDot.className = 'hud-dot warning';
-                hudText.innerText = 'CLUSTER: PARTIAL ONLINE';
+            if (allHealthy) {
+                globalDot.className = 'status-dot';
+                globalText.innerText = 'All Systems Operational';
+            } else if (partiallyHealthy) {
+                globalDot.className = 'status-dot degraded';
+                globalText.innerText = 'Partial Service Availability';
             } else {
-                hudDot.className = 'hud-dot danger';
-                hudText.innerText = 'CLUSTER: STANDBY';
+                globalDot.className = 'status-dot offline';
+                globalText.innerText = 'Infrastructure Standby';
             }
 
             const lats = [ocisLat, vscodeLat].filter(x => x !== null && x !== undefined);
             if (lats.length > 0) {
                 const avg = Math.round(lats.reduce((a, b) => a + b, 0) / lats.length);
-                pingEl.innerText = `${avg} ms`;
-                pingEl.style.color = '#34d399';
-            } else if (partial) {
-                pingEl.innerText = 'Active';
-                pingEl.style.color = '#34d399';
+                latencyBadge.innerText = `Latency: ${avg}ms`;
+            } else if (partiallyHealthy) {
+                latencyBadge.innerText = 'Edge Connected';
             } else {
-                pingEl.innerText = 'Offline';
-                pingEl.style.color = '#fb7185';
+                latencyBadge.innerText = 'Standby Mode';
             }
 
             if (data.updated_at) {
-                const elapsed = Math.floor(Date.now() / 1000) - parseInt(data.updated_at);
-                if (elapsed < 3600) {
-                    const mins = Math.max(1, Math.floor(elapsed / 60));
-                    refreshEl.innerText = `Synced ${mins}m ago`;
-                    footerSync.innerText = `Tunnel updated ${mins}m ago`;
+                const elapsedSec = Math.floor(Date.now() / 1000) - parseInt(data.updated_at);
+                if (elapsedSec < 3600) {
+                    const mins = Math.max(1, Math.floor(elapsedSec / 60));
+                    syncTime.innerText = `Synced ${mins}m ago`;
                 } else {
-                    refreshEl.innerText = 'Mesh Active';
-                    footerSync.innerText = 'Node 2 Master Online';
+                    syncTime.innerText = 'Tunnel Active';
                 }
+            } else {
+                syncTime.innerText = 'Edge Synced';
             }
         }
 
-        async function syncCluster() {
-            const recheckBtn = document.getElementById('recheckBtn');
-            if (recheckBtn) recheckBtn.classList.add('rotating');
+        async function synchronizeMesh() {
+            const btn = document.getElementById('recheck-btn');
+            if (btn) btn.classList.add('is-refreshing');
 
-            const data = await fetchLinkData();
+            const data = await fetchLinkManifest();
             if (data && (data.url || data.vscode_url)) {
-                liveClusterData = data;
-                // Optimistic instant hydration
-                applyClusterState(data, false);
-                saveToCache(data);
+                clusterCache = data;
+                applyState(data, false);
+                saveCache(data);
 
-                // Parallel non-blocking probe
+                // Run non-blocking probe
                 const [ocisProbe, vscodeProbe] = await Promise.all([
-                    probeEndpointFast(data.url),
-                    probeEndpointFast(data.vscode_url)
+                    testEndpointReachability(data.url),
+                    testEndpointReachability(data.vscode_url)
                 ]);
 
-                applyClusterState(data, true, ocisProbe.alive, vscodeProbe.alive, ocisProbe.latency, vscodeProbe.latency);
+                applyState(data, true, ocisProbe.alive, vscodeProbe.alive, ocisProbe.latency, vscodeProbe.latency);
             } else {
-                loadFromCache();
+                loadCache();
             }
 
-            if (recheckBtn) {
-                setTimeout(() => recheckBtn.classList.remove('rotating'), 500);
+            if (btn) {
+                setTimeout(() => btn.classList.remove('is-refreshing'), 450);
             }
-        }
-
-        async function testSingleService(service) {
-            if (!liveClusterData) return;
-            const url = (service === 'owndrive') ? liveClusterData.url : liveClusterData.vscode_url;
-            const diagStatus = document.getElementById(`${service}-diag-status`);
-            const diagPing = document.getElementById(`${service}-diag-ping`);
-
-            if (diagStatus) {
-                diagStatus.innerText = 'PINGING...';
-                diagStatus.className = 'diag-val warn';
-            }
-
-            const probe = await probeEndpointFast(url);
-            setServiceUI(service, probe.alive, url, probe.latency);
         }
 
         function forceRecheck() {
-            syncCluster();
+            synchronizeMesh();
         }
 
-        // Instant paint from local cache
-        loadFromCache();
+        // 1. Instantaneous 0ms load from cache
+        loadCache();
 
-        // Silent immediate sync + background interval
-        syncCluster();
-        setInterval(syncCluster, 25000);
+        // 2. Initial live sync + background poll every 30s
+        synchronizeMesh();
+        setInterval(synchronizeMesh, 30000);
     </script>
 </body>
 </html>
