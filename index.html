@@ -11,39 +11,39 @@
     <meta name="google-site-verification" content="iuKSqNpRhrCLbG9bHdJ-Ujie6lXFxCI5tkMqmWknN6o" />
 
     <!-- SEO Meta Tags -->
-    <title>Sathwik Server Mesh</title>
-    <meta name="title" content="Sathwik Server Mesh">
-    <meta name="description" content="Private cloud infrastructure gateway for OwnCloud storage and VS Code remote development workspaces.">
-    <meta name="author" content="Sathwik Inteti">
+    <title>Sathwik Server Mesh — Immersive Liquid-Glass Gateway</title>
+    <meta name="title" content="Sathwik Server Mesh — Immersive Liquid-Glass Gateway">
+    <meta name="description" content="Official infrastructure portal for the Sathwik Server Mesh. Private edge-computing gateway featuring OwnCloud storage and VS Code developer workspaces with dual-scene liquid transitions.">
+    <meta name="author" content="Sathwik Inteti (@sathwik4444)">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sathwik4444.github.io/SERVER-LINKS/">
 
-    <!-- Typography: SF Pro / Inter System Fonts -->
+    <!-- Typography: Inter for UI, JetBrains Mono for system metrics -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         /* ==========================================================================
-           APPLE LIQUID-GLASS & PURE-BLACK DESIGN SYSTEM
-           - Canvas: Genuine Pure Black (#000000)
-           - Floating Glass: Smoked translucent surfaces with backdrop-filter blur
+           CORE VISUAL SYSTEM — PURE BLACK & CRYSTAL GLASS
+           - Canvas: True Pure Black (#000000)
+           - Floating Glass: Smoked optical crystal surfaces with backdrop blur
            - Light Catcher: Specular hairline borders with directional light
-           - Typography: Refined system sans with precise optical tracking
+           - Typography: Inter + JetBrains Mono
            - Accents: Neutral white and Apple system status colors
            ========================================================================== */
         :root {
             --bg-canvas: #000000;
             --text-primary: #FFFFFF;
-            --text-secondary: #86868B;
-            --text-tertiary: #515154;
+            --text-secondary: #8E8E93;
+            --text-muted: #555558;
 
-            --glass-surface: rgba(255, 255, 255, 0.025);
-            --glass-surface-hover: rgba(255, 255, 255, 0.045);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-border-top: rgba(255, 255, 255, 0.18);
-            --glass-border-hover: rgba(255, 255, 255, 0.22);
-            --glass-border-top-hover: rgba(255, 255, 255, 0.35);
+            --glass-surface: rgba(255, 255, 255, 0.028);
+            --glass-surface-hover: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.09);
+            --glass-border-top: rgba(255, 255, 255, 0.22);
+            --glass-border-hover: rgba(255, 255, 255, 0.25);
+            --glass-border-top-hover: rgba(255, 255, 255, 0.45);
 
             --status-online: #30D158;
             --status-unknown: #8E8E93;
@@ -68,40 +68,135 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            cursor: default;
         }
 
-        /* Pure Black Canvas Ambient Backlight (soft neutral atmospheric depth) */
-        .ambient-backlight {
+        /* Prevent text selection on animated UI */
+        .no-select {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Screen Reader Accessible Text */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* ==========================================================================
+           BACKGROUND CANVASES (SCENE A: BLACK HOLE | SCENE B: LUMINOUS FILAMENTS)
+           ========================================================================== */
+        .bg-layer {
             position: fixed;
-            top: 25%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 700px;
-            height: 400px;
-            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.008) 45%, transparent 70%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: 0;
+            transition: opacity 0.9s var(--ease-apple);
         }
 
-        /* Viewport Container */
-        .portal-wrapper {
+        #canvas-black-hole {
+            opacity: 1;
+        }
+
+        #canvas-filaments {
+            opacity: 0;
+        }
+
+        body.scene-b #canvas-black-hole {
+            opacity: 0;
+        }
+
+        body.scene-b #canvas-filaments {
+            opacity: 1;
+        }
+
+        /* Liquid Transition Distortion Container */
+        .liquid-container {
             position: relative;
-            z-index: 1;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 2.5rem 1.75rem 3rem;
+            z-index: 2;
             width: 100%;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            filter: none;
+            transition: filter 0.8s var(--ease-apple);
+        }
+
+        .liquid-container.is-transitioning {
+            filter: url('#liquid-refraction');
+        }
+
+        /* Main Viewport Container */
+        .portal-wrapper {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 2.25rem 1.75rem 3rem;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
         }
 
         /* ==========================================================================
-           REFINED IDENTITY HEADER
+           USER CURSOR (React Bits Pro Inspired)
+           ========================================================================== */
+        #user-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            display: none;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s ease;
+        }
+
+        .cursor-pointer {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
+            transition: transform 0.15s ease;
+        }
+
+        .cursor-tag {
+            background: rgba(10, 10, 10, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.64rem;
+            color: #FFFFFF;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        body.cursor-hover .cursor-pointer {
+            transform: scale(1.6);
+            background: #FFFFFF;
+        }
+
+        /* ==========================================================================
+           HEADER COMPONENT
            ========================================================================== */
         header {
             display: flex;
@@ -120,22 +215,28 @@
         }
 
         .brand-symbol {
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
             border-radius: 6px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.16);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25);
         }
 
         .brand-name {
-            font-size: 0.82rem;
+            font-size: 0.84rem;
             font-weight: 500;
             letter-spacing: -0.01em;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .cluster-status-pill {
@@ -145,9 +246,8 @@
             padding: 5px 12px;
             border-radius: 9999px;
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.72rem;
             color: var(--text-secondary);
@@ -163,28 +263,28 @@
 
         .status-dot.online {
             background: var(--status-online);
-            box-shadow: 0 0 8px rgba(48, 209, 88, 0.6);
+            box-shadow: 0 0 8px rgba(48, 209, 88, 0.7);
         }
 
         .status-dot.offline {
             background: var(--status-offline);
-            box-shadow: 0 0 8px rgba(255, 69, 58, 0.6);
+            box-shadow: 0 0 8px rgba(255, 69, 58, 0.7);
         }
 
         /* ==========================================================================
-           HERO
+           TECHTEXT WORDMARK & HERO
            ========================================================================== */
         .hero {
             text-align: center;
-            margin: 3.5rem auto 4.5rem;
-            max-width: 640px;
+            margin: 2rem auto 3.5rem;
+            max-width: 820px;
             animation: heroReveal 0.9s var(--ease-apple) forwards;
         }
 
         @keyframes heroReveal {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(12px);
             }
             to {
                 opacity: 1;
@@ -192,13 +292,26 @@
             }
         }
 
-        h1.hero-headline {
-            font-size: clamp(2.1rem, 4.5vw, 2.9rem);
-            font-weight: 500;
-            letter-spacing: -0.035em;
-            line-height: 1.15;
-            color: #FFFFFF;
-            margin-bottom: 0.9rem;
+        /* TechText Component Container */
+        .tech-text-container {
+            position: relative;
+            width: 100%;
+            height: 120px;
+            margin: 0 auto 0.75rem;
+            touch-action: pan-y;
+            user-select: none;
+        }
+
+        @media (max-width: 600px) {
+            .tech-text-container {
+                height: 75px;
+            }
+        }
+
+        #tech-text-canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
         }
 
         p.hero-subhead {
@@ -207,17 +320,109 @@
             font-weight: 400;
             line-height: 1.5;
             letter-spacing: -0.01em;
+            max-width: 640px;
+            margin: 0 auto;
         }
 
         /* ==========================================================================
-           FLOATING LIQUID-GLASS PANELS (The Two Core Destinations)
+           CENTRAL OPTICAL LENS TRIGGER (Double-Click / Double-Tap Scene Switcher)
            ========================================================================== */
+        .scene-lens-trigger-bar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 0 auto 2.5rem;
+            animation: fadeIn 1s var(--ease-apple) forwards;
+        }
+
+        .lens-trigger-button {
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            border-radius: 9999px;
+            padding: 8px 18px;
+            color: rgba(255, 255, 255, 0.85);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s var(--ease-apple);
+            box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+            touch-action: manipulation;
+        }
+
+        .lens-trigger-button:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.28);
+            transform: translateY(-2px);
+            color: #FFFFFF;
+            box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.85), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .lens-trigger-button:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 3px;
+        }
+
+        .lens-icon-ring {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1.5px dashed rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s ease;
+        }
+
+        .lens-trigger-button:hover .lens-icon-ring {
+            transform: rotate(90deg);
+            border-color: #FFFFFF;
+        }
+
+        .lens-caption {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.66rem;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+        }
+
+        /* ==========================================================================
+           SCENE VIEWS: SCENE A (DUAL GATEWAY) VS SCENE B (VS CODE FOCUS)
+           ========================================================================== */
+        .scene-view {
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        #scene-b-view {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        body.scene-b #scene-a-view {
+            display: none;
+            opacity: 0;
+        }
+
+        body.scene-b #scene-b-view {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gateway Grid (Scene A) */
         .gateway-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             perspective: 1200px;
-            margin-bottom: 4rem;
+            margin-bottom: 3.5rem;
         }
 
         @media (max-width: 720px) {
@@ -227,7 +432,7 @@
             }
         }
 
-        /* The Liquid-Glass Panel */
+        /* The Crystal Liquid-Glass Panels */
         .glass-panel {
             position: relative;
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%), rgba(10, 10, 10, 0.55);
@@ -245,7 +450,7 @@
             min-height: 290px;
             box-shadow: 
                 0 24px 48px -12px rgba(0, 0, 0, 0.85),
-                inset 0 1px 1px rgba(255, 255, 255, 0.14),
+                inset 0 1px 1px rgba(255, 255, 255, 0.16),
                 inset 0 0 20px rgba(255, 255, 255, 0.015);
             transition: 
                 transform 0.4s var(--ease-apple),
@@ -274,19 +479,14 @@
             }
         }
 
-        /* Resting Ambient Floating Motion */
-        @keyframes subtleFloat1 {
+        /* Subtle Floating Motion */
+        @keyframes floatA {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-3px); }
         }
 
-        @keyframes subtleFloat2 {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-3px); }
-        }
-
-        .glass-panel:nth-child(1) { animation: cardFloatIn 0.8s var(--ease-apple) backwards, subtleFloat1 6s ease-in-out infinite 0.8s; }
-        .glass-panel:nth-child(2) { animation: cardFloatIn 0.8s var(--ease-apple) backwards, subtleFloat2 6s ease-in-out infinite 1.8s; }
+        .glass-panel:nth-child(1) { animation: cardFloatIn 0.8s var(--ease-apple) backwards, floatA 6s ease-in-out infinite 0.8s; }
+        .glass-panel:nth-child(2) { animation: cardFloatIn 0.8s var(--ease-apple) backwards, floatA 6s ease-in-out infinite 1.8s; }
 
         /* Dynamic Pointer Reflection (Localized soft white highlight) */
         .glass-reflection {
@@ -297,13 +497,12 @@
             height: 100%;
             pointer-events: none;
             border-radius: inherit;
-            background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 70%);
+            background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.07), transparent 70%);
             opacity: 0;
             transition: opacity 0.3s ease;
             z-index: 0;
         }
 
-        /* Hover States */
         .glass-panel:hover {
             animation-play-state: paused;
             transform: translateY(-5px) scale(1.008);
@@ -311,7 +510,7 @@
             border-top-color: var(--glass-border-top-hover);
             box-shadow: 
                 0 32px 64px -16px rgba(0, 0, 0, 0.95),
-                inset 0 1px 2px rgba(255, 255, 255, 0.25),
+                inset 0 1px 2px rgba(255, 255, 255, 0.28),
                 inset 0 0 24px rgba(255, 255, 255, 0.03);
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.015) 100%), rgba(14, 14, 14, 0.65);
         }
@@ -322,9 +521,6 @@
 
         .glass-panel:active {
             transform: translateY(-2px) scale(0.99);
-            box-shadow: 
-                0 16px 32px -8px rgba(0, 0, 0, 0.9),
-                inset 0 1px 1px rgba(255, 255, 255, 0.12);
         }
 
         .glass-panel:focus-visible {
@@ -358,7 +554,7 @@
 
         .glass-panel:hover .panel-icon-box {
             transform: scale(1.05);
-            border-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.22);
         }
 
         .panel-state-pill {
@@ -480,25 +676,128 @@
         }
 
         .glass-panel.is-offline .launch-label {
-            color: var(--text-tertiary);
+            color: var(--text-muted);
         }
 
         /* ==========================================================================
-           AUTHENTIC DIRECT ACCESS & MINIMAL FOOTER
+           SCENE B: IMMERSIVE VS CODE ENVIRONMENT FOCUS VIEW
+           ========================================================================== */
+        .scene-b-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.01) 100%), rgba(8, 8, 8, 0.7);
+            backdrop-filter: blur(40px) saturate(190%);
+            -webkit-backdrop-filter: blur(40px) saturate(190%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 28px;
+            padding: 3rem 2.5rem;
+            max-width: 760px;
+            margin: 0 auto 3.5rem;
+            box-shadow: 0 32px 70px -15px rgba(0, 0, 0, 0.95), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .scene-b-title {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            color: #FFFFFF;
+            margin-bottom: 0.75rem;
+        }
+
+        .scene-b-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto 2.25rem;
+            line-height: 1.6;
+        }
+
+        .scene-b-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn-scene-launch {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: #FFFFFF;
+            color: #000000;
+            border-radius: 12px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.25s var(--ease-apple);
+            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-scene-launch:hover {
+            background: #E5E5E5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25);
+        }
+
+        .btn-scene-return {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--text-primary);
+            border-radius: 12px;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-scene-return:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .scene-b-quick-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            color: var(--text-muted);
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .scene-b-quick-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .scene-b-quick-link:hover {
+            color: #FFFFFF;
+        }
+
+        /* ==========================================================================
+           DIRECT ACCESS ROW & MINIMAL FOOTER
            ========================================================================== */
         .mesh-direct-row {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 16px;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             animation: fadeIn 1s var(--ease-apple) forwards;
         }
 
         .direct-link {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.72rem;
-            color: var(--text-tertiary);
+            color: var(--text-muted);
             text-decoration: none;
             padding: 4px 10px;
             border-radius: 6px;
@@ -508,7 +807,7 @@
 
         .direct-link:hover {
             color: var(--text-secondary);
-            border-color: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.08);
             background: rgba(255, 255, 255, 0.02);
         }
 
@@ -517,7 +816,7 @@
             align-items: center;
             justify-content: space-between;
             font-size: 0.76rem;
-            color: var(--text-tertiary);
+            color: var(--text-muted);
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             animation: fadeIn 1s var(--ease-apple) forwards;
@@ -530,7 +829,7 @@
         }
 
         .footer-right a {
-            color: var(--text-tertiary);
+            color: var(--text-muted);
             text-decoration: none;
             transition: color 0.2s ease;
         }
@@ -544,7 +843,7 @@
             to { opacity: 1; }
         }
 
-        /* Reduced Motion Accessibility */
+        /* Accessibility: Prefers reduced motion */
         @media (prefers-reduced-motion: reduce) {
             *, ::before, ::after {
                 animation-duration: 0.01ms !important;
@@ -555,136 +854,804 @@
             .glass-panel {
                 animation: none !important;
             }
+            #user-cursor {
+                display: none !important;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="ambient-backlight" aria-hidden="true"></div>
+    <!-- SVG Refraction Filter for Liquid Transition Effect -->
+    <svg style="position: absolute; width: 0; height: 0; pointer-events: none;" aria-hidden="true">
+        <filter id="liquid-refraction">
+            <feTurbulence id="turb-wave" type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="warp" />
+            <feDisplacementMap id="disp-map" xChannelSelector="R" yChannelSelector="G" scale="0" in="SourceGraphic" in2="warp" />
+        </filter>
+    </svg>
 
-    <div class="portal-wrapper">
-        <!-- Minimal Refined Header -->
-        <header>
-            <div class="brand-badge">
-                <div class="brand-symbol" aria-hidden="true">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                    </svg>
-                </div>
-                <span class="brand-name">Sathwik Server Mesh</span>
-            </div>
-
-            <div class="cluster-status-pill" id="global-pill" title="Cloudflare Edge Cluster Reachability">
-                <span class="status-dot" id="global-dot"></span>
-                <span id="global-text">Resolving Mesh</span>
-            </div>
-        </header>
-
-        <!-- Understated Hero -->
-        <main>
-            <section class="hero">
-                <h1 class="hero-headline">Private Service Gateway</h1>
-                <p class="hero-subhead">Secure, hardware-isolated access to personal cloud storage and developer workspaces.</p>
-            </section>
-
-            <!-- The Two Floating Liquid-Glass Panels -->
-            <section class="gateway-grid" aria-label="Available Services">
-                <!-- Panel 1: OwnCloud -->
-                <a id="card-owncloud" href="#" class="glass-panel" target="_blank" rel="noopener noreferrer">
-                    <div class="glass-reflection" aria-hidden="true"></div>
-                    <div>
-                        <div class="panel-header">
-                            <div class="panel-icon-box" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-                                </svg>
-                            </div>
-                            <div class="panel-state-pill" id="owncloud-pill">
-                                <span class="pill-indicator"></span>
-                                <span id="owncloud-pill-text">Checking...</span>
-                            </div>
-                        </div>
-
-                        <div class="panel-body">
-                            <h2 class="panel-title">OwnCloud</h2>
-                            <p class="panel-description">Infinite Scale private object storage with end-to-end encrypted WebDAV file synchronization.</p>
-                        </div>
-                    </div>
-
-                    <div class="panel-footer">
-                        <span class="launch-label" id="owncloud-label">Open OwnCloud</span>
-                        <div class="arrow-circle" aria-hidden="true">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Panel 2: VS Code -->
-                <a id="card-vscode" href="#" class="glass-panel" target="_blank" rel="noopener noreferrer">
-                    <div class="glass-reflection" aria-hidden="true"></div>
-                    <div>
-                        <div class="panel-header">
-                            <div class="panel-icon-box" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="16 18 22 12 16 6"></polyline>
-                                    <polyline points="8 6 2 12 8 18"></polyline>
-                                </svg>
-                            </div>
-                            <div class="panel-state-pill" id="vscode-pill">
-                                <span class="pill-indicator"></span>
-                                <span id="vscode-pill-text">Checking...</span>
-                            </div>
-                        </div>
-
-                        <div class="panel-body">
-                            <h2 class="panel-title">VS Code</h2>
-                            <p class="panel-description">Browser-based engineering environment with sandboxed Linux terminal access and persistent volumes.</p>
-                        </div>
-                    </div>
-
-                    <div class="panel-footer">
-                        <span class="launch-label" id="vscode-label">Launch IDE</span>
-                        <div class="arrow-circle" aria-hidden="true">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            </section>
-
-            <!-- Authentic Direct Tailscale Fallbacks (Quietly Available) -->
-            <div class="mesh-direct-row">
-                <a href="http://100.120.154.90:8081" class="direct-link" target="_blank" rel="noopener noreferrer">Tailscale Storage (:8081)</a>
-                <span style="color: var(--text-tertiary);">•</span>
-                <a href="http://100.120.154.90:8080" class="direct-link" target="_blank" rel="noopener noreferrer">Tailscale IDE (:8080)</a>
-            </div>
-        </main>
-
-        <!-- Understated Minimal Footer -->
-        <footer>
-            <div class="footer-left">
-                <span>Node 1 Core Fabric</span>
-                <span>•</span>
-                <span id="footer-sync">Mesh Active</span>
-            </div>
-            <div class="footer-right">
-                <a href="https://github.com/sathwik4444" target="_blank" rel="noopener noreferrer">@sathwik4444</a>
-            </div>
-        </footer>
+    <!-- Custom User Cursor (React Bits Pro Inspired) -->
+    <div id="user-cursor" aria-hidden="true">
+        <div class="cursor-pointer"></div>
+        <div class="cursor-tag">Operator</div>
     </div>
 
-    <!-- Liquid Glass Interactive Dynamics & Real Service Health -->
+    <!-- Background A: Black Hole Canvas -->
+    <canvas id="canvas-black-hole" class="bg-layer" aria-hidden="true"></canvas>
+
+    <!-- Background B: Luminous Filaments Canvas -->
+    <canvas id="canvas-filaments" class="bg-layer" aria-hidden="true"></canvas>
+
+    <!-- Liquid Distortion Wrapper -->
+    <div class="liquid-container" id="liquid-container">
+        <div class="portal-wrapper">
+            <!-- Header -->
+            <header>
+                <a href="#" class="brand-badge" aria-label="Sathwik Server Mesh Home">
+                    <div class="brand-symbol" aria-hidden="true">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <span class="brand-name">Sathwik Server Mesh</span>
+                </a>
+
+                <div class="header-actions">
+                    <div class="cluster-status-pill" id="global-pill" title="Status of Edge Ingress Mesh">
+                        <span class="status-dot" id="global-dot"></span>
+                        <span id="global-text">Resolving Mesh</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Section with TechText -->
+            <main>
+                <section class="hero">
+                    <h1 class="sr-only">SATHWIK SERVER MESH</h1>
+                    <!-- TechText Canvas Component (React Bits Integrated) -->
+                    <div class="tech-text-container" id="tech-text-box" role="img" aria-label="SATHWIK SERVER MESH wordmark">
+                        <canvas id="tech-text-canvas"></canvas>
+                    </div>
+                    <p class="hero-subhead" id="hero-subhead">
+                        Dedicated hardware-isolated compute gateway powering private OwnCloud storage and cloud development environments.
+                    </p>
+                </section>
+
+                <!-- Central Optical Trigger (Scene Transition Controller) -->
+                <div class="scene-lens-trigger-bar no-select">
+                    <button class="lens-trigger-button" id="lens-toggle-btn" aria-label="Switch between Gateway and VS Code Environment">
+                        <span class="lens-icon-ring"></span>
+                        <span id="lens-btn-label">Double-Click to Enter IDE Lens</span>
+                    </button>
+                    <span class="lens-caption">Optical glass refraction • Double-tap or Press Enter</span>
+                </div>
+
+                <!-- SCENE A: DUAL GATEWAY VIEW (DEFAULT) -->
+                <div class="scene-view" id="scene-a-view">
+                    <section class="gateway-grid" aria-label="Available Services">
+                        <!-- Panel 1: OwnCloud -->
+                        <a id="card-owncloud" href="#" class="glass-panel" target="_blank" rel="noopener noreferrer">
+                            <div class="glass-reflection" aria-hidden="true"></div>
+                            <div>
+                                <div class="panel-header">
+                                    <div class="panel-icon-box" aria-hidden="true">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="panel-state-pill" id="owncloud-pill">
+                                        <span class="pill-indicator"></span>
+                                        <span id="owncloud-pill-text">Checking...</span>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <h2 class="panel-title">OwnCloud</h2>
+                                    <p class="panel-description">Infinite Scale private object storage with end-to-end encrypted WebDAV file synchronization.</p>
+                                </div>
+                            </div>
+
+                            <div class="panel-footer">
+                                <span class="launch-label" id="owncloud-label">Open OwnCloud</span>
+                                <div class="arrow-circle" aria-hidden="true">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Panel 2: VS Code -->
+                        <a id="card-vscode" href="#" class="glass-panel" target="_blank" rel="noopener noreferrer">
+                            <div class="glass-reflection" aria-hidden="true"></div>
+                            <div>
+                                <div class="panel-header">
+                                    <div class="panel-icon-box" aria-hidden="true">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="16 18 22 12 16 6"></polyline>
+                                            <polyline points="8 6 2 12 8 18"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="panel-state-pill" id="vscode-pill">
+                                        <span class="pill-indicator"></span>
+                                        <span id="vscode-pill-text">Checking...</span>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <h2 class="panel-title">VS Code</h2>
+                                    <p class="panel-description">Browser-based engineering environment with sandboxed Linux terminal access and persistent volumes.</p>
+                                </div>
+                            </div>
+
+                            <div class="panel-footer">
+                                <span class="launch-label" id="vscode-label">Launch IDE</span>
+                                <div class="arrow-circle" aria-hidden="true">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                </div>
+
+                <!-- SCENE B: VS CODE ENVIRONMENT FOCUS VIEW -->
+                <div class="scene-view" id="scene-b-view">
+                    <div class="scene-b-card">
+                        <div class="panel-icon-box" style="margin: 0 auto 1.5rem; width: 56px; height: 56px;" aria-hidden="true">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h2 class="scene-b-title">VS Code Workspaces</h2>
+                        <p class="scene-b-desc">
+                            High-performance browser developer sandbox running natively inside Debian 12 ARM64 container with full shell access and persistent storage.
+                        </p>
+                        <div class="scene-b-actions">
+                            <a id="scene-b-launch-btn" href="#" class="btn-scene-launch" target="_blank" rel="noopener noreferrer">
+                                <span>Launch Workspace IDE</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </a>
+                            <button class="btn-scene-return" onclick="triggerSceneSwap()">
+                                <span>← Return to Gateway</span>
+                            </button>
+                        </div>
+                        <div class="scene-b-quick-nav">
+                            <span>Alternative Access:</span>
+                            <a id="scene-b-owncloud-link" href="#" class="scene-b-quick-link" target="_blank" rel="noopener noreferrer">OwnCloud Storage ↗</a>
+                            <span>•</span>
+                            <a href="http://100.120.154.90:8080" class="scene-b-quick-link" target="_blank" rel="noopener noreferrer">Tailscale (:8080)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direct Mesh Access Links -->
+                <div class="mesh-direct-row">
+                    <a href="http://100.120.154.90:8081" class="direct-link" target="_blank" rel="noopener noreferrer">Tailscale Storage (:8081)</a>
+                    <span style="color: var(--text-muted);">•</span>
+                    <a href="http://100.120.154.90:8080" class="direct-link" target="_blank" rel="noopener noreferrer">Tailscale IDE (:8080)</a>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer>
+                <div class="footer-left">
+                    <span>Node 1 Core Fabric</span>
+                    <span>•</span>
+                    <span id="footer-sync">Mesh Active</span>
+                </div>
+                <div class="footer-right">
+                    <a href="https://github.com/sathwik4444" target="_blank" rel="noopener noreferrer">@sathwik4444</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Core Script Engine: TechText, Shaders, Gestures & Real Service URLs -->
     <script>
         // ==========================================================================
-        // LIQUID-GLASS PERSPECTIVE & SPECULAR HIGHLIGHT TRACKER
+        // 1. TECHTEXT IMPLEMENTATION (Full React Bits Spec in Vanilla Canvas)
         // ==========================================================================
-        const glassPanels = document.querySelectorAll('.glass-panel');
+        (function initTechText() {
+            const container = document.getElementById('tech-text-box');
+            const canvas = document.getElementById('tech-text-canvas');
+            if (!container || !canvas) return;
 
-        glassPanels.forEach(panel => {
+            const ctx = canvas.getContext('2d');
+            const scratch = document.createElement('canvas');
+            const scratchCtx = scratch.getContext('2d');
+            if (!ctx || !scratchCtx) return;
+
+            const LABEL_FONT = '10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+            const FALLOFF_STEPS = 8;
+            const SPRING = 320;
+            const DAMPING = 22;
+
+            const approach = (current, target, dt, seconds) => current + (target - current) * (1 - Math.exp(-dt / seconds));
+
+            const noise = (...values) => {
+                let h = 2166136261;
+                for (const value of values) {
+                    h = Math.imul(h ^ (value | 0), 16777619);
+                    h ^= h >>> 13;
+                    h = Math.imul(h, 0x5bd1e995);
+                    h ^= h >>> 15;
+                }
+                return (h >>> 0) / 4294967296;
+            };
+
+            const signed = value => (value > 0 ? `+${value}` : value < 0 ? `−${-value}` : '0');
+
+            const s = {
+                text: 'SATHWIK SERVER MESH',
+                fontFamily: 'Inter, -apple-system, sans-serif',
+                fontWeight: 600,
+                fontSize: 58,
+                letterSpacing: -0.04,
+                color: '#ffffff',
+                accentColor: '#ffffff',
+                reach: 160,
+                softness: 0.7,
+                dashLength: 4,
+                dashGap: 2,
+                strokeWidth: 1.5,
+                lineStyle: 'dashed',
+                reveal: 'letter',
+                specks: 12,
+                selection: true,
+                labels: true,
+                draggable: true,
+                sweep: true,
+                speed: 0.8
+            };
+
+            const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+            let width = 1, height = 1, dpr = 1, raf = 0, last = performance.now();
+            let visible = true, alive = true, layoutKey = '', word = null, glyphs = [];
+            let presence = 0, clock = 0, pulse = 0, placed = false, dragging = -1;
+            const pointer = { x: 0, y: 0, inside: false };
+            const grab = { x: 0, y: 0 };
+            const lens = { x: 0, y: 0 };
+            const frame = { x1: 0, y1: 0, x2: 0, y2: 0, alpha: 0, index: -1 };
+
+            const family = () => s.fontFamily || 'sans-serif';
+            const fontFor = size => `${s.fontWeight} ${size}px ${family()}`;
+
+            const setFont = (target, size) => {
+                target.font = fontFor(size);
+                if ('letterSpacing' in target) target.letterSpacing = `${s.letterSpacing * size}px`;
+                target.textAlign = 'left';
+                target.textBaseline = 'alphabetic';
+            };
+
+            const sprite = (view, glyph, stroke) => {
+                const pad = Math.ceil(s.strokeWidth * 2 + 4);
+                const left = glyph.box.x1 - pad;
+                const top = glyph.box.y1 - pad;
+                const w = glyph.box.x2 - glyph.box.x1 + pad * 2;
+                const h = glyph.box.y2 - glyph.box.y1 + pad * 2;
+                const image = document.createElement('canvas');
+                image.width = Math.max(1, Math.ceil(w * dpr));
+                image.height = Math.max(1, Math.ceil(h * dpr));
+                const c = image.getContext('2d');
+                if (!c) return { image, left, top };
+                c.setTransform(dpr, 0, 0, dpr, -left * dpr, -top * dpr);
+                setFont(c, view.size);
+                if (stroke) {
+                    c.lineJoin = 'round';
+                    c.lineWidth = s.strokeWidth * 2;
+                    c.lineCap = 'butt';
+                    c.strokeStyle = s.color;
+                    if (s.lineStyle !== 'solid') c.setLineDash([Math.max(1, s.dashLength), Math.max(1, s.dashGap)]);
+                    c.strokeText(glyph.char, glyph.x, view.baseline);
+                    c.setLineDash([]);
+                    c.globalCompositeOperation = 'destination-out';
+                    c.fillStyle = '#000000';
+                    c.fillText(glyph.char, glyph.x, view.baseline);
+                    c.globalCompositeOperation = 'source-over';
+                } else {
+                    c.fillStyle = s.color;
+                    c.fillText(glyph.char, glyph.x, view.baseline);
+                }
+                return { image, left, top };
+            };
+
+            const ensureLayout = () => {
+                const key = [s.text, family(), s.fontWeight, s.fontSize, s.letterSpacing, width, height, dpr].join('|');
+                if (key === layoutKey && word) return word;
+                layoutKey = key;
+
+                const probe = scratchCtx;
+                setFont(probe, s.fontSize);
+                let m = probe.measureText(s.text);
+                const fit = Math.min(
+                    1,
+                    (width * 0.94) / Math.max(m.actualBoundingBoxLeft + m.actualBoundingBoxRight, 1),
+                    (height * 0.75) / Math.max(m.actualBoundingBoxAscent + m.actualBoundingBoxDescent, 1)
+                );
+                const size = s.fontSize * fit;
+                setFont(probe, size);
+                m = probe.measureText(s.text);
+                const inkWidth = m.actualBoundingBoxLeft + m.actualBoundingBoxRight;
+                const inkHeight = m.actualBoundingBoxAscent + m.actualBoundingBoxDescent;
+                const x = (width - inkWidth) / 2 + m.actualBoundingBoxLeft;
+                const baseline = (height - inkHeight) / 2 + m.actualBoundingBoxAscent;
+                const next = {
+                    size,
+                    baseline,
+                    left: x - m.actualBoundingBoxLeft,
+                    right: x + m.actualBoundingBoxRight,
+                    top: baseline - m.actualBoundingBoxAscent,
+                    bottom: baseline + m.actualBoundingBoxDescent
+                };
+                word = next;
+
+                const chars = Array.from(s.text);
+                const previous = glyphs;
+                glyphs = [];
+                let prefix = '';
+                chars.forEach((char, i) => {
+                    prefix += char;
+                    const own = probe.measureText(char);
+                    const gx = x + probe.measureText(prefix).width - own.width;
+                    if (!char.trim()) return;
+                    const base = {
+                        char,
+                        x: gx,
+                        box: {
+                            x1: gx - own.actualBoundingBoxLeft,
+                            y1: baseline - own.actualBoundingBoxAscent,
+                            x2: gx + own.actualBoundingBoxRight,
+                            y2: baseline + own.actualBoundingBoxDescent
+                        }
+                    };
+                    const kept = previous[glyphs.length];
+                    glyphs.push({
+                        ...base,
+                        offset: kept?.char === char ? kept.offset : { x: 0, y: 0 },
+                        velocity: { x: 0, y: 0 },
+                        outline: 0,
+                        index: i,
+                        fill: sprite(next, base, false),
+                        dashes: sprite(next, base, true)
+                    });
+                });
+                dragging = -1;
+                frame.index = -1;
+                return next;
+            };
+
+            const glyphAt = (x, y) => {
+                if (!word || y < word.top - 20 || y > word.bottom + 20) return -1;
+                let best = -1, bestDistance = Infinity;
+                glyphs.forEach((glyph, i) => {
+                    const x1 = glyph.box.x1 + glyph.offset.x;
+                    const x2 = glyph.box.x2 + glyph.offset.x;
+                    const d = x < x1 ? x1 - x : x > x2 ? x - x2 : 0;
+                    if (d < bestDistance) {
+                        bestDistance = d;
+                        best = i;
+                    }
+                });
+                return bestDistance < 24 ? best : -1;
+            };
+
+            const falloff = (target, cx, cy, radius, strength, softness) => {
+                const inner = Math.min(1, Math.max(0, 1 - softness));
+                const gradient = target.createRadialGradient(cx, cy, 0, cx, cy, radius);
+                gradient.addColorStop(0, `rgba(0, 0, 0, ${strength})`);
+                for (let i = 0; i <= FALLOFF_STEPS; i++) {
+                    const t = i / FALLOFF_STEPS;
+                    const eased = t * t * (3 - 2 * t);
+                    gradient.addColorStop(inner + (1 - inner) * t, `rgba(0, 0, 0, ${strength * (1 - eased)})`);
+                }
+                return gradient;
+            };
+
+            const blit = (target, art, dx, dy, originX, originY) => {
+                target.drawImage(
+                    art.image,
+                    Math.round((art.left + dx) * dpr - originX),
+                    Math.round((art.top + dy) * dpr - originY)
+                );
+            };
+
+            const drawReveal = () => {
+                const radius = s.reach * dpr;
+                const cx = lens.x * dpr, cy = lens.y * dpr;
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.fillStyle = falloff(ctx, cx, cy, radius, presence, s.softness);
+                ctx.fillRect(cx - radius, cy - radius, radius * 2, radius * 2);
+                ctx.globalCompositeOperation = 'source-over';
+
+                const x0 = Math.max(0, Math.floor(cx - radius));
+                const y0 = Math.max(0, Math.floor(cy - radius));
+                const x1 = Math.min(canvas.width, Math.ceil(cx + radius));
+                const y1 = Math.min(canvas.height, Math.ceil(cy + radius));
+                if (x1 <= x0 || y1 <= y0) return;
+                const w = x1 - x0, h = y1 - y0;
+                if (scratch.width < w || scratch.height < h) {
+                    scratch.width = Math.max(scratch.width, w);
+                    scratch.height = Math.max(scratch.height, h);
+                }
+                scratchCtx.setTransform(1, 0, 0, 1, 0, 0);
+                scratchCtx.globalCompositeOperation = 'source-over';
+                scratchCtx.clearRect(0, 0, w, h);
+                for (const glyph of glyphs) blit(scratchCtx, glyph.dashes, glyph.offset.x, glyph.offset.y, x0, y0);
+                scratchCtx.globalCompositeOperation = 'destination-in';
+                scratchCtx.fillStyle = falloff(scratchCtx, cx - x0, cy - y0, radius, 1, s.softness);
+                scratchCtx.fillRect(0, 0, w, h);
+                scratchCtx.globalCompositeOperation = 'source-over';
+                ctx.globalAlpha = presence;
+                ctx.drawImage(scratch, 0, 0, w, h, x0, y0, w, h);
+                ctx.globalAlpha = 1;
+            };
+
+            const crisp = value => (Math.round(value * dpr) + 0.5) / dpr;
+
+            const drawFrame = () => {
+                const glyph = glyphs[frame.index];
+                if (!glyph || frame.alpha < 0.01) return;
+                const a = frame.alpha;
+                const x1 = crisp(frame.x1), y1 = crisp(frame.y1);
+                const x2 = crisp(frame.x2), y2 = crisp(frame.y2);
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+                ctx.beginPath();
+                ctx.rect(x1, y1, x2 - x1, y2 - y1);
+                ctx.lineWidth = 1;
+                ctx.strokeStyle = `rgba(255, 255, 255, ${0.45 * a})`;
+                ctx.stroke();
+
+                for (const [cx, cy] of [[x1, y1], [x2, y1], [x2, y2], [x1, y2]]) {
+                    ctx.fillStyle = `rgba(255, 255, 255, ${0.9 * a})`;
+                    ctx.fillRect(Math.round(cx) - 2, Math.round(cy) - 2, 4, 4);
+                }
+
+                if (!s.labels) return;
+                ctx.font = LABEL_FONT;
+                ctx.textAlign = 'left';
+                ctx.textBaseline = 'bottom';
+                ctx.fillStyle = `rgba(255, 255, 255, ${0.65 * a})`;
+                const label = `${glyph.char}  ${Math.round(glyph.box.x2 - glyph.box.x1)}×${Math.round(glyph.box.y2 - glyph.box.y1)}`;
+                ctx.fillText(label, Math.round(frame.x1), Math.round(frame.y1) - 6);
+            };
+
+            const tick = now => {
+                raf = 0;
+                const dt = Math.min(0.05, Math.max(0.001, (now - last) / 1000));
+                last = now;
+                const view = ensureLayout();
+
+                const sweeping = s.sweep && !reducedMotion && !pointer.inside && dragging < 0;
+                if (sweeping) clock += dt * s.speed;
+                pulse += dt;
+                let targetX = pointer.x, targetY = pointer.y;
+                if (sweeping) {
+                    targetX = view.left + (view.right - view.left) * (0.5 - 0.5 * Math.cos(clock * 0.45));
+                    targetY = view.top + (view.bottom - view.top) * (0.45 + 0.1 * Math.sin(clock * 0.8));
+                }
+                const active = pointer.inside || sweeping || dragging >= 0;
+                if (active && !placed) { lens.x = targetX; lens.y = targetY; }
+                if (active) {
+                    const lag = pointer.inside ? 0.05 : 0.22;
+                    lens.x = approach(lens.x, targetX, dt, lag);
+                    lens.y = approach(lens.y, targetY, dt, lag);
+                }
+                placed = active;
+                presence = approach(presence, s.reveal === 'area' && active && dragging < 0 ? 1 : 0, dt, 0.16);
+
+                let moving = false;
+                glyphs.forEach((glyph, i) => {
+                    if (i === dragging) {
+                        glyph.offset.x = approach(glyph.offset.x, pointer.x - grab.x, dt, 0.03);
+                        glyph.offset.y = approach(glyph.offset.y, pointer.y - grab.y, dt, 0.03);
+                        glyph.velocity.x = 0; glyph.velocity.y = 0;
+                        moving = true;
+                        return;
+                    }
+                    const { offset, velocity } = glyph;
+                    if (Math.abs(offset.x) < 0.05 && Math.abs(offset.y) < 0.05 && Math.hypot(velocity.x, velocity.y) < 0.5) {
+                        offset.x = 0; offset.y = 0; velocity.x = 0; velocity.y = 0;
+                        return;
+                    }
+                    velocity.x += (-SPRING * offset.x - DAMPING * velocity.x) * dt;
+                    velocity.y += (-SPRING * offset.y - DAMPING * velocity.y) * dt;
+                    offset.x += velocity.x * dt;
+                    offset.y += velocity.y * dt;
+                    moving = true;
+                });
+
+                const focus = dragging >= 0 ? dragging : active ? glyphAt(lens.x, lens.y) : -1;
+                if (focus >= 0 && s.selection) {
+                    const glyph = glyphs[focus];
+                    const bx1 = glyph.box.x1 + glyph.offset.x - 5;
+                    const by1 = glyph.box.y1 + glyph.offset.y - 5;
+                    const bx2 = glyph.box.x2 + glyph.offset.x + 5;
+                    const by2 = glyph.box.y2 + glyph.offset.y + 5;
+                    if (frame.index < 0 || frame.alpha < 0.02) {
+                        frame.x1 = bx1; frame.y1 = by1; frame.x2 = bx2; frame.y2 = by2;
+                    }
+                    const glide = focus === dragging ? 0.02 : 0.08;
+                    frame.x1 = approach(frame.x1, bx1, dt, glide);
+                    frame.y1 = approach(frame.y1, by1, dt, glide);
+                    frame.x2 = approach(frame.x2, bx2, dt, glide);
+                    frame.y2 = approach(frame.y2, by2, dt, glide);
+                    frame.index = focus;
+                }
+                frame.alpha = approach(frame.alpha, focus >= 0 && s.selection ? 1 : 0, dt, 0.1);
+
+                glyphs.forEach((glyph, i) => {
+                    const target = s.reveal === 'letter' && i === focus && i !== dragging ? 1 : 0;
+                    glyph.outline = approach(glyph.outline, target, dt, 0.09);
+                    if (Math.abs(glyph.outline - target) > 0.002) moving = true;
+                    else glyph.outline = target;
+                });
+
+                ctx.setTransform(1, 0, 0, 1, 0, 0);
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (const glyph of glyphs) {
+                    if (glyph.outline < 0.999) {
+                        ctx.globalAlpha = 1 - glyph.outline;
+                        blit(ctx, glyph.fill, glyph.offset.x, glyph.offset.y, 0, 0);
+                    }
+                    if (glyph.outline > 0.001) {
+                        ctx.globalAlpha = glyph.outline;
+                        blit(ctx, glyph.dashes, glyph.offset.x, glyph.offset.y, 0, 0);
+                    }
+                    ctx.globalAlpha = 1;
+                }
+                if (presence > 0.001) drawReveal();
+                drawFrame();
+
+                if ((active || moving || frame.alpha > 0.01) && visible && alive) raf = requestAnimationFrame(tick);
+            };
+
+            const wake = () => {
+                if (raf || !visible || !alive) return;
+                last = performance.now();
+                raf = requestAnimationFrame(tick);
+            };
+
+            const resize = () => {
+                width = Math.max(1, container.clientWidth);
+                height = Math.max(1, container.clientHeight);
+                dpr = Math.min(window.devicePixelRatio || 1, 2);
+                canvas.width = Math.round(width * dpr);
+                canvas.height = Math.round(height * dpr);
+                layoutKey = '';
+                wake();
+            };
+
+            const locate = e => {
+                const rect = container.getBoundingClientRect();
+                pointer.x = e.clientX - rect.left;
+                pointer.y = e.clientY - rect.top;
+            };
+
+            container.addEventListener('pointermove', e => { locate(e); pointer.inside = true; wake(); }, { passive: true });
+            container.addEventListener('pointerleave', () => { pointer.inside = false; wake(); }, { passive: true });
+            container.addEventListener('pointerdown', e => {
+                locate(e);
+                pointer.inside = true;
+                const index = glyphAt(pointer.x, pointer.y);
+                if (index >= 0) {
+                    dragging = index;
+                    grab.x = pointer.x - glyphs[index].offset.x;
+                    grab.y = pointer.y - glyphs[index].offset.y;
+                }
+                wake();
+            }, { passive: true });
+            window.addEventListener('pointerup', () => { dragging = -1; wake(); }, { passive: true });
+
+            window.addEventListener('resize', resize, { passive: true });
+            document.addEventListener('visibilitychange', () => { visible = !document.hidden; if (visible) wake(); });
+            resize();
+        })();
+
+        // ==========================================================================
+        // 2. SCENE A BACKGROUND: THE BLACK HOLE (Smoky Photon Ring & Curved Lensing)
+        // ==========================================================================
+        (function initBlackHole() {
+            const canvas = document.getElementById('canvas-black-hole');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let w = canvas.width = window.innerWidth;
+            let h = canvas.height = window.innerHeight;
+            let animId = 0, time = 0, isRunning = true;
+
+            window.addEventListener('resize', () => {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }, { passive: true });
+
+            function render() {
+                if (!isRunning || document.hidden || document.body.classList.contains('scene-b')) {
+                    animId = requestAnimationFrame(render);
+                    return;
+                }
+
+                time += 0.008;
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(0, 0, w, h);
+
+                const cx = w * 0.5;
+                const cy = h * 0.46;
+                const radius = Math.min(w, h) * 0.22;
+
+                // 1. Accretion Disk / Photon Glow
+                const gradOuter = ctx.createRadialGradient(cx, cy, radius * 0.7, cx, cy, radius * 2.8);
+                gradOuter.addColorStop(0, 'rgba(255, 255, 255, 0.18)');
+                gradOuter.addColorStop(0.25, 'rgba(255, 255, 255, 0.06)');
+                gradOuter.addColorStop(0.6, 'rgba(255, 255, 255, 0.012)');
+                gradOuter.addColorStop(1, 'rgba(0, 0, 0, 0)');
+                ctx.fillStyle = gradOuter;
+                ctx.beginPath();
+                ctx.arc(cx, cy, radius * 2.8, 0, Math.PI * 2);
+                ctx.fill();
+
+                // 2. Relativistic Photon Ring
+                ctx.save();
+                ctx.translate(cx, cy);
+                ctx.scale(1, 0.38); // Flatten to circular inclination disk
+
+                // Smoky light particles swirling
+                for (let i = 0; i < 42; i++) {
+                    const angle = time * 0.5 + (i * Math.PI * 2) / 42;
+                    const r = radius * (1.3 + Math.sin(i * 1.5 + time) * 0.25);
+                    const px = Math.cos(angle) * r;
+                    const py = Math.sin(angle) * r;
+                    const alpha = (0.08 + Math.sin(angle + Math.PI * 0.5) * 0.06) * (px < 0 ? 1.4 : 0.6); // Doppler beaming
+
+                    ctx.beginPath();
+                    ctx.arc(px, py, 1.8, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 255, 255, ${Math.max(0, alpha)})`;
+                    ctx.fill();
+                }
+
+                // Inner sharp photon ring
+                ctx.beginPath();
+                ctx.arc(0, 0, radius * 1.08, 0, Math.PI * 2);
+                ctx.lineWidth = 2.5;
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+                ctx.shadowBlur = 14;
+                ctx.stroke();
+                ctx.restore();
+
+                // 3. Absolute Pure Black Event Horizon
+                ctx.beginPath();
+                ctx.arc(cx, cy, radius * 0.95, 0, Math.PI * 2);
+                ctx.fillStyle = '#000000';
+                ctx.shadowBlur = 0;
+                ctx.fill();
+
+                animId = requestAnimationFrame(render);
+            }
+            render();
+        })();
+
+        // ==========================================================================
+        // 3. SCENE B BACKGROUND: LUMINOUS FILAMENTS (Fine White Fibers)
+        // ==========================================================================
+        (function initFilaments() {
+            const canvas = document.getElementById('canvas-filaments');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let w = canvas.width = window.innerWidth;
+            let h = canvas.height = window.innerHeight;
+            let time = 0;
+
+            window.addEventListener('resize', () => {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }, { passive: true });
+
+            function render() {
+                if (!document.body.classList.contains('scene-b') || document.hidden) {
+                    requestAnimationFrame(render);
+                    return;
+                }
+
+                time += 0.007;
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(0, 0, w, h);
+
+                const cx = w * 0.5;
+                const cy = h * 0.2;
+                const strands = 36;
+
+                ctx.lineWidth = 1;
+                for (let i = 0; i < strands; i++) {
+                    const norm = i / strands;
+                    const angleOffset = (norm - 0.5) * 1.8;
+                    const alpha = 0.04 + Math.sin(time + i) * 0.025;
+
+                    ctx.beginPath();
+                    ctx.moveTo(cx, cy);
+
+                    let x = cx;
+                    let y = cy;
+                    const segments = 18;
+                    const stepY = (h * 0.8) / segments;
+
+                    for (let j = 1; j <= segments; j++) {
+                        const wave = Math.sin(time * 1.2 + j * 0.35 + i * 0.2) * (20 + j * 4);
+                        x = cx + Math.sin(angleOffset) * (j * stepY * 1.1) + wave;
+                        y = cy + j * stepY;
+                        ctx.lineTo(x, y);
+                    }
+
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+                    ctx.stroke();
+                }
+
+                // Core Source Glow
+                const coreGrad = ctx.createRadialGradient(cx, cy, 2, cx, cy, 140);
+                coreGrad.addColorStop(0, 'rgba(255, 255, 255, 0.22)');
+                coreGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.04)');
+                coreGrad.addColorStop(1, 'transparent');
+                ctx.fillStyle = coreGrad;
+                ctx.beginPath();
+                ctx.arc(cx, cy, 140, 0, Math.PI * 2);
+                ctx.fill();
+
+                requestAnimationFrame(render);
+            }
+            render();
+        })();
+
+        // ==========================================================================
+        // 4. USER CURSOR WITH NAME TAG (React Bits Pro Spec)
+        // ==========================================================================
+        (function initUserCursor() {
+            const cursor = document.getElementById('user-cursor');
+            if (!cursor || window.matchMedia('(pointer: coarse)').matches) return;
+
+            let mouseX = -100, mouseY = -100, curX = -100, curY = -100;
+            let active = false;
+
+            window.addEventListener('mousemove', e => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                if (!active) {
+                    active = true;
+                    cursor.style.display = 'flex';
+                }
+            }, { passive: true });
+
+            document.addEventListener('mouseleave', () => {
+                cursor.style.opacity = '0';
+            });
+            document.addEventListener('mouseenter', () => {
+                cursor.style.opacity = '1';
+            });
+
+            // Interactive hover detection
+            const interactables = document.querySelectorAll('a, button, .glass-panel, .lens-trigger-button');
+            interactables.forEach(el => {
+                el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+                el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+            });
+
+            function loop() {
+                curX += (mouseX - curX) * 0.22;
+                curY += (mouseY - curY) * 0.22;
+                cursor.style.transform = `translate3d(${curX}px, ${curY}px, 0)`;
+                requestAnimationFrame(loop);
+            }
+            loop();
+        })();
+
+        // ==========================================================================
+        // 5. CRYSTAL-GLASS 3D TILT & SPECULAR HIGHLIGHT TRACKER
+        // ==========================================================================
+        const panels = document.querySelectorAll('.glass-panel');
+        panels.forEach(panel => {
             panel.addEventListener('mousemove', e => {
                 const rect = panel.getBoundingClientRect();
                 const x = e.clientX - rect.left;
@@ -693,7 +1660,6 @@
                 panel.style.setProperty('--mouse-x', `${x}px`);
                 panel.style.setProperty('--mouse-y', `${y}px`);
 
-                // Subtle 3D tilt calculation (-3deg to +3deg)
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
                 const rotateX = ((y - centerY) / centerY) * -3;
@@ -708,35 +1674,130 @@
         });
 
         // ==========================================================================
-        // SERVICE RECOGNITION & HEALTH ENGINE (Preserves Real Destinations)
+        // 6. SCENE SWAP ENGINE WITH LIQUID DISTORTION & DELIBERATE GESTURE
         // ==========================================================================
-        let liveData = null;
+        let isSceneB = false;
+        let isSwapRunning = false;
 
-        function loadCachedManifest() {
+        function triggerSceneSwap() {
+            if (isSwapRunning) return;
+            isSwapRunning = true;
+
+            const container = document.getElementById('liquid-container');
+            const dispMap = document.getElementById('disp-map');
+            const turb = document.getElementById('turb-wave');
+            const subhead = document.getElementById('hero-subhead');
+            const lensBtnLabel = document.getElementById('lens-btn-label');
+
+            container.classList.add('is-transitioning');
+            let start = performance.now();
+            const duration = 850;
+
+            function animateLiquid(now) {
+                const progress = Math.min(1, (now - start) / duration);
+                const scale = Math.sin(progress * Math.PI) * 55; // Refraction peak
+                if (dispMap) dispMap.setAttribute('scale', scale.toFixed(1));
+                if (turb) turb.setAttribute('baseFrequency', (0.015 + Math.sin(progress * Math.PI) * 0.03).toFixed(3));
+
+                if (progress > 0.45 && !toggled) {
+                    toggled = true;
+                    isSceneB = !isSceneB;
+                    document.body.classList.toggle('scene-b', isSceneB);
+
+                    if (isSceneB) {
+                        subhead.innerText = 'Immersive developer workspace with sandboxed Linux terminal and WebDAV integration.';
+                        lensBtnLabel.innerText = 'Double-Click to Return to Gateway';
+                    } else {
+                        subhead.innerText = 'Dedicated hardware-isolated compute gateway powering private OwnCloud storage and cloud development environments.';
+                        lensBtnLabel.innerText = 'Double-Click to Enter IDE Lens';
+                    }
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(animateLiquid);
+                } else {
+                    container.classList.remove('is-transitioning');
+                    if (dispMap) dispMap.setAttribute('scale', '0');
+                    isSwapRunning = false;
+                }
+            }
+            let toggled = false;
+            requestAnimationFrame(animateLiquid);
+        }
+
+        // Gesture Detection: Double-Click / Double-Tap on Lens Trigger
+        const lensBtn = document.getElementById('lens-toggle-btn');
+        let lastTapTime = 0;
+        let lastTapX = 0;
+        let lastTapY = 0;
+
+        lensBtn.addEventListener('click', e => {
+            const now = Date.now();
+            const dist = Math.hypot(e.clientX - lastTapX, e.clientY - lastTapY);
+            if (now - lastTapTime < 380 && dist < 25) {
+                triggerSceneSwap();
+                lastTapTime = 0;
+            } else {
+                lastTapTime = now;
+                lastTapX = e.clientX;
+                lastTapY = e.clientY;
+            }
+        });
+
+        // Touchscreen deliberate double-tap
+        lensBtn.addEventListener('touchend', e => {
+            const now = Date.now();
+            const touch = e.changedTouches[0];
+            const dist = Math.hypot(touch.clientX - lastTapX, touch.clientY - lastTapY);
+            if (now - lastTapTime < 380 && dist < 30) {
+                e.preventDefault();
+                triggerSceneSwap();
+                lastTapTime = 0;
+            } else {
+                lastTapTime = now;
+                lastTapX = touch.clientX;
+                lastTapY = touch.clientY;
+            }
+        }, { passive: false });
+
+        // Keyboard Accessibility (Enter / Space on Trigger)
+        lensBtn.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                triggerSceneSwap();
+            }
+        });
+
+        // ==========================================================================
+        // 7. REAL SERVICE STATE & MANIFEST SYNCHRONIZATION
+        // ==========================================================================
+        let meshManifest = null;
+
+        function loadCache() {
             try {
-                const stored = localStorage.getItem('sathwik_glass_mesh');
-                if (stored) {
-                    liveData = JSON.parse(stored);
-                    applyInterfaceState(liveData, false);
+                const raw = localStorage.getItem('sathwik_mesh_liquid_cache');
+                if (raw) {
+                    meshManifest = JSON.parse(raw);
+                    applyState(meshManifest, false);
                 }
             } catch (e) {}
         }
 
-        function saveCachedManifest(data) {
+        function saveCache(data) {
             try {
-                localStorage.setItem('sathwik_glass_mesh', JSON.stringify(data));
+                localStorage.setItem('sathwik_mesh_liquid_cache', JSON.stringify(data));
             } catch (e) {}
         }
 
         async function fetchManifest() {
-            const timestamp = Date.now();
+            const t = Date.now();
             try {
-                const res = await fetch(`https://raw.githubusercontent.com/sathwik4444/SERVER-LINKS/main/link.json?t=${timestamp}`, { cache: 'no-store' });
+                const res = await fetch(`https://raw.githubusercontent.com/sathwik4444/SERVER-LINKS/main/link.json?t=${t}`, { cache: 'no-store' });
                 if (res.ok) return await res.json();
             } catch (e) {}
 
             try {
-                const res = await fetch(`https://api.github.com/repos/sathwik4444/SERVER-LINKS/contents/link.json?t=${timestamp}`, {
+                const res = await fetch(`https://api.github.com/repos/sathwik4444/SERVER-LINKS/contents/link.json?t=${t}`, {
                     headers: { 'Accept': 'application/vnd.github.v3.raw' },
                     cache: 'no-store'
                 });
@@ -745,78 +1806,82 @@
             return null;
         }
 
-        async function testReachability(url) {
-            if (!url || !url.startsWith('http')) return { reachable: false };
+        // Audited Reachability Probe (non-blocking, mode: no-cors)
+        async function probeEndpoint(url) {
+            if (!url || !url.startsWith('http')) return { reached: false };
             const controller = new AbortController();
             const timeout = setTimeout(() => controller.abort(), 3500);
             try {
                 await fetch(url, { mode: 'no-cors', cache: 'no-store', signal: controller.signal });
                 clearTimeout(timeout);
-                return { reachable: true };
+                return { reached: true };
             } catch (e) {
                 clearTimeout(timeout);
-                return { reachable: false };
+                return { reached: false };
             }
         }
 
-        function setPanelState(id, isAlive, url) {
-            const panel = document.getElementById(`card-${id}`);
+        function updateServiceCard(id, url, isHealthy) {
+            const card = document.getElementById(`card-${id}`);
             const pill = document.getElementById(`${id}-pill`);
             const pillText = document.getElementById(`${id}-pill-text`);
             const label = document.getElementById(`${id}-label`);
-
             const defaultLabel = (id === 'owncloud') ? 'Open OwnCloud' : 'Launch IDE';
 
             if (url && url.startsWith('http')) {
-                panel.href = url;
-
-                if (isAlive) {
-                    panel.classList.remove('is-offline');
+                card.href = url;
+                if (isHealthy) {
+                    card.classList.remove('is-offline');
                     pill.className = 'panel-state-pill online';
                     pillText.innerText = 'Online';
                     label.innerText = defaultLabel;
                 } else {
-                    // Graceful unavailable state
-                    panel.classList.add('is-offline');
+                    card.classList.add('is-offline');
                     pill.className = 'panel-state-pill offline';
                     pillText.innerText = 'Unavailable';
-                    label.innerText = 'Service Standby';
+                    label.innerText = 'Standby';
                 }
             } else {
-                panel.classList.add('is-offline');
+                card.classList.add('is-offline');
                 pill.className = 'panel-state-pill offline';
                 pillText.innerText = 'Offline';
-                panel.href = '#';
-                label.innerText = 'Resolving Tunnel';
+                card.href = '#';
+                label.innerText = 'Resolving';
             }
         }
 
-        function applyInterfaceState(data, probed, ocAlive, vsAlive) {
+        function applyState(data, probed, ocAlive, vsAlive) {
             if (!data) return;
 
             const hasOc = !!(data.url && data.url.startsWith('http'));
             const hasVs = !!(data.vscode_url && data.vscode_url.startsWith('http'));
 
             if (!probed) {
-                setPanelState('owncloud', hasOc, data.url);
-                setPanelState('vscode', hasVs, data.vscode_url);
+                updateServiceCard('owncloud', data.url, hasOc);
+                updateServiceCard('vscode', data.vscode_url, hasVs);
             } else {
-                setPanelState('owncloud', ocAlive, data.url);
-                setPanelState('vscode', vsAlive, data.vscode_url);
+                updateServiceCard('owncloud', data.url, ocAlive);
+                updateServiceCard('vscode', data.vscode_url, vsAlive);
             }
 
-            // Global Mesh Indicator
+            // Sync Scene B controls
+            const sceneBLaunch = document.getElementById('scene-b-launch-btn');
+            const sceneBOwncloud = document.getElementById('scene-b-owncloud-link');
+            if (sceneBLaunch && data.vscode_url) sceneBLaunch.href = data.vscode_url;
+            if (sceneBOwncloud && data.url) sceneBOwncloud.href = data.url;
+
+            // Global HUD Indicator
             const globalDot = document.getElementById('global-dot');
             const globalText = document.getElementById('global-text');
             const footerSync = document.getElementById('footer-sync');
 
             const allActive = probed ? (ocAlive && vsAlive) : (hasOc && hasVs);
-            const partialActive = probed ? (ocAlive || vsAlive) : (hasOc || hasVs);
+            const partial = probed ? (ocAlive || vsAlive) : (hasOc || hasVs);
 
             if (allActive) {
                 globalDot.className = 'status-dot online';
                 globalText.innerText = 'All Services Active';
-            } else if (partialActive) {
+            } else if (partial) {
                 globalDot.className = 'status-dot online';
                 globalText.innerText = 'Partial Mesh';
             } else {
@@ -833,31 +1898,31 @@
             }
         }
 
-        async function synchronizeState() {
+        async function syncMesh() {
             const data = await fetchManifest();
             if (data && (data.url || data.vscode_url)) {
-                liveData = data;
-                applyInterfaceState(data, false);
-                saveCachedManifest(data);
+                meshManifest = data;
+                applyState(data, false);
+                saveCache(data);
 
-                // Non-blocking real probe test
-                const [ocTest, vsTest] = await Promise.all([
-                    testReachability(data.url),
-                    testReachability(data.vscode_url)
+                // Run parallel non-blocking probe
+                const [ocProbe, vsProbe] = await Promise.all([
+                    probeEndpoint(data.url),
+                    probeEndpoint(data.vscode_url)
                 ]);
 
-                applyInterfaceState(data, true, ocTest.reachable, vsTest.reachable);
+                applyState(data, true, ocProbe.reached, vsProbe.reached);
             } else {
-                loadCachedManifest();
+                loadCache();
             }
         }
 
-        // 1. Instantaneous 0ms load
-        loadCachedManifest();
+        // 1. Instant 0ms Paint
+        loadCache();
 
-        // 2. Network synchronization
-        synchronizeState();
-        setInterval(synchronizeState, 30000);
+        // 2. Network Sync & Polling
+        syncMesh();
+        setInterval(syncMesh, 30000);
     </script>
 </body>
 </html>
