@@ -10,39 +10,34 @@
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="iuKSqNpRhrCLbG9bHdJ-Ujie6lXFxCI5tkMqmWknN6o" />
 
-    <!-- Primary SEO Meta Tags (Keyword-Rich) -->
-    <title>Blixor Cloud • Sathwik Server & Infrastructure Portal</title>
-    <meta name="title" content="Blixor Cloud • Sathwik Server & Infrastructure Portal">
-    <meta name="description" content="Official Blixor Cloud & Sathwik Server Portal - Live Cloudflare Edge development cluster, OwnDrive Infinite Scale cloud storage, and multi-tenant VS Code web IDE by sathwik4444 (Sathwik Inteti).">
-    <meta name="keywords" content="sathwik server, sathwik servers, blixor, blixor server, blixor cloud, blixor core, blixor edge, sathwik blixor, sathwik4444, sathwikinteti, sathwik inteti, sathwik cloud, sathwik server links, SERVER-LINKS, owndrive, owndrive cloud, vs code web, cloud ide, edge cluster, sathwik dev server, cloudflare tunnels">
+    <!-- Primary SEO Meta Tags -->
+    <title>Sathwik Server Mesh • Autonomous Cloud & Edge Cluster Portal</title>
+    <meta name="title" content="Sathwik Server Mesh • Autonomous Cloud & Edge Cluster Portal">
+    <meta name="description" content="Official Sathwik Server Mesh Portal - Live Cloudflare Edge cluster, OwnDrive Infinite Scale cloud storage, and multi-tenant VS Code web IDE by sathwik4444 (Sathwik Inteti).">
+    <meta name="keywords" content="sathwik server, sathwik servers, blixor, blixor server, blixor cloud, sathwik blixor, sathwik4444, sathwikinteti, sathwik inteti, sathwik cloud, sathwik server links, SERVER-LINKS, owndrive, vs code web, cloud ide, edge cluster, cloudflare tunnels">
     <meta name="author" content="sathwik4444 (Sathwik Inteti)">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://sathwik4444.github.io/SERVER-LINKS/">
 
-    <!-- Open Graph / Facebook / LinkedIn -->
+    <!-- Open Graph / Social Cards -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sathwik4444.github.io/SERVER-LINKS/">
-    <meta property="og:title" content="Blixor Cloud • Sathwik Server & Infrastructure Portal">
-    <meta property="og:description" content="Official Blixor Cloud & Sathwik Server Portal - Live Cloudflare Edge cluster, OwnDrive Cloud, and VS Code IDE by sathwik4444.">
-    <meta property="og:site_name" content="Blixor Cloud & Sathwik Server">
-
-    <!-- Twitter Cards -->
+    <meta property="og:title" content="Sathwik Server Mesh • Autonomous Cloud & Edge Cluster Portal">
+    <meta property="og:description" content="Official Sathwik Server Mesh Portal - Live Cloudflare Edge cluster, OwnDrive Cloud, and VS Code IDE by sathwik4444.">
+    <meta property="og:site_name" content="Sathwik Server Mesh">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://sathwik4444.github.io/SERVER-LINKS/">
-    <meta name="twitter:title" content="Blixor Cloud • Sathwik Server & Infrastructure Portal">
-    <meta name="twitter:description" content="Official Blixor Cloud & Sathwik Server Portal by sathwik4444. Access OwnDrive & VS Code IDE.">
 
-    <!-- JSON-LD Structured Data for Google Rich Snippets -->
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Blixor Cloud - Sathwik Server Portal",
-      "alternateName": ["Sathwik Server", "Blixor Server", "Blixor Cloud", "Sathwik Server Links", "Sathwik Cloud IDE"],
+      "name": "Sathwik Server Mesh",
+      "alternateName": ["Sathwik Server", "Blixor Cloud", "Sathwik Server Links"],
       "url": "https://sathwik4444.github.io/SERVER-LINKS/",
-      "description": "Official Blixor Cloud & Sathwik Server Portal powering OwnDrive storage and sandboxed VS Code web IDEs.",
+      "description": "Unified access gateway for private OwnDrive storage and sandboxed VS Code web IDE on the Sathwik dual-phone server cluster.",
       "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Web, Linux",
+      "operatingSystem": "Linux, Web",
       "author": {
         "@type": "Person",
         "name": "Sathwik Inteti",
@@ -55,148 +50,139 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         /* ==========================================================================
-           COLOR PSYCHOLOGY DESIGN SYSTEM:
-           - Base: Deep Cosmic Obsidian (#040714) - Focus, infinite depth, premium calm
-           - OwnDrive (Trust & Cloud Storage): Sapphire & Cerulean (#0284c7 -> #38bdf8)
-           - VS Code (Creativity & Engineering): Royal Amethyst & Violet (#7c3aed -> #c084fc)
-           - Active State (Optimal Health): Mint Emerald (#10b981 / #34d399) - Reassuring
-           - Standby State (High-Tech Defense): Burnished Coral & Amber (#f43f5e / #fb923c)
+           COLOR SYSTEM & DESIGN TOKENS
+           - Dark Void: #040714 with subtle cyan & violet ambient glow
+           - OwnDrive Palette: Cerulean / Sapphire (#0284c7 -> #38bdf8)
+           - VS Code Palette: Electric Amethyst (#7c3aed -> #c084fc)
+           - Status Online: Mint Emerald (#10b981)
+           - Status Standby / Reconnecting: Amber Gold (#f59e0b)
+           - Status Offline / Alert: Crimson Coral (#f43f5e)
            ========================================================================== */
         :root {
-            --bg-dark: #040714;
-            --bg-surface: rgba(11, 17, 33, 0.78);
-            --bg-surface-hover: rgba(15, 23, 42, 0.88);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --card-border-hover: rgba(255, 255, 255, 0.18);
+            --bg-void: #040714;
+            --bg-card: rgba(11, 18, 36, 0.72);
+            --bg-card-hover: rgba(15, 25, 48, 0.88);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --border-card-hover: rgba(255, 255, 255, 0.18);
             
-            /* OwnDrive Cerulean Palette */
             --owndrive-primary: #0284c7;
             --owndrive-light: #38bdf8;
             --owndrive-glow: rgba(56, 189, 248, 0.35);
             --owndrive-subtle: rgba(2, 132, 199, 0.12);
 
-            /* VS Code Amethyst Palette */
             --vscode-primary: #7c3aed;
             --vscode-light: #c084fc;
             --vscode-glow: rgba(168, 85, 247, 0.35);
             --vscode-subtle: rgba(124, 58, 237, 0.12);
 
-            /* Status & Psychological Signals */
             --status-online: #10b981;
-            --status-online-glow: rgba(16, 185, 129, 0.45);
+            --status-online-glow: rgba(16, 185, 129, 0.4);
             --status-online-bg: rgba(16, 185, 129, 0.12);
 
-            --status-standby: #fb923c;
-            --status-standby-glow: rgba(251, 146, 60, 0.4);
-            --status-standby-bg: rgba(251, 146, 60, 0.12);
+            --status-standby: #f59e0b;
+            --status-standby-glow: rgba(245, 158, 11, 0.4);
+            --status-standby-bg: rgba(245, 158, 11, 0.12);
 
-            --status-blackout: #f43f5e;
-            --status-blackout-glow: rgba(244, 63, 94, 0.4);
-            --status-blackout-bg: rgba(244, 63, 94, 0.12);
+            --status-offline: #f43f5e;
+            --status-offline-glow: rgba(244, 63, 94, 0.4);
+            --status-offline-bg: rgba(244, 63, 94, 0.12);
 
             --text-main: #f8fafc;
-            --text-secondary: #cbd5e1;
             --text-muted: #94a3b8;
+            --text-dim: #64748b;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-void);
             color: var(--text-main);
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
             overflow-x: hidden;
             position: relative;
-            padding: 40px 20px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* 3D Cyber-Horizon Canvas */
+        /* High-Efficiency Canvas for Ambient Fluid Glow */
         #bgCanvas {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1;
+            z-index: 0;
             pointer-events: none;
+            opacity: 0.75;
         }
 
-        /* Ambient Glow Spheres */
-        .glow-sphere-1 {
+        /* Subtle Cyber Grid */
+        .cyber-grid {
             position: fixed;
-            width: 750px;
-            height: 750px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
-            top: -220px;
-            left: -180px;
-            filter: blur(95px);
-            z-index: 1;
-            animation: floatGlow 16s ease-in-out infinite alternate;
-            pointer-events: none;
-        }
-
-        .glow-sphere-2 {
-            position: fixed;
-            width: 800px;
-            height: 800px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-            bottom: -240px;
-            right: -220px;
-            filter: blur(105px);
-            z-index: 1;
-            animation: floatGlow 20s ease-in-out infinite alternate-reverse;
-            pointer-events: none;
-        }
-
-        @keyframes floatGlow {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(110px, 85px) scale(1.2); }
-        }
-
-        .container {
-            position: relative;
-            z-index: 10;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 980px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.8;
         }
 
-        /* Top HUD Bar */
+        /* Main Container */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        /* ==========================================================================
+           HUD STATUS BAR (Top Minimal Bar)
+           ========================================================================== */
         .hud-bar {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            background: rgba(11, 18, 36, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-card);
+            border-radius: 9999px;
+            padding: 0.6rem 1.25rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hud-left, .hud-right {
+            display: flex;
+            align-items: center;
             gap: 16px;
-            background: rgba(11, 17, 33, 0.82);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            padding: 8px 20px;
-            border-radius: 40px;
-            margin-bottom: 2rem;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-            max-width: 92%;
             flex-wrap: wrap;
         }
 
         .hud-item {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.82rem;
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--text-secondary);
         }
 
         .hud-dot {
@@ -204,392 +190,575 @@
             height: 8px;
             border-radius: 50%;
             background: var(--status-online);
-            box-shadow: 0 0 10px var(--status-online-glow);
-            animation: pulseDot 2s infinite;
+            box-shadow: 0 0 10px var(--status-online);
+            transition: all 0.3s ease;
         }
 
         .hud-dot.warning {
             background: var(--status-standby);
-            box-shadow: 0 0 10px var(--status-standby-glow);
+            box-shadow: 0 0 10px var(--status-standby);
         }
 
         .hud-dot.danger {
-            background: var(--status-blackout);
-            box-shadow: 0 0 10px var(--status-blackout-glow);
+            background: var(--status-offline);
+            box-shadow: 0 0 10px var(--status-offline);
+            animation: pulseAlert 1.2s infinite;
         }
 
-        @keyframes pulseDot {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.35); opacity: 0.55; }
+        @keyframes pulseAlert {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.3); }
         }
 
         .hud-btn {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
             padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-family: 'JetBrains Mono', monospace;
+            border-radius: 9999px;
             cursor: pointer;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 6px;
-            transition: all 0.25s ease;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            transition: all 0.2s ease;
         }
 
         .hud-btn:hover {
-            background: rgba(56, 189, 248, 0.15);
-            border-color: var(--owndrive-light);
-            color: #fff;
-            transform: scale(1.03);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-1px);
         }
 
         .hud-btn.rotating svg {
-            animation: spin 0.8s linear infinite;
+            animation: spin 0.7s linear infinite;
         }
 
         @keyframes spin {
             100% { transform: rotate(360deg); }
         }
 
-        /* Hero Header */
+        /* ==========================================================================
+           HEADER & HERO
+           ========================================================================== */
+        .hero {
+            text-align: center;
+            margin-bottom: 2.8rem;
+        }
+
         .brand-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(168, 85, 247, 0.12));
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--owndrive-light);
-            margin-bottom: 1.2rem;
-            letter-spacing: 0.5px;
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 5px 14px;
+            border-radius: 9999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #7dd3fc;
             text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.2rem;
         }
 
         h1 {
             font-family: 'Outfit', sans-serif;
-            font-size: 3.2rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 40%, #38bdf8 80%, #c084fc 100%);
+            font-size: 2.85rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-align: center;
-            letter-spacing: -1.2px;
-            line-height: 1.15;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.75rem;
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-muted);
-            text-align: center;
-            max-width: 650px;
-            line-height: 1.65;
-            margin-bottom: 3.2rem;
+            max-width: 680px;
+            margin: 0 auto;
+            font-weight: 400;
         }
 
-        /* Services Grid */
+        /* Section Title Header */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 2.5rem 0 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #f1f5f9;
+        }
+
+        .section-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ==========================================================================
+           SERVICES GRID (Top Section)
+           ========================================================================== */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 32px;
-            width: 100%;
-            perspective: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.75rem;
+            margin-bottom: 1rem;
         }
 
-        /* 3D Glassmorphism Cards */
         .service-card {
-            background: var(--bg-surface);
-            backdrop-filter: blur(32px);
-            -webkit-backdrop-filter: blur(32px);
-            border: 1px solid var(--card-border);
-            border-radius: 28px;
-            padding: 2.5rem;
-            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.7);
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 2.2rem;
+            position: relative;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-            transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.15s ease-out, background 0.4s ease;
-            transform-style: preserve-3d;
-            min-height: 480px;
+            backdrop-filter: blur(16px);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Top Accent Rim Light */
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-card-hover);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Top Accent Glow Border */
         .service-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
+            width: 100%;
             height: 3px;
             background: linear-gradient(90deg, transparent, var(--owndrive-light), transparent);
-            opacity: 0;
-            transition: opacity 0.4s;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
         }
 
-        .service-card.vscode-card::before {
+        .vscode-card::before {
             background: linear-gradient(90deg, transparent, var(--vscode-light), transparent);
         }
 
-        .service-card:not(.is-blackout):hover {
-            border-color: rgba(56, 189, 248, 0.45);
-            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.85), 0 0 35px -5px var(--owndrive-glow);
-        }
-
-        .service-card.vscode-card:not(.is-blackout):hover {
-            border-color: rgba(168, 85, 247, 0.45);
-            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.85), 0 0 35px -5px var(--vscode-glow);
-        }
-
-        .service-card:not(.is-blackout):hover::before { opacity: 1; }
-
-        /* Dynamic Holographic Specular Glare Sheen */
-        .service-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 28px;
-            background: radial-gradient(circle 380px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.09) 0%, transparent 75%);
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 3;
-        }
-
-        .service-card:hover::after { opacity: 1; }
-
-        /* Card Top Row */
         .card-top-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .card-icon-box {
-            width: 62px;
-            height: 62px;
-            border-radius: 18px;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .service-card:hover .card-icon-box {
-            transform: scale(1.08) rotate(-3deg);
+            transition: transform 0.3s ease;
         }
 
         .icon-owndrive {
-            background: linear-gradient(135deg, rgba(2, 132, 199, 0.3), rgba(56, 189, 248, 0.15));
-            border: 1px solid rgba(56, 189, 248, 0.35);
+            background: rgba(2, 132, 199, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.3);
             color: var(--owndrive-light);
-            box-shadow: 0 8px 24px rgba(2, 132, 199, 0.25);
+            box-shadow: 0 0 20px var(--owndrive-glow);
         }
 
         .icon-vscode {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(168, 85, 247, 0.15));
-            border: 1px solid rgba(168, 85, 247, 0.35);
+            background: rgba(124, 58, 237, 0.15);
+            border: 1px solid rgba(192, 132, 252, 0.3);
             color: var(--vscode-light);
-            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.25);
+            box-shadow: 0 0 20px var(--vscode-glow);
         }
 
+        .service-card:hover .card-icon-box {
+            transform: scale(1.06);
+        }
+
+        /* Interactive Status Pill */
         .status-pill {
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.72rem;
-            font-family: 'JetBrains Mono', monospace;
+            padding: 5px 12px;
+            border-radius: 9999px;
+            font-size: 0.74rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            font-family: 'JetBrains Mono', monospace;
             background: var(--status-online-bg);
-            border: 1px solid rgba(16, 185, 129, 0.35);
+            border: 1px solid rgba(16, 185, 129, 0.3);
             color: #34d399;
-            transition: all 0.3s ease;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
         }
 
-        .status-pill .pill-dot {
-            width: 7px;
-            height: 7px;
+        .status-pill:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 12px var(--status-online-glow);
+        }
+
+        .pill-dot {
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
-            background: var(--status-online);
-            box-shadow: 0 0 8px var(--status-online);
+            background: currentColor;
+            box-shadow: 0 0 6px currentColor;
         }
 
         .card-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.65rem;
-            font-weight: 800;
+            font-size: 1.55rem;
+            font-weight: 700;
             color: #ffffff;
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.5px;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
         }
 
         .card-desc {
             font-size: 0.92rem;
             color: var(--text-muted);
+            margin-bottom: 1.4rem;
             line-height: 1.6;
-            margin-bottom: 1.8rem;
         }
 
         .tags-row {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 2.2rem;
+            margin-bottom: 1.6rem;
         }
 
         .tag {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 5px 12px;
-            border-radius: 10px;
-            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.74rem;
             font-family: 'JetBrains Mono', monospace;
-            color: var(--text-secondary);
+            color: #cbd5e1;
         }
 
-        /* Launch Buttons */
+        /* ==========================================================================
+           INLINE DIAGNOSTIC DRAWER (Reveals when offline or upon clicking status)
+           ========================================================================== */
+        .diag-drawer {
+            display: none;
+            background: rgba(4, 7, 20, 0.85);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            padding: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            animation: drawerSlide 0.3s ease;
+        }
+
+        .diag-drawer.open {
+            display: block;
+        }
+
+        @keyframes drawerSlide {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .diag-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .diag-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            color: var(--text-muted);
+        }
+
+        .diag-val {
+            color: #f1f5f9;
+        }
+
+        .diag-val.good { color: #34d399; }
+        .diag-val.warn { color: #fbbf24; }
+        .diag-val.bad  { color: #fb7185; }
+
+        .diag-action-bar {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .diag-btn {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 0.74rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .diag-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Action Buttons */
         .btn-launch {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            width: 100%;
-            padding: 1.05rem 1.6rem;
-            border-radius: 16px;
-            font-weight: 700;
-            font-size: 0.98rem;
-            font-family: 'Outfit', sans-serif;
+            gap: 10px;
+            padding: 13px 20px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
             text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
             position: relative;
             overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: none;
+            width: 100%;
         }
 
         .btn-owndrive {
             background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
             color: #040714;
-            box-shadow: 0 8px 24px -4px rgba(56, 189, 248, 0.45);
+            box-shadow: 0 6px 20px -4px rgba(56, 189, 248, 0.45);
         }
 
         .btn-owndrive:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 32px -4px rgba(56, 189, 248, 0.65);
+            box-shadow: 0 12px 28px -4px rgba(56, 189, 248, 0.65);
         }
 
         .btn-vscode {
             background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
             color: #040714;
-            box-shadow: 0 8px 24px -4px rgba(168, 85, 247, 0.45);
+            box-shadow: 0 6px 20px -4px rgba(168, 85, 247, 0.45);
         }
 
         .btn-vscode:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 32px -4px rgba(168, 85, 247, 0.65);
+            box-shadow: 0 12px 28px -4px rgba(168, 85, 247, 0.65);
+        }
+
+        /* Standby / Offline State Styling on Card */
+        .service-card.is-offline {
+            border-color: rgba(244, 63, 94, 0.35);
+            background: radial-gradient(circle at 50% 0%, rgba(28, 14, 24, 0.85) 0%, rgba(10, 12, 22, 0.95) 100%);
+        }
+
+        .service-card.is-offline::before {
+            background: linear-gradient(90deg, transparent, var(--status-offline), transparent);
+        }
+
+        .service-card.is-offline .btn-launch {
+            background: rgba(244, 63, 94, 0.12);
+            border: 1px solid rgba(244, 63, 94, 0.3);
+            color: #fda4af;
+            box-shadow: none;
+        }
+
+        .service-card.is-offline .btn-launch:hover {
+            background: rgba(244, 63, 94, 0.22);
+            border-color: var(--status-offline);
         }
 
         /* ==========================================================================
-           ⚡ CYBER BLACKOUT / HIGH-TECH STANDBY STATE
+           ARCHITECTURE TOPOLOGY SECTION (Minimalist Cyber Architecture)
            ========================================================================== */
-        .service-card.is-blackout {
-            background: radial-gradient(circle at 50% 0%, rgba(28, 14, 24, 0.8) 0%, rgba(10, 12, 20, 0.95) 100%);
-            border-color: rgba(244, 63, 94, 0.35);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(244, 63, 94, 0.15);
+        .topology-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 2.2rem;
+            backdrop-filter: blur(16px);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .service-card.is-blackout::before {
-            background: linear-gradient(90deg, transparent, var(--status-blackout), transparent);
-            opacity: 1;
-            animation: alertFlicker 3s infinite;
-        }
-
-        .service-card.is-blackout .blackout-scanlines {
-            display: block;
-        }
-
-        .blackout-scanlines {
-            display: none;
+        .topology-card::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.25) 0px,
-                rgba(0, 0, 0, 0.25) 2px,
-                transparent 2px,
-                transparent 4px
-            );
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0.65;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.6), rgba(168, 85, 247, 0.6), transparent);
         }
 
-        .service-card.is-blackout .status-pill {
-            background: var(--status-blackout-bg);
-            border-color: rgba(244, 63, 94, 0.45);
-            color: #fb7185;
-        }
-
-        .service-card.is-blackout .status-pill .pill-dot {
-            background: var(--status-blackout);
-            box-shadow: 0 0 10px var(--status-blackout);
-            animation: pulseDot 1s infinite;
-        }
-
-        .blackout-banner {
-            display: none;
-            background: rgba(244, 63, 94, 0.1);
-            border: 1px dashed rgba(244, 63, 94, 0.35);
-            border-radius: 12px;
-            padding: 10px 14px;
-            margin-bottom: 1.5rem;
+        .topology-grid {
+            display: grid;
+            grid-template-columns: 1fr 140px 1fr;
             align-items: center;
-            gap: 10px;
-            font-size: 0.82rem;
-            color: #fda4af;
-            animation: fadeIn 0.4s ease;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
-        .service-card.is-blackout .blackout-banner {
-            display: flex;
+        @media (max-width: 860px) {
+            .topology-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
         }
 
-        @keyframes alertFlicker {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 0.2; }
-            70% { opacity: 1; }
-            85% { opacity: 0.3; }
-        }
-
-        .service-card.is-blackout .btn-launch {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(244, 63, 94, 0.3);
-            color: #fda4af;
-            box-shadow: none;
+        .node-box {
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
             cursor: pointer;
         }
 
-        .service-card.is-blackout .btn-launch:hover {
-            background: rgba(244, 63, 94, 0.15);
-            border-color: var(--status-blackout);
-            transform: none;
+        .node-box:hover {
+            border-color: rgba(56, 189, 248, 0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .node-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .node-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .node-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+        }
+
+        .node-meta {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .node-specs {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.76rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .node-spec-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text-dim);
+        }
+
+        .node-spec-row span:last-child {
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        /* Central Interconnect Bus */
+        .bus-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-align: center;
+        }
+
+        .bus-wire {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            position: relative;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        @media (max-width: 860px) {
+            .bus-wire {
+                width: 2px;
+                height: 40px;
+            }
+        }
+
+        .bus-chip {
+            background: rgba(30, 41, 59, 0.85);
+            border: 1px solid rgba(129, 140, 248, 0.4);
+            border-radius: 12px;
+            padding: 10px 14px;
+            box-shadow: 0 0 20px rgba(129, 140, 248, 0.25);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #c7d2fe;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .bus-chip:hover {
+            transform: scale(1.05);
+            border-color: #a5b4fc;
+        }
+
+        .bus-chip-title {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 0.8rem;
+            margin-bottom: 2px;
         }
 
         /* Footer */
@@ -599,7 +768,7 @@
             align-items: center;
             gap: 14px;
             font-size: 0.85rem;
-            color: #64748b;
+            color: var(--text-dim);
             font-family: 'JetBrains Mono', monospace;
             flex-wrap: wrap;
             justify-content: center;
@@ -612,380 +781,388 @@
             background: #334155;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
+        .footer-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: #38bdf8;
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.3rem; }
+            h1 { font-size: 2.2rem; }
             .services-grid { grid-template-columns: 1fr; }
-            .service-card { padding: 1.8rem; min-height: auto; }
-            .hud-bar { justify-content: center; }
+            .service-card { padding: 1.7rem; }
+            .topology-card { padding: 1.5rem; }
+            .hud-bar { justify-content: center; border-radius: 16px; }
         }
     </style>
 </head>
 <body>
     <canvas id="bgCanvas"></canvas>
-    <div class="glow-sphere-1"></div>
-    <div class="glow-sphere-2"></div>
+    <div class="cyber-grid"></div>
 
     <div class="container">
         <!-- Top Minimal Status Bar -->
         <div class="hud-bar">
-            <div class="hud-item">
-                <span class="hud-dot" id="cluster-hud-dot"></span>
-                <span id="cluster-hud-text">CLUSTER ONLINE</span>
+            <div class="hud-left">
+                <div class="hud-item">
+                    <span class="hud-dot" id="cluster-hud-dot"></span>
+                    <span id="cluster-hud-text">CLUSTER: INITIALIZING</span>
+                </div>
+                <div class="hud-item">
+                    <span style="color: var(--text-dim);">LATENCY:</span>
+                    <span id="cluster-ping" style="color: #38bdf8;">-- ms</span>
+                </div>
             </div>
-            <div class="hud-item">
-                <span>LATENCY:</span>
-                <span id="cluster-ping" style="color: #38bdf8;">-- ms</span>
+            <div class="hud-right">
+                <span id="refresh-time" style="color: var(--text-dim);">Checking Mesh...</span>
+                <button class="hud-btn" id="recheckBtn" onclick="forceRecheck()">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                    <span>Test Connectivity</span>
+                </button>
             </div>
-            <button class="hud-btn" id="recheckBtn" onclick="forceRecheck()">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-                <span>Check Status</span>
-            </button>
         </div>
 
-        <div class="brand-badge"><span class="pill-dot"></span> Edge Cloud Cluster</div>
-        <h1>Sathwik Cloud Infrastructure</h1>
-        <p class="subtitle">Unified access gateway for private OwnDrive cloud storage and remote web development workspaces.</p>
+        <!-- Hero Header -->
+        <div class="hero">
+            <div class="brand-badge">
+                <span class="pill-dot" style="background:#38bdf8;"></span>
+                Autonomous Server Cluster
+            </div>
+            <h1>Sathwik Server Mesh</h1>
+            <p class="subtitle">Unified edge gateway powering private OwnDrive storage and sandboxed VS Code developer environments.</p>
+        </div>
+
+        <!-- Section 1: Edge Cloud Services -->
+        <div class="section-header">
+            <div class="section-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                Active Cloud Gateways
+            </div>
+            <div class="section-tag">Public Edge Ingress</div>
+        </div>
 
         <div class="services-grid">
             <!-- 📁 OwnDrive Card -->
             <div class="service-card" id="card-owndrive" data-service="owndrive">
-                <div class="blackout-scanlines"></div>
                 <div>
                     <div class="card-top-row">
                         <div class="card-icon-box icon-owndrive">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                         </div>
-                        <div class="status-pill" id="owndrive-pill">
+                        <div class="status-pill" id="owndrive-pill" onclick="toggleDrawer('owndrive')">
                             <span class="pill-dot"></span>
                             <span id="owndrive-pill-text">Checking...</span>
                         </div>
                     </div>
 
                     <div class="card-title">OwnDrive Cloud Storage</div>
-                    <div class="card-desc">High-performance private cloud storage powered by ownCloud Infinite Scale. Supports multi-device sync, encrypted WebDAV, and fast file sharing.</div>
+                    <div class="card-desc">High-performance private cloud storage powered by ownCloud Infinite Scale. Supports multi-device sync, encrypted WebDAV, and direct streaming.</div>
 
                     <div class="tags-row">
                         <span class="tag">ownCloud Infinite Scale</span>
-                        <span class="tag">Encrypted WebDAV</span>
-                        <span class="tag">Instant Sync</span>
+                        <span class="tag">WebDAV</span>
+                        <span class="tag">Zero-Knowledge</span>
+                    </div>
+
+                    <!-- Inline Diagnostic Drawer -->
+                    <div class="diag-drawer" id="owndrive-drawer">
+                        <div class="diag-header">
+                            <span>DIAGNOSTIC TELEMETRY</span>
+                            <span id="owndrive-diag-status" class="diag-val good">PROBING</span>
+                        </div>
+                        <div class="diag-row">
+                            <span>Edge Ingress:</span>
+                            <span id="owndrive-diag-url" class="diag-val">Resolving...</span>
+                        </div>
+                        <div class="diag-row">
+                            <span>Round-Trip Ping:</span>
+                            <span id="owndrive-diag-ping" class="diag-val">--</span>
+                        </div>
+                        <div class="diag-row">
+                            <span>Watchdog Daemon:</span>
+                            <span class="diag-val good">Active (Server 2)</span>
+                        </div>
+                        <div class="diag-action-bar">
+                            <button class="diag-btn" onclick="testSingleService('owndrive')">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                                Retest Node
+                            </button>
+                            <a class="diag-btn" href="http://100.120.154.90:8081" target="_blank" rel="noopener noreferrer" title="Direct Tailscale Mesh Access">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                                Tailscale LAN (:8081)
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <a id="ocis-btn" href="#" class="btn-launch btn-owndrive" target="_blank" rel="noopener noreferrer">
                     <span id="ocis-btn-text">Launch OwnDrive</span>
-                    <svg id="ocis-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
             </div>
 
             <!-- 💻 VS Code Card -->
             <div class="service-card vscode-card" id="card-vscode" data-service="vscode">
-                <div class="blackout-scanlines"></div>
                 <div>
                     <div class="card-top-row">
                         <div class="card-icon-box icon-vscode">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                         </div>
-                        <div class="status-pill" id="vscode-pill">
+                        <div class="status-pill" id="vscode-pill" onclick="toggleDrawer('vscode')">
                             <span class="pill-dot"></span>
                             <span id="vscode-pill-text">Checking...</span>
                         </div>
                     </div>
 
                     <div class="card-title">VS Code Cloud IDE</div>
-                    <div class="card-desc">Browser-based full development environment with integrated Linux terminal, isolated workspace containers, and persistent developer tooling.</div>
+                    <div class="card-desc">Full browser-based development environment with integrated Linux terminal, isolated workspace containers, and persistent developer tooling.</div>
 
                     <div class="tags-row">
                         <span class="tag">VS Code Server</span>
                         <span class="tag">Linux Terminal</span>
-                        <span class="tag">Container Workspace</span>
+                        <span class="tag">Multi-Tenant</span>
+                    </div>
+
+                    <!-- Inline Diagnostic Drawer -->
+                    <div class="diag-drawer" id="vscode-drawer">
+                        <div class="diag-header">
+                            <span>DIAGNOSTIC TELEMETRY</span>
+                            <span id="vscode-diag-status" class="diag-val good">PROBING</span>
+                        </div>
+                        <div class="diag-row">
+                            <span>Edge Ingress:</span>
+                            <span id="vscode-diag-url" class="diag-val">Resolving...</span>
+                        </div>
+                        <div class="diag-row">
+                            <span>Round-Trip Ping:</span>
+                            <span id="vscode-diag-ping" class="diag-val">--</span>
+                        </div>
+                        <div class="diag-row">
+                            <span>Authentication:</span>
+                            <span class="diag-val">WebDAV / OwnDrive Key</span>
+                        </div>
+                        <div class="diag-action-bar">
+                            <button class="diag-btn" onclick="testSingleService('vscode')">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                                Retest Node
+                            </button>
+                            <a class="diag-btn" href="http://100.120.154.90:8080" target="_blank" rel="noopener noreferrer" title="Direct Tailscale Mesh Access">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                                Tailscale LAN (:8080)
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <a id="vscode-btn" href="#" class="btn-launch btn-vscode" target="_blank" rel="noopener noreferrer">
                     <span id="vscode-btn-text">Launch Cloud IDE</span>
-                    <svg id="vscode-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
             </div>
         </div>
 
+        <!-- Section 2: Minimalist Architecture Topology -->
+        <div class="section-header">
+            <div class="section-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                Cluster Topology & Hardware Mesh
+            </div>
+            <div class="section-tag">Zero-Trust Physical Architecture</div>
+        </div>
+
+        <div class="topology-card">
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+                Dual-Android autonomous computing fabric synchronized through hardware power sequencing and zero-trust WireGuard mesh.
+            </p>
+
+            <div class="topology-grid">
+                <!-- Node 0: Lenovo A6000 -->
+                <div class="node-box" onclick="toggleDrawer('owndrive')">
+                    <div class="node-header">
+                        <div class="node-title">
+                            <span style="color:#38bdf8;">⚡</span> Node 0 (Slave)
+                        </div>
+                        <span class="node-badge">AUX GATEWAY</span>
+                    </div>
+                    <div class="node-meta">Lenovo Kraft-A6000 • Qualcomm Snapdragon 410 (64-bit)</div>
+                    <div class="node-specs">
+                        <div class="node-spec-row"><span>OS:</span><span>Android + Alpine Chroot</span></div>
+                        <div class="node-spec-row"><span>Mesh IP:</span><span>100.102.245.39</span></div>
+                        <div class="node-spec-row"><span>Roles:</span><span>AdGuard DNS • SSH Honeypot</span></div>
+                        <div class="node-spec-row"><span>Bus Role:</span><span>USB ADB / OTG Slave</span></div>
+                    </div>
+                </div>
+
+                <!-- Hardware Interconnect Bus -->
+                <div class="bus-column">
+                    <div class="bus-wire"></div>
+                    <div class="bus-chip" title="Hardware Controller & Intruder Defense">
+                        <div class="bus-chip-title">BLIXOR ESP32-S3</div>
+                        <div>8-Relay Matrix</div>
+                        <div style="font-size: 0.68rem; color: #94a3b8; margin-top: 2px;">Powered Y-Cable (+5V Isolated)</div>
+                    </div>
+                    <div class="bus-wire"></div>
+                </div>
+
+                <!-- Node 1: Xiaomi Redmi Note 3 -->
+                <div class="node-box" onclick="toggleDrawer('vscode')">
+                    <div class="node-header">
+                        <div class="node-title">
+                            <span style="color:#c084fc;">🚀</span> Node 1 (Master)
+                        </div>
+                        <span class="node-badge" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">CORE COMPUTE</span>
+                    </div>
+                    <div class="node-meta">Redmi Note 3 • Qualcomm Snapdragon 650 (Hexa-core)</div>
+                    <div class="node-specs">
+                        <div class="node-spec-row"><span>OS:</span><span>Native Debian 12 Chroot</span></div>
+                        <div class="node-spec-row"><span>Mesh IP:</span><span>100.120.154.90</span></div>
+                        <div class="node-spec-row"><span>Storage:</span><span>MicroSD ext4 (/mnt/sdcard)</span></div>
+                        <div class="node-spec-row"><span>Daemons:</span><span>oCIS • VS Code • Watchdog</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
         <div class="footer">
             <span>Sathwik Server Mesh</span>
             <span class="footer-dot"></span>
-            <span>Node 2 Edge</span>
+            <a href="https://github.com/sathwik4444" class="footer-link" target="_blank" rel="noopener noreferrer">@sathwik4444</a>
             <span class="footer-dot"></span>
-            <span id="refresh-time">Mesh Synced</span>
+            <span>Cloudflare Edge Tunneled</span>
+            <span class="footer-dot"></span>
+            <span id="footer-sync-time">Cluster Active</span>
         </div>
     </div>
 
+    <!-- Client Logic & Fluid Particle Animation -->
     <script>
         // ==========================================================================
-        // 🌌 THE "GOAT" LIQUID QUANTUM AURORA & INTERACTIVE STARDUST ENGINE
+        // 🌌 OPTIMIZED HIGH-PERFORMANCE AMBIENT AURORA CANVAS ENGINE (60 FPS)
         // ==========================================================================
         const canvas = document.getElementById('bgCanvas');
         const ctx = canvas.getContext('2d');
         let width = canvas.width = window.innerWidth;
         let height = canvas.height = window.innerHeight;
+        let isTabActive = true;
 
-        let mouse = {
-            x: width * 0.5,
-            y: height * 0.45,
-            targetX: width * 0.5,
-            targetY: height * 0.45,
-            vx: 0,
-            vy: 0,
-            lastX: width * 0.5,
-            lastY: height * 0.45,
-            speed: 0
-        };
-
-        window.addEventListener('mousemove', (e) => {
-            mouse.targetX = e.clientX;
-            mouse.targetY = e.clientY;
-            for (let i = 0; i < 3; i++) {
-                spawnStardust(e.clientX, e.clientY);
-            }
+        document.addEventListener('visibilitychange', () => {
+            isTabActive = !document.hidden;
         });
-
-        window.addEventListener('touchmove', (e) => {
-            if (e.touches && e.touches[0]) {
-                mouse.targetX = e.touches[0].clientX;
-                mouse.targetY = e.touches[0].clientY;
-                spawnStardust(e.touches[0].clientX, e.touches[0].clientY);
-            }
-        }, { passive: true });
 
         window.addEventListener('resize', () => {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
-        });
+        }, { passive: true });
 
-        // Interactive Cosmic Stardust Particles
-        let stardust = [];
-        function spawnStardust(x, y) {
-            if (stardust.length > 130) stardust.shift();
-            const angle = Math.random() * Math.PI * 2;
-            const velocity = Math.random() * 2.8 + 0.6;
-            stardust.push({
-                x: x + (Math.random() - 0.5) * 14,
-                y: y + (Math.random() - 0.5) * 14,
-                vx: Math.cos(angle) * velocity + mouse.vx * 0.15,
-                vy: Math.sin(angle) * velocity + mouse.vy * 0.15,
-                size: Math.random() * 2.2 + 1.2,
-                alpha: 1,
-                decay: Math.random() * 0.02 + 0.015,
-                colorType: Math.random()
-            });
-        }
+        // Cosmic Ribbon Particles
+        const particles = [];
+        const PARTICLE_COUNT = Math.min(45, Math.floor(width / 30));
 
-        // Ambient Floating Nebula Motes
-        const nebulaMotes = [];
-        for (let i = 0; i < 55; i++) {
-            nebulaMotes.push({
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+            particles.push({
                 x: Math.random() * width,
                 y: Math.random() * height,
                 vx: (Math.random() - 0.5) * 0.4,
                 vy: (Math.random() - 0.5) * 0.4,
-                size: Math.random() * 2.0 + 0.8,
-                phase: Math.random() * Math.PI * 2,
-                baseAlpha: Math.random() * 0.4 + 0.2
+                radius: Math.random() * 2 + 0.8,
+                alpha: Math.random() * 0.5 + 0.2,
+                color: Math.random() > 0.5 ? '56, 189, 248' : '168, 85, 247'
             });
         }
 
         let time = 0;
-        let isAnyBlackout = false;
-        let blackoutBlend = 0;
+        function animateCanvas() {
+            if (!isTabActive) {
+                requestAnimationFrame(animateCanvas);
+                return;
+            }
 
-        function renderLiquidAurora() {
+            time += 0.005;
             ctx.clearRect(0, 0, width, height);
 
-            mouse.vx = mouse.targetX - mouse.lastX;
-            mouse.vy = mouse.targetY - mouse.lastY;
-            mouse.speed = Math.hypot(mouse.vx, mouse.vy);
-            mouse.lastX = mouse.targetX;
-            mouse.lastY = mouse.targetY;
-            mouse.x += (mouse.targetX - mouse.x) * 0.07;
-            mouse.y += (mouse.targetY - mouse.y) * 0.07;
+            // Ambient Energy Gradients
+            const g1 = ctx.createRadialGradient(
+                width * 0.3 + Math.sin(time) * 100, 
+                height * 0.25 + Math.cos(time) * 80, 
+                10, 
+                width * 0.3, 
+                height * 0.25, 
+                width * 0.55
+            );
+            g1.addColorStop(0, 'rgba(2, 132, 199, 0.12)');
+            g1.addColorStop(1, 'transparent');
+            ctx.fillStyle = g1;
+            ctx.fillRect(0, 0, width, height);
 
-            time += 0.014;
+            const g2 = ctx.createRadialGradient(
+                width * 0.7 + Math.cos(time * 0.8) * 120, 
+                height * 0.65 + Math.sin(time * 0.8) * 90, 
+                10, 
+                width * 0.7, 
+                height * 0.65, 
+                width * 0.5
+            );
+            g2.addColorStop(0, 'rgba(124, 58, 237, 0.10)');
+            g2.addColorStop(1, 'transparent');
+            ctx.fillStyle = g2;
+            ctx.fillRect(0, 0, width, height);
 
-            const targetBlend = isAnyBlackout ? 1 : 0;
-            blackoutBlend += (targetBlend - blackoutBlend) * 0.05;
+            // Smooth floating cosmic stardust
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
 
-            // 1. Multi-Layered Liquid Silk Aurora Ribbons
-            const ribbonCount = 6;
-            for (let i = 0; i < ribbonCount; i++) {
-                ctx.save();
+                if (p.x < 0) p.x = width;
+                if (p.x > width) p.x = 0;
+                if (p.y < 0) p.y = height;
+                if (p.y > height) p.y = 0;
+
                 ctx.beginPath();
-
-                const yOffset = height * (0.22 + i * 0.11);
-                const freq = 0.0018 + i * 0.0004;
-                const speed = 0.8 + i * 0.25;
-                const amp = 46 + i * 14;
-
-                ctx.moveTo(0, height);
-                for (let x = 0; x <= width; x += 12) {
-                    let wave = Math.sin(x * freq + time * speed + i * 1.3) * amp
-                             + Math.cos(x * freq * 1.6 - time * speed * 0.7) * (amp * 0.45);
-
-                    const distToMouse = Math.hypot(x - mouse.x, (yOffset + wave) - mouse.y);
-                    const influenceRadius = 240;
-                    if (distToMouse < influenceRadius) {
-                        const push = Math.cos((distToMouse / influenceRadius) * (Math.PI / 2));
-                        wave -= push * (55 + Math.min(30, mouse.speed * 1.5));
-                    }
-
-                    const y = yOffset + wave;
-                    if (x === 0) ctx.lineTo(x, y);
-                    else ctx.lineTo(x, y);
-                }
-                ctx.lineTo(width, height);
-                ctx.closePath();
-
-                const grad = ctx.createLinearGradient(0, yOffset - amp, width, yOffset + amp + 160);
-                if (blackoutBlend > 0.01) {
-                    // Molten Coral & Cyber Amber Mode
-                    grad.addColorStop(0, `rgba(244, 63, 94, ${(0.15 - i * 0.018) * blackoutBlend})`);
-                    grad.addColorStop(0.5, `rgba(251, 146, 60, ${(0.11 - i * 0.012) * blackoutBlend})`);
-                    grad.addColorStop(1, 'transparent');
-                }
-                if (blackoutBlend < 0.99) {
-                    // Electric Cyan & Royal Amethyst Mode
-                    const activeWeight = 1 - blackoutBlend;
-                    if (i % 2 === 0) {
-                        grad.addColorStop(0, `rgba(14, 165, 233, ${(0.16 - i * 0.018) * activeWeight})`);
-                        grad.addColorStop(0.5, `rgba(56, 189, 248, ${(0.11 - i * 0.012) * activeWeight})`);
-                        grad.addColorStop(1, 'transparent');
-                    } else {
-                        grad.addColorStop(0, `rgba(124, 58, 237, ${(0.17 - i * 0.018) * activeWeight})`);
-                        grad.addColorStop(0.5, `rgba(192, 132, 252, ${(0.12 - i * 0.012) * activeWeight})`);
-                        grad.addColorStop(1, 'transparent');
-                    }
-                }
-
-                ctx.fillStyle = grad;
-                ctx.fill();
-
-                ctx.lineWidth = 1.2;
-                if (blackoutBlend > 0.01) {
-                    ctx.strokeStyle = `rgba(244, 63, 94, ${(0.25 - i * 0.03) * blackoutBlend})`;
-                } else {
-                    ctx.strokeStyle = i % 2 === 0 
-                        ? `rgba(56, 189, 248, ${(0.3 - i * 0.03) * (1 - blackoutBlend)})`
-                        : `rgba(168, 85, 247, ${(0.3 - i * 0.03) * (1 - blackoutBlend)})`;
-                }
-                ctx.stroke();
-                ctx.restore();
-            }
-
-            // 2. Ambient Floating Nebula Motes
-            for (let m of nebulaMotes) {
-                m.x += m.vx;
-                m.y += m.vy;
-                if (m.x < 0) m.x = width;
-                if (m.x > width) m.x = 0;
-                if (m.y < 0) m.y = height;
-                if (m.y > height) m.y = 0;
-
-                const flicker = Math.sin(time * 2 + m.phase) * 0.2 + m.baseAlpha;
-                ctx.beginPath();
-                ctx.arc(m.x, m.y, m.size, 0, Math.PI * 2);
-                if (isAnyBlackout) {
-                    ctx.fillStyle = `rgba(251, 146, 60, ${flicker * 0.7})`;
-                } else {
-                    ctx.fillStyle = `rgba(56, 189, 248, ${flicker * 0.8})`;
-                }
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
                 ctx.fill();
             }
 
-            // 3. Interactive Cosmic Stardust Trail
-            for (let i = stardust.length - 1; i >= 0; i--) {
-                const s = stardust[i];
-                s.x += s.vx;
-                s.y += s.vy;
-                s.vx *= 0.96;
-                s.vy *= 0.96;
-                s.alpha -= s.decay;
-
-                if (s.alpha <= 0) {
-                    stardust.splice(i, 1);
-                    continue;
-                }
-
-                ctx.save();
-                ctx.beginPath();
-                ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
-                if (isAnyBlackout) {
-                    ctx.fillStyle = s.colorType > 0.5 
-                        ? `rgba(244, 63, 94, ${s.alpha})`
-                        : `rgba(251, 146, 60, ${s.alpha})`;
-                    ctx.shadowColor = 'rgba(244, 63, 94, 0.8)';
-                } else {
-                    ctx.fillStyle = s.colorType > 0.5 
-                        ? `rgba(56, 189, 248, ${s.alpha})`
-                        : `rgba(192, 132, 252, ${s.alpha})`;
-                    ctx.shadowColor = 'rgba(56, 189, 248, 0.8)';
-                }
-                ctx.shadowBlur = 8;
-                ctx.fill();
-                ctx.restore();
-            }
-
-            requestAnimationFrame(renderLiquidAurora);
+            requestAnimationFrame(animateCanvas);
         }
-        renderLiquidAurora();
-
-        // 3D Card Tilt on Mouse Move with Holographic Specular Glare
-        const cards = document.querySelectorAll('.service-card');
-        cards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                const rotateX = -(y / (rect.height / 2)) * 6;
-                const rotateY = (x / (rect.width / 2)) * 6;
-                card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
-                card.style.setProperty('--mouse-x', `${(e.clientX - rect.left)}px`);
-                card.style.setProperty('--mouse-y', `${(e.clientY - rect.top)}px`);
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
-            });
-        });
+        requestAnimationFrame(animateCanvas);
 
         // ==========================================================================
-        // 2. High-Speed Background Probe & Persistent Cache
+        // ⚡ REAL-TIME CLUSTER & LIVE PROBE STATE MACHINE
         // ==========================================================================
-        const CACHE_KEY = 'sathwik_cluster_state_v3';
+        let liveClusterData = null;
 
         function loadFromCache() {
             try {
-                const raw = localStorage.getItem(CACHE_KEY);
-                if (raw) {
-                    const cached = JSON.parse(raw);
-                    if (cached && cached.data) {
-                        applyClusterState(cached.data, true, true, cached.ocisLat, cached.vscodeLat);
-                        return true;
-                    }
+                const cached = localStorage.getItem('sathwik_mesh_cache');
+                if (cached) {
+                    const parsed = JSON.parse(cached);
+                    liveClusterData = parsed;
+                    applyClusterState(parsed, false);
                 }
             } catch (e) {}
-            return false;
         }
 
-        function saveToCache(data, ocisLat, vscodeLat) {
+        function saveToCache(data) {
             try {
-                localStorage.setItem(CACHE_KEY, JSON.stringify({
-                    data, ocisLat, vscodeLat,
-                    cachedAt: Date.now()
-                }));
+                localStorage.setItem('sathwik_mesh_cache', JSON.stringify(data));
             } catch (e) {}
         }
 
+        function toggleDrawer(service) {
+            const drawer = document.getElementById(`${service}-drawer`);
+            if (drawer) {
+                drawer.classList.toggle('open');
+            }
+        }
+
+        // Multi-tier link.json fetch
         async function fetchLinkData() {
             const timestamp = Date.now();
             try {
@@ -1003,11 +1180,11 @@
             return null;
         }
 
-        // Non-blocking latency probe with generous timeout
+        // Non-blocking latency probe with AbortController
         async function probeEndpointFast(url) {
             if (!url || !url.startsWith('http')) return { alive: false, latency: null };
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 3000);
+            const timeoutId = setTimeout(() => controller.abort(), 2500);
             const start = performance.now();
             try {
                 await fetch(url, { mode: 'no-cors', cache: 'no-store', signal: controller.signal });
@@ -1019,63 +1196,113 @@
             }
         }
 
-        function setServiceState(service, isAlive, url, latency) {
+        function setServiceUI(service, isAlive, url, latency) {
             const card = document.getElementById(`card-${service}`);
             const pill = document.getElementById(`${service}-pill`);
             const pillText = document.getElementById(`${service}-pill-text`);
             const btn = document.getElementById(service === 'owndrive' ? 'ocis-btn' : 'vscode-btn');
             const btnText = document.getElementById(service === 'owndrive' ? 'ocis-btn-text' : 'vscode-btn-text');
+            const drawer = document.getElementById(`${service}-drawer`);
+            
+            const diagStatus = document.getElementById(`${service}-diag-status`);
+            const diagUrl = document.getElementById(`${service}-diag-url`);
+            const diagPing = document.getElementById(`${service}-diag-ping`);
 
             if (url && url.startsWith('http')) {
-                // ALWAYS ENABLE AND POINT TO REAL CLUSTER URL
-                btn.href = url;
-                btn.target = '_blank';
-                btn.rel = 'noopener noreferrer';
-                btn.removeAttribute('onclick');
+                // Short domain formatting for diagnostics
+                try {
+                    const uObj = new URL(url);
+                    if (diagUrl) diagUrl.innerText = uObj.hostname;
+                } catch(e) {
+                    if (diagUrl) diagUrl.innerText = url;
+                }
 
-                card.classList.remove('is-blackout');
-                pill.style.background = 'var(--status-online-bg)';
-                pill.style.borderColor = 'rgba(16, 185, 129, 0.4)';
-                pill.style.color = '#34d399';
-                pillText.innerText = latency ? `ONLINE • ${latency}ms` : 'ONLINE';
-                btnText.innerText = (service === 'owndrive') ? 'Launch OwnDrive' : 'Launch Cloud IDE';
+                if (isAlive) {
+                    card.classList.remove('is-offline');
+                    pill.style.background = 'var(--status-online-bg)';
+                    pill.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                    pill.style.color = '#34d399';
+                    pillText.innerText = latency ? `ONLINE • ${latency}ms` : 'ONLINE';
+                    btn.href = url;
+                    btnText.innerText = (service === 'owndrive') ? 'Launch OwnDrive' : 'Launch Cloud IDE';
+                    
+                    if (diagStatus) {
+                        diagStatus.innerText = 'ONLINE';
+                        diagStatus.className = 'diag-val good';
+                    }
+                    if (diagPing) diagPing.innerText = latency ? `${latency} ms` : 'Active';
+                } else {
+                    // Endpoint unreachable or tunnel down
+                    card.classList.add('is-offline');
+                    pill.style.background = 'var(--status-offline-bg)';
+                    pill.style.borderColor = 'rgba(244, 63, 94, 0.45)';
+                    pill.style.color = '#fb7185';
+                    pillText.innerText = 'STANDBY / RETRY';
+                    btn.href = url; // Still allow user click to force test
+                    btnText.innerText = 'Launch (Offline Check)';
+
+                    // Automatically reveal diagnostic drawer when down!
+                    if (drawer) drawer.classList.add('open');
+
+                    if (diagStatus) {
+                        diagStatus.innerText = 'UNREACHABLE';
+                        diagStatus.className = 'diag-val bad';
+                    }
+                    if (diagPing) diagPing.innerText = 'Timeout / 502';
+                }
             } else {
-                card.classList.add('is-blackout');
-                pill.style.background = 'var(--status-blackout-bg)';
+                // No link available yet
+                card.classList.add('is-offline');
+                pill.style.background = 'var(--status-offline-bg)';
                 pill.style.borderColor = 'rgba(244, 63, 94, 0.45)';
                 pill.style.color = '#fb7185';
-                pillText.innerText = 'CONNECTING';
+                pillText.innerText = 'RESOLVING';
                 btn.href = 'javascript:void(0);';
                 btnText.innerText = 'Resolving Tunnel...';
+                
+                if (drawer) drawer.classList.add('open');
+                if (diagStatus) {
+                    diagStatus.innerText = 'NO TUNNEL';
+                    diagStatus.className = 'diag-val bad';
+                }
+                if (diagUrl) diagUrl.innerText = 'None';
             }
         }
 
-        function applyClusterState(data, ocisAlive, vscodeAlive, ocisLat, vscodeLat) {
+        function applyClusterState(data, probed, ocisAlive, vscodeAlive, ocisLat, vscodeLat) {
             if (!data) return;
 
             const hasOcis = !!(data.url && data.url.startsWith('http'));
             const hasVscode = !!(data.vscode_url && data.vscode_url.startsWith('http'));
 
-            setServiceState('owndrive', hasOcis, data.url, ocisLat);
-            setServiceState('vscode', hasVscode, data.vscode_url, vscodeLat);
-
-            // Never blackout if either tunnel is live!
-            isAnyBlackout = (!hasOcis && !hasVscode);
+            if (!probed) {
+                // Initial optimistic paint from cache / link.json
+                setServiceUI('owndrive', hasOcis, data.url, null);
+                setServiceUI('vscode', hasVscode, data.vscode_url, null);
+            } else {
+                // Real probed state
+                setServiceUI('owndrive', ocisAlive, data.url, ocisLat);
+                setServiceUI('vscode', vscodeAlive, data.vscode_url, vscodeLat);
+            }
 
             const hudDot = document.getElementById('cluster-hud-dot');
             const hudText = document.getElementById('cluster-hud-text');
             const pingEl = document.getElementById('cluster-ping');
             const refreshEl = document.getElementById('refresh-time');
+            const footerSync = document.getElementById('footer-sync-time');
 
-            if (hasOcis && hasVscode) {
+            const allAlive = probed ? (ocisAlive && vscodeAlive) : (hasOcis && hasVscode);
+            const partial = probed ? (ocisAlive || vscodeAlive) : (hasOcis || hasVscode);
+
+            if (allAlive) {
                 hudDot.className = 'hud-dot';
-                hudText.innerText = 'CLUSTER: ALL SERVICES ONLINE';
-            } else if (hasOcis || hasVscode) {
+                hudText.innerText = 'CLUSTER: ALL ONLINE';
+            } else if (partial) {
                 hudDot.className = 'hud-dot warning';
                 hudText.innerText = 'CLUSTER: PARTIAL ONLINE';
             } else {
                 hudDot.className = 'hud-dot danger';
-                hudText.innerText = 'CLUSTER: CONNECTING';
+                hudText.innerText = 'CLUSTER: STANDBY';
             }
 
             const lats = [ocisLat, vscodeLat].filter(x => x !== null && x !== undefined);
@@ -1083,43 +1310,45 @@
                 const avg = Math.round(lats.reduce((a, b) => a + b, 0) / lats.length);
                 pingEl.innerText = `${avg} ms`;
                 pingEl.style.color = '#34d399';
-            } else {
+            } else if (partial) {
                 pingEl.innerText = 'Active';
                 pingEl.style.color = '#34d399';
+            } else {
+                pingEl.innerText = 'Offline';
+                pingEl.style.color = '#fb7185';
             }
 
             if (data.updated_at) {
                 const elapsed = Math.floor(Date.now() / 1000) - parseInt(data.updated_at);
                 if (elapsed < 3600) {
                     const mins = Math.max(1, Math.floor(elapsed / 60));
-                    refreshEl.innerHTML = `Tunnel synced ${mins}m ago`;
+                    refreshEl.innerText = `Synced ${mins}m ago`;
+                    footerSync.innerText = `Tunnel updated ${mins}m ago`;
                 } else {
-                    refreshEl.innerHTML = `Cluster Node 2 • Active`;
+                    refreshEl.innerText = 'Mesh Active';
+                    footerSync.innerText = 'Node 2 Master Online';
                 }
-            } else {
-                refreshEl.innerHTML = 'Cluster Active';
             }
         }
 
-        // Master Background Sync (Instant UI + Parallel Non-blocking Ping)
         async function syncCluster() {
             const recheckBtn = document.getElementById('recheckBtn');
             if (recheckBtn) recheckBtn.classList.add('rotating');
 
             const data = await fetchLinkData();
             if (data && (data.url || data.vscode_url)) {
-                // 1. Immediately hydrate UI with active links (0ms wait!)
-                applyClusterState(data, true, true, null, null);
-                saveToCache(data, null, null);
+                liveClusterData = data;
+                // Optimistic instant hydration
+                applyClusterState(data, false);
+                saveToCache(data);
 
-                // 2. Measure latency in background without blocking buttons
+                // Parallel non-blocking probe
                 const [ocisProbe, vscodeProbe] = await Promise.all([
                     probeEndpointFast(data.url),
                     probeEndpointFast(data.vscode_url)
                 ]);
 
-                applyClusterState(data, true, true, ocisProbe.latency, vscodeProbe.latency);
-                saveToCache(data, ocisProbe.latency, vscodeProbe.latency);
+                applyClusterState(data, true, ocisProbe.alive, vscodeProbe.alive, ocisProbe.latency, vscodeProbe.latency);
             } else {
                 loadFromCache();
             }
@@ -1129,16 +1358,31 @@
             }
         }
 
+        async function testSingleService(service) {
+            if (!liveClusterData) return;
+            const url = (service === 'owndrive') ? liveClusterData.url : liveClusterData.vscode_url;
+            const diagStatus = document.getElementById(`${service}-diag-status`);
+            const diagPing = document.getElementById(`${service}-diag-ping`);
+
+            if (diagStatus) {
+                diagStatus.innerText = 'PINGING...';
+                diagStatus.className = 'diag-val warn';
+            }
+
+            const probe = await probeEndpointFast(url);
+            setServiceUI(service, probe.alive, url, probe.latency);
+        }
+
         function forceRecheck() {
             syncCluster();
         }
 
-        // 1. Instantaneous render from cache if available (0ms load!)
+        // Instant paint from local cache
         loadFromCache();
 
-        // 2. Perform silent background sync immediately and every 20 seconds
+        // Silent immediate sync + background interval
         syncCluster();
-        setInterval(syncCluster, 20000);
+        setInterval(syncCluster, 25000);
     </script>
 </body>
 </html>
