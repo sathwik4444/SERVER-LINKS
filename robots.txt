@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
+User-agent: Bravebot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://sathwik4444.github.io/SERVER-LINKS/sitemap.xml
