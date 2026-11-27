@@ -1,1 +1,9 @@
-{"url": "https://server-1.tail73aee1.ts.net", "vscode_url": "https://server-1.tail73aee1.ts.net:8443", "updated_at": "1795606472"}
+{
+  "url": "https://server-1.tail73aee1.ts.net",
+  "vscode_url": "https://server-1.tail73aee1.ts.net:8443",
+  "direct_url": "http://100.120.154.90:8081",
+  "direct_vscode_url": "http://100.120.154.90:8080",
+  "transport": "tailscale-funnel",
+  "permanent": true,
+  "updated_at": "2026-11-27T19:40:00+05:30"
+}
